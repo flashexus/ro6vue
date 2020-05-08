@@ -1,0 +1,44 @@
+version: '3'
+services:
+  web:
+    build: 
+      context: ./docker/nginx
+    ports:
+      - 80:80
+    depends_on:
+      - apl
+    volumes:
+      - public-data:/Ro6MysNgx/public
+      - tmp-data:/Ro6MysNgx/tmp
+    environment:
+      TZ: Asia/Tokyo
+  apl:
+    build: .
+    command: sh docker/rails6/scripts/launch.sh
+    volumes:
+      - .:/Ro6MysNgx
+      - /Ro6MysNgx/node_modules
+      - public-data:/Ro6MysNgx/public
+      - tmp-data:/Ro6MysNgx/tmp
+      - log-data:/Ro6MysNgx/log
+    environment:
+      RAILS_ENV: development
+      TZ: Asia/Tokyo
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    build: 
+      context: ./docker/mysql
+    command: mysqld --default-time-zone=Asia/Tokyo
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - "TZ=Asia/Tokyo"
+volumes: 
+    db:
+    public-data:
+    tmp-data:
+    log-data:
