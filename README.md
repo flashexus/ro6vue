@@ -35,7 +35,7 @@ DBコンテナでmysqlクライアント起動
 
 ## Database 作成
 
-`docker-compose run web rake db:create`
+`docker-compose run apl rake db:create`
 
 ## 接続確認
 
@@ -50,5 +50,5 @@ http://192.168.x.x ⇒ サイト表示OK
 `docker-compose up --build`
 
 全体を再構築する場合：
-`docker-compose run web bundle install`
+`docker-compose run apl bundle install`
 `docker-compose up --build`
