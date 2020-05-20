@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: 
-      context: ./docker/nginx
+      context: ./docker/Nginx
     ports:
       - 80:80
     depends_on:
@@ -14,7 +14,7 @@ services:
       TZ: Asia/Tokyo
   apl:
     build: .
-    command: sh docker/rails6/scripts/launch.sh
+    command: sh docker/Rails6/scripts/launch.sh
     volumes:
       - .:/Ro6MysNgx
       - /Ro6MysNgx/node_modules
@@ -30,7 +30,7 @@ services:
       - db
   db:
     build: 
-      context: ./docker/mysql
+      context: ./docker/Mysql
     command: mysqld --default-time-zone=Asia/Tokyo
     volumes:
       - db:/var/lib/mysql
