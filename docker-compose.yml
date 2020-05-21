@@ -31,7 +31,6 @@ services:
   db:
     build: 
       context: ./docker/MySQL
-    command: mysqld --default-time-zone=Asia/Tokyo
     volumes:
       - db:/var/lib/mysql
     environment:
