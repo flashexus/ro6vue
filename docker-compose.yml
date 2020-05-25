@@ -32,6 +32,7 @@ services:
     build: 
       context: ./docker/MySQL
     volumes:
+      - ./db:/usr/local/share/db
       - db:/var/lib/mysql
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
