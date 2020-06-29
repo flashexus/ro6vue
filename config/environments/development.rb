@@ -1,10 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.logger = Logger.new(STDOUT)
   config.log_level = :debug
+  config.logger = Logger.new(STDOUT)
+  config.logger = ActiveSupport::Logger.new(STDOUT)
   config.log_tags = [:request_id, :remote_ip]
   config.logger.formatter = ::Logger::Formatter.new
   config.action_view.logger = nil
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -62,5 +64,11 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # デバッグ用設定
+  config.file_watcher = ActiveSupport::FileUpdateChecker
+  
+  # devise gem用設定
+  config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
+  # config.reload_classes_only_on_change = false
 end

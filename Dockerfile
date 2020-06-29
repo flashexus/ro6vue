@@ -19,9 +19,9 @@ WORKDIR /Ro6MysNgx
 
 COPY Gemfile /Ro6MysNgx/Gemfile
 COPY Gemfile.lock /Ro6MysNgx/Gemfile.lock
-RUN bundle install
 RUN yarn install --check-files
-COPY . /Ro6MysNgx
+ADD . /Ro6MysNgx
+RUN bundle install && rails webpacker:install 
 
 VOLUME /$PROJECT
 # puma.sockを配置するディレクトリを作成

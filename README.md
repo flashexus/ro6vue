@@ -24,7 +24,8 @@ Docker Machineが起動するこを確認する
 
 `docker-compose up -d`
 
-`docker-compose run apl bundle exec rails webpacker:install`
+### bundleがなくてrailsが立ち上がらない場合：
+`docker-compose run apl ./bin/bundle`
 
 ## DBコンテナ認証方式変更
 

@@ -21,6 +21,7 @@ services:
       - public-data:/Ro6MysNgx/public
       - tmp-data:/Ro6MysNgx/tmp
       - log-data:/Ro6MysNgx/log
+      - gem_data:/usr/local/bundle
     environment:
       RAILS_ENV: development
       TZ: Asia/Tokyo
@@ -44,3 +45,4 @@ volumes:
     public-data:
     tmp-data:
     log-data:
+    gem_data:
