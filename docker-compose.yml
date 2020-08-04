@@ -36,7 +36,7 @@ services:
       - ./db:/usr/local/share/db
       - db:/var/lib/mysql
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_ROOT_PASSWORD=pass
       - "TZ=Asia/Tokyo"
     ports:
       - "3306:3306"

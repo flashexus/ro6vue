@@ -34,7 +34,7 @@ DBコンテナでmysqlクライアント起動
 
 認証方式変更
 `mysql -u root`
-`ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '';`
+`ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'pass';`
 
 ## Database 作成
 
