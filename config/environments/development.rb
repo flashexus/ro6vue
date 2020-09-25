@@ -71,4 +71,16 @@ Rails.application.configure do
   # devise gem用設定
   config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
   # config.reload_classes_only_on_change = false
+
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "iwata.vitallead@gmail.com", #gmailアドレス
+    :password => "flashx18999",
+    :authentication => 'login',
+  }
+
+
 end
