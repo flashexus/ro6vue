@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index'
+  get 'home/show'
   devise_for :users
   namespace :admin do
     # Add dashboard for your models here
