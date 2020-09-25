@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+ip addr add 192.168.99.101 dev eth0
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /Ro6MysNgx/tmp/pids/server.pid
 

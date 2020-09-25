@@ -1,0 +1,75 @@
+<%#
+# Application Layout
+This view template is used as the layout
+for every page that Administrate generates.
+By default, it renders:
+- Navigation
+- Content for a search bar
+  (if provided by a `content_for` block in a nested page)
+- Flashes
+- Links to stylesheets and JavaScripts
+%>
+
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noodp, noydir, index, follow">
+    <meta name="viewport" content="initial-scale=1">
+    <title>
+      <%= content_for(:title) || 'Dashboard' %> - <%= Rails.application.class.parent_name.titlecase %>
+    </title>
+    <%= stylesheet_link_tag 'administrate/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'administrate', 'data-turbolinks-track': 'reload' %>
+
+    <%= render "stylesheet" %>
+    <%= csrf_meta_tags %>
+
+    <meta name="turbolinks-root" content="/admin">
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg bg-light">
+     <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <% if user_signed_in? %>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to current_user.username,'#' ,class:"nav-link"%>
+      </li>
+      <li class="nav-item ">
+        <%= link_to 'プロフィール変更', edit_user_registration_path,class:"nav-link" %>
+      </li>
+      <li class="nav-item ">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"nav-link" %>
+      </li>
+      <li class="nav-item ">
+          <% else %>
+            <%= link_to 'サインアップ', new_user_registration_path,class:"nav-link"  %>
+      </li>
+      <li class="nav-item ">
+            <%= link_to 'ログイン', new_user_session_path ,class:"nav-link" %>
+      </li>
+          <% end %>
+    </ul>
+  </div>
+</nav>
+
+    <div class="app-container">
+      <%= render "navigation" -%>
+
+      <main class="main-content" role="main">
+        <%= render "flashes" -%>
+        <%= yield %>
+      </main>
+    </div>
+
+    <div style="display: none; width: 0; height: 0; overflow: hidden; position: absolute">
+      <%= render "icons" %>
+    </div>
+    <%= render "javascript" %>
+  </body>
+</html>
