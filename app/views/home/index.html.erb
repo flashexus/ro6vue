@@ -1,2 +1,230 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>モバイルスタンプラリー｜維新の旅</title>
+<meta name="viewport" content="width=device-width">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<%= stylesheet_link_tag 'css/style', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/script.js"></script>
+<script type="text/javascript" src="static/js/jquery.smoothscroll.js"></script>
+<script type="text/javascript" src="static/js/jquery.scrollshow.js"></script>
+<script type="text/javascript" src="static/js/jquery.rollover.js"></script>
+<script type="text/javascript" src="static/js/jquery.slideshow.js"></script>
+<style>
+	/*================================================
+	*  帯
+	================================================*/
+	.band {
+		padding:10px 0px;
+		margin:30px 0px 30px 0px;
+		background:#BE993E;
+		text-align:center;
+		font-size:20px;
+		color:#FFFFFF;
+		font-weight:bold;
+		overflow:hidden;
+	}
+	.band a {
+		padding:0% 5%;
+		text-decoration: none;
+		color:#FFFFFF;
+		text-decoration:underline;/*下線を引く*/
+	}
+</style>
+<script>
+$(function($){
+	$('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 10});
+	$('.totop').scrollshow({position : 500});
+	$('.slide').slideshow({
+		touch         : true,
+		touchDistance : '80',
+		bgImage       : false,
+		autoSlide     : true,
+		effect        : 'slide',
+		repeat        : true,
+		easing        : 'swing',
+		interval      : 3000,
+		duration      : 1000,
+		imgHoverStop  : true,
+		navHoverStop  : true,
+		navImg        : false,
+		navImgCustom  : false,
+		navImgSuffix  : ''
+	});
+	$('.slidePrev img').rollover();
+	$('.slideNext img').rollover();
+	});
+	
+</script>
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+</header>
+<div class="slide">
+	<ul class="slideInner">
+		<li><a href="/"><%= image_tag "static/images/header_top.png" %></a></li>
+	</ul>
+	<div class="slidePrev"><%= image_tag "static/images/nav_prev.png",{alt:"前へ"} %></div>
+	<div class="slidePrev"><%= image_tag "static/images/nav_next.png",{alt:"次へ"} %></div>
+	<div class="controlNav"></div>
+</div><!-- /.slide -->
+<!-- 
+<nav>
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/collesta">ログイン</a></li>
+		<li><a href="/howtouse">使い方</a></li>
+	</ul>
+</nav> -->
+<div class="band">
+	<a href="/">ＨＯＭＥ</a>
+	<a href="/collesta#/signup">新規登録</a>
+	<a href="/collesta">ログイン</a>
+	<a href="/howtouse">使い方</a>
+</div>
+<div id="contents">
+	<div id="main">
+		<dl class="info">
+			<dd>
+				萩・石見エリアの観光スポットを３箇所（異なる市町で１箇所ずつ）を巡り、スマホでスタンプをゲットすると、抽選で豪華賞品が当たります！
+			</dd>
+			<dd>
+				応募期間：2019年9月14日（土）～11月4日（月）
+			</dd>
+		</dl>
+		<div class="catalog">
+			<h3 id="present">スタンプ取得地点マップ</h3>
+			<p>スタンプが取得できるのは、萩・石見エリアの5市3町にまたがる60箇所です。</p>
+			<ul>
+				<li>
+					<a href="/spot" target="_blank"><%= image_tag "static/images/spot.png" %></a>
+					<p><a href="/spot" target="_blank">PDFはこちら</a></p>
+				</li>
+			</ul>
+			<h3 id="present">賞品</h3>
+			<p style="font-size: 0.75rem">
+			3箇所のスタンプを集め、アンケートにご協力いただいた方の中から抽選を行います。<br>
+			当選者の方は、以下の７種類の賞品の中から、異なる市町の賞品２つをセットで差し上げます。<br>
+			ただし、益田市・萩市の「石見焼と萩焼セット」と「扶桑鶴と東洋美人の地酒セット」については、賞品１つのみとなります。
+			</p>
+			<ul>
+				<li>
+          <%= image_tag "static/images/keihin/sio-set.jpg",{alt:"【浜田市】浜守の塩　4種セット画像"} %>
+					<p>【浜田市】浜守の塩　4種セット</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/keihin/rusk2.jpg",{alt:"【【益田市】萩・石見空港はちみつラスク画像"} %>
+					<p>【益田市】萩・石見空港はちみつラスク</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/keihin/yakimono-set.jpg",{alt:"【益田市・萩市】MASCOS HOTELオリジナル　石見焼と萩焼のセット画像"} %>
+					<p>【益田市・萩市】MASCOS HOTELオリジナル　石見焼と萩焼のセット</p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+          <%= image_tag "static/images/keihin/jam2.jpg",{alt:"【吉賀町】農家さんが作ったジャム2個セット画像"} %>
+					<p>【吉賀町】農家さんが作ったジャム2個セット</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/keihin/dressing-set.jpg",{alt:"【津和野町】まるごと津和野MADEドレッシング3本セット画像"} %>
+					<p>【津和野町】まるごと津和野MADEドレッシング3本セット</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/keihin/abu-leine.jpg",{alt:"【阿武町】マドレーヌ「あぶれーぬ」詰め合わせ画像"} %>
+					<p>【阿武町】マドレーヌ「あぶれーぬ」詰め合わせ</p>
+				</li>
+			</ul>
+			<ul>
+				<li>
+            <%= image_tag "static/images/keihin/sake-set.jpg",{alt:"【益田市・萩市】石見の地酒「扶桑鶴」と山口の地酒「東洋美人」のセット画像"} %>
+						<p>【益田市・萩市】石見の地酒「扶桑鶴」と山口の地酒「東洋美人」のセット</p>
+					</li>
+			</ul>
+			<p style="font-size:0.75rem;">
+				※賞品の写真は全てイメージです。また、在庫状況により賞品が変わる場合があります。
+				※賞品の発送は、2019年12月を予定しています。
+			</p>
+		</div><!-- /.catalog -->
+
+		<div class="sanka">
+			<h2 id="spot">参加方法</h2>
+			<ul>
+				<li>
+          <%= image_tag "static/images/sanka_1.png" %>
+					<p>
+						チラシやポスターに掲載されているQRコードの読み取りや「萩・石見空港　レンタカー」で検索し、Webサイトにアクセスしてください。
+					</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/sanka_2.png" %>
+					<p>
+						「新規登録」より、ユーザー登録を行い、登録したメールアドレスに届いたメール本文内URLをクリックし登録完了です。<br>
+						<a href="/collesta#/signup">新規登録はこちら</a>
+					</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/sanka_3.png" %>
+					<p>
+						ログインページより、ID・パスワードを入力してログインしてください。<br>
+						<a href="/collesta">ログインはこちら</a>
+					</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/sanka_4.png" %>
+					<p>
+						周辺を探索し、スタンプラリースポットを探しましょう！<br>
+						<a href="/howtouse">使い方はこちら</a>
+					</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/sanka_5.png" %>
+					<p>
+						スポットクリックでスタンプゲット！異なる3市町でスタンプをゲットするとプレゼント応募が可能です。
+					</p>
+				</li>
+				<li>
+          <%= image_tag "static/images/sanka_6.png" %>
+					<p>
+						マイページにログインし、「スタンプ履歴」の画面からプレゼントに応募してください。<br>
+						応募の際に、簡単なアンケートにお答えいただきます。<br>
+						なお、プレゼントへの応募は登録のメールアドレス1つにつき1回に限ります。
+					</p>
+				</li>
+			</ul>
+			<h2 id="spot">(ご案内)モバイル端末をお持ちでない方へ</h2>
+			<div>
+				2019年7月13日(土)から12月22日(日)まで、石見周遊スタンプラリー「いわみくるり」を同時開催しています。<br>詳しくは<a href="https://www.all-iwami.com/contents/stamprally/" target="_blank">こちら</a>をご覧ください。<br><a href="https://www.all-iwami.com/contents/stamprally/" target="_blank">石見周遊スタンプラリー「いわみくるり」</a>(外部サイトへ移動します)<br>
+			</div>
+			<br>
+			<div>
+				<h3 id="present">お問い合わせ先</h3>
+				〒690-8501　島根県松江市殿町8番地（県庁南庁舎6階）<br>
+				山陰道沿線活性化協議会（事務局：島根県高速道路推進課）<br>
+				電話：0852-22-6570（平日9時～17時）<br>
+				E-mail：highway@pref.shimane.lg.jp<br>
+			</div>
+		</div><!-- /.catalog -->
+	</div><!-- /#main -->
+</div><!-- /#contents -->
+<footer>
+	<div class="footmenu">
+		<ul>
+			<li><a href="/">HOME</a></li>
+			<li><a href="/collesta">ログイン</a></li>
+			<li><a href="/howtouse">使い方</a></li>
+		</ul>
+	</div><!-- /.footmenu -->
+	<div class="copyright">Copyright &#169;; 2019 山陰道整備促進キャンペーン 維新の旅 モバイルスタンプラリー All Rights Reserved.</div><!-- /.copyright -->
+</footer>
+<div class="totop"><a href="#"><%= image_tag "static/images/totop.png",{alt:"ページのトップへ戻る"} %></a></div><!-- /.totop -->
+</body>
+</html>
