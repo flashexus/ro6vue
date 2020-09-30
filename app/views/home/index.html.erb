@@ -7,13 +7,12 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <%= stylesheet_link_tag 'css/style', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<script type="text/javascript" src="static/js/jquery.js"></script>
-<script type="text/javascript" src="static/js/script.js"></script>
-<script type="text/javascript" src="static/js/jquery.smoothscroll.js"></script>
-<script type="text/javascript" src="static/js/jquery.scrollshow.js"></script>
-<script type="text/javascript" src="static/js/jquery.rollover.js"></script>
-<script type="text/javascript" src="static/js/jquery.slideshow.js"></script>
+<script type="text/javascript" src="../../javascript/js/jquery.js"></script>
+<script type="text/javascript" src="../../javascript/js/script.js"></script>
+<script type="text/javascript" src="../../javascript/js/jquery.smoothscroll.js"></script>
+<script type="text/javascript" src="../../javascript/js/jquery.scrollshow.js"></script>
+<script type="text/javascript" src="../../javascript/js/jquery.rollover.js"></script>
+<script type="text/javascript" src="../../javascript/js/jquery.slideshow.js"></script>
 <style>
 	/*================================================
 	*  帯
@@ -68,6 +67,7 @@ $(function($){
 <body>
 <header>
 </header>
+
 <div class="slide">
 	<ul class="slideInner">
 		<li><a href="/"><%= image_tag "static/images/header_top.png" %></a></li>
@@ -86,8 +86,8 @@ $(function($){
 </nav> -->
 <div class="band">
 	<a href="/">ＨＯＭＥ</a>
-	<a href="/collesta#/signup">新規登録</a>
-	<a href="/collesta">ログイン</a>
+	<a href="/users/sign_up">新規登録</a>
+	<a href="/users/sign_in">ログイン</a>
 	<a href="/howtouse">使い方</a>
 </div>
 <div id="contents">
@@ -219,7 +219,7 @@ $(function($){
 	<div class="footmenu">
 		<ul>
 			<li><a href="/">HOME</a></li>
-			<li><a href="/collesta">ログイン</a></li>
+			<li><a href="/users/sign_in">ログイン</a></li>
 			<li><a href="/howtouse">使い方</a></li>
 		</ul>
 	</div><!-- /.footmenu -->
