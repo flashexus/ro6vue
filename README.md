@@ -33,7 +33,7 @@ DBコンテナでmysqlクライアント起動
 `docker-compose exec db bash`
 
 認証方式変更
-`mysql -u root`
+`mysql -u root -p ` → `pass`
 `ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'pass';`
 
 ## Database 作成

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :points
+  resources :stamps
   root 'home#index'
   get 'home/index'
   get 'home/show'

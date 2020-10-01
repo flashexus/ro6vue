@@ -4,11 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   #Role Const
-  ADMINISTRATOR = 1
-  USER = 2
+  ROLE_TYPE = %w(管理者 一般ユーザ)
   #Gender Type
-  MALE = 1
-  FEMALE = 2
-  OTHER = 3
+  GENDER_TYPE = %w(男性 女性 その他)
   #AGE Type
+  AGE_TYPE = %w(10代以下 10代 20代 30代 40代 50代 60代 90代 90代以上)
 end

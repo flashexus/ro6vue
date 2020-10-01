@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>stamp</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Point</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stamp.each do |stamp| %>
+      <tr>
+        <td><%= stamp.name %></td>
+        <td><%= stamp.user_id %></td>
+        <td><%= stamp.point_id %></td>
+        <td><%= link_to 'Show', stamp %></td>
+        <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
+        <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stamp', new_stamp_path %>

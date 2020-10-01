@@ -18,9 +18,9 @@ class UserDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     uid: Field::String,
     username: Field::String,
-    role: Field::Number,
-    gender: Field::Number,
-    age: Field::Number,
+    role: Field::String,
+    gender: Field::String,
+    age: Field::String,
     address: Field::String,
   }.freeze
 

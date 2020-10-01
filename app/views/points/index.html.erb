@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Points</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Lon</th>
+      <th>Lat</th>
+      <th>Path</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @points.each do |point| %>
+      <tr>
+        <td><%= point.name %></td>
+        <td><%= point.desc %></td>
+        <td><%= point.lon %></td>
+        <td><%= point.lat %></td>
+        <td><%= point.path %></td>
+        <td><%= point.deleted_at %></td>
+        <td><%= link_to 'Show', point %></td>
+        <td><%= link_to 'Edit', edit_point_path(point) %></td>
+        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Point', new_point_path %>

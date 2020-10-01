@@ -1,16 +1,59 @@
+<%#
+# Application Layout
+This view template is used as the layout
+for every page that Administrate generates.
+By default, it renders:
+- Navigation
+- Content for a search bar
+  (if provided by a `content_for` block in a nested page)
+- Flashes
+- Links to stylesheets and JavaScripts
+%>
+
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
-    <title>Ro6Mys</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noodp, noydir, index, follow">
+    <meta name="viewport" content="initial-scale=1">
+    <title>ユーザーメニュー
+    </title>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
   </head>
-
   <body>
+  <nav class="navbar navbar-expand-lg bg-light">
+     <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+  <% if user_signed_in? %>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <%= link_to current_user.username,'#' ,class:"nav-link"%>
+      </li>
+      <li class="nav-item ">
+        <%= link_to 'プロフィール変更', edit_user_registration_path,class:"nav-link" %>
+      </li>
+      <li class="nav-item ">
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"nav-link" %>
+      </li>
+  <% else %>
+      <li class="nav-item ">
+            <%= link_to '新規登録', new_user_registration_path,class:"nav-link"  %>
+      </li>
+      <li class="nav-item ">
+            <%= link_to 'ログイン', new_user_session_path ,class:"nav-link" %>
+      </li>
+  <% end %>
+    </ul>
+  </div>
+</nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
