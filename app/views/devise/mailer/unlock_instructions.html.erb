@@ -1,7 +1,0 @@
-<p>Hello <%= @resource.email %>!</p>
-
-<p>ログイン失敗が繰り返されたため、アカウントはロックされています。</p>
-
-<p>アカウントのロックを解除するには下のリンクをクリックしてください。:</p>
-
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

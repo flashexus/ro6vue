@@ -30,7 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem 'rails-i18n', '~> 6.0'
+gem 'devise-bootstrap-views', '~> 1.0'
 gem 'administrate', "0.14.0"
 gem 'font-awesome-sass'
 group :development, :test do
