@@ -7,20 +7,13 @@
 <meta name="viewport" content="width=device-width">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<!-- link rel="stylesheet" type="text/css" href="css/style.css" -->
-<!-- <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
-<script type="text/javascript" src="js/jquery.scrollshow.js"></script>
-<script type="text/javascript" src="js/jquery.rollover.js"></script>
-<script type="text/javascript" src="js/jquery.slideshow.js"></script> -->
-<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-<script type="text/javascript" src="/static/js/jquery.js"></script>
-<script type="text/javascript" src="/static/js/script.js"></script>
-<script type="text/javascript" src="/static/js/jquery.smoothscroll.js"></script>
-<script type="text/javascript" src="/static/js/jquery.scrollshow.js"></script>
-<script type="text/javascript" src="/static/js/jquery.rollover.js"></script>
-<script type="text/javascript" src="/static/js/jquery.slideshow.js"></script>
+<%= stylesheet_link_tag 'css/style', media: 'all', 'data-turbolinks-track': 'reload' %>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/jquery.smoothscroll.js"></script>
+<script type="text/javascript" src="/js/jquery.scrollshow.js"></script>
+<script type="text/javascript" src="/js/jquery.rollover.js"></script>
+<script type="text/javascript" src="/js/jquery.slideshow.js"></script>
 <script>
 $(function($){
 	$('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 10});
