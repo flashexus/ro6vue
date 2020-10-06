@@ -7,6 +7,7 @@ class PointsController < ApplicationController
     @points = Point.all
     @user = current_user
     gon.user = @user
+    gon.icon = ApplicationController.helpers.master_icon_path("static/yado.gif")
   end
 
   # GET /points/1

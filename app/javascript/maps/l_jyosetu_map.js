@@ -81,48 +81,49 @@ LJyosetuMap.prototype = {
         var group = null;
 
         var layers = L.geoJSON(geojson.features, {
-                style:
-                    function (feature) {
-                        return {
-                            color: self.lineColors[feature.properties.kubun],
-                            weight: self.lineWidths[feature.properties.kubun],
-                            opacity: 0.8
-                        };
-                    },
-                pointToLayer: function (feature, latlng) {
-		    icon_url = feature.properties.file_path;
-		    // 連携車両の場合、標準のアイコンを設定
-		    if ($.inArray(feature.properties.car_id, self.shareCarIds) >= 0) {
-			icon_url = self.shareCarIconPath;
-		    }
+            style:
+                function (feature) {
+                    return {
+                        color: self.lineColors[feature.properties.kubun],
+                        weight: self.lineWidths[feature.properties.kubun],
+                        opacity: 0.8
+                    };
+                },
+            pointToLayer: function (feature, latlng) {
+		        icon_url = feature.properties.file_path;
+		        // 連携車両の場合、標準のアイコンを設定
+		        if ($.inArray(feature.properties.car_id, self.shareCarIds) >= 0) {
+			      icon_url = self.shareCarIconPath;
+		         }
                     var icon = L.icon({
                         iconUrl: icon_url,
                         iconSize: [32, 32],
                         iconAnchor: [16, 32],   // アイコンの左上隅が[0, 0]
                         popupAnchor: [0, -32]   // latlngからのオフセット
                     });
-		    if (options['popup_of_min']) {
-			var description = '';
-			if (feature.properties.sub_name) {
-			    description = escapeHTML(feature.properties.sub_name.trim()) + '<br>' +
-				escapeHTML(feature.properties.car_name.trim()) + '<br>';
-			} else {
-			    description = escapeHTML(feature.properties.car_name.trim()) + '<br>';
-			}
-                        if (feature.properties.car_radio_no) {
-                          description += escapeHTML(feature.properties.car_radio_no.trim());
-                        }
-	   	    } else {
-			var description = escapeHTML(feature.properties.customer_name.trim()) + '<br>' +
-                        escapeHTML(feature.properties.car_type.trim()) + '<br>' +
-                        escapeHTML(feature.properties.car_name.trim()) + '<br>' +
-                        escapeHTML(feature.properties.date_time.trim());
-		    }
-                    var layer = L.marker(latlng, {icon: icon}).bindPopup(description);
-		    if (options['mouseover']) {
-			layer.on('mouseover', function() { layer.openPopup(); }); // マウスオーバー
-			layer.on('mouseout', function() { layer.closePopup(); }); // マウスアウト
-		    }
+		        if (options['popup_of_min']) {
+			        var description = '';
+			        if (feature.properties.sub_name) {
+			            description = escapeHTML(feature.properties.sub_name.trim()) + '<br>' +
+			        	escapeHTML(feature.properties.car_name.trim()) + '<br>';
+			        } else {
+			            description = escapeHTML(feature.properties.car_name.trim()) + '<br>';
+                    }
+                    
+                    if (feature.properties.car_radio_no) {
+                      description += escapeHTML(feature.properties.car_radio_no.trim());
+                    }
+	   	        } else {
+			    var description = escapeHTML(feature.properties.customer_name.trim()) + '<br>' +
+                            escapeHTML(feature.properties.car_type.trim()) + '<br>' +
+                            escapeHTML(feature.properties.car_name.trim()) + '<br>' +
+                            escapeHTML(feature.properties.date_time.trim());
+		        }
+                var layer = L.marker(latlng, {icon: icon}).bindPopup(description);
+		        if (options['mouseover']) {
+			        layer.on('mouseover', function() { layer.openPopup(); }); // マウスオーバー
+			        layer.on('mouseout', function() { layer.closePopup(); }); // マウスアウト
+		        }
                     car_name = feature.properties.car_name;
                     car_type = feature.properties.car_type;
                     sub_name = feature.properties.sub_name;
@@ -137,14 +138,14 @@ LJyosetuMap.prototype = {
                         layer: layer
                     });
                     return layer;
-                },
-	    onEachFeature: function (feature, layer) {
+            },
+	        onEachFeature: function (feature, layer) {
                 if (feature.desc) {
                     var line_desc = escapeHTML(feature.desc.customer_name.trim()) + '<br>' +
                         escapeHTML(feature.desc.car_type.trim()) + '<br>' +
                         escapeHTML(feature.desc.car_name.trim()) + '<br>' +
                         escapeHTML(feature.desc.date_time.trim());
-		    layer.bindPopup(line_desc);
+		            layer.bindPopup(line_desc);
                 }
             }
         }).addTo(this.map);
@@ -188,15 +189,15 @@ LJyosetuMap.prototype = {
      * スポットを追加する
      * @param data
      */
-    addSpotMarker: function (data) {
-        var latlng = L.latLng();
+    addSpotMarker: function (data,icon_path) {
+        var latlng = data;
         var icon = L.icon({
-            iconUrl: '/img/',
+            iconUrl: icon_path,
             iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
-        var layer = L.marker(latlng, {icon: icon})
+        var layer = L.marker([latlng[1],latlng[0]], {icon: icon})
             .bindPopup('スポット')
             .addTo(this.map);
 
