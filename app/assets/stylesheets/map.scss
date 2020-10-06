@@ -1,0 +1,177 @@
+// Place all the styles related to the Map controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.resize_area {
+  position: relative;
+  height: 85vh; // jsでリサイズするので適当な値
+}
+
+.sidebar {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.main {
+  height: 100%;
+}
+
+.gmap {
+  height: 100%;
+  width: 100%;
+  border: 1px solid tomato;
+  z-index: 0;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0.8;
+  z-index: 1000;
+}
+
+.news {
+  font-size: 1em;
+}
+
+input[type="radio"][name=tab] {
+  display: none;
+}
+
+.tab_label {
+  margin-bottom: 0;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  box-shadow: inset -1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  color: #dddddd;
+  background-color:#174b67;
+  cursor: pointer;
+}
+
+input[type=radio][name=tab]:checked + .tab_label {
+  color: white;
+  background-color:  #1e6891;
+}
+
+.tab-box {
+  //width: auto;
+  //height: 100%;
+  padding: 10px;
+  border: 2px solid #1e6891;
+  border-radius: 0 5px 5px 5px;
+  box-sizing: border-box;
+}
+
+#tabView1,
+#tabView2,
+#tabView3 {
+  display: none;
+}
+
+#tab1:checked ~ .tab-box > #tabView1,
+#tab2:checked ~ .tab-box > #tabView2,
+#tab3:checked ~ .tab-box > #tabView3 {
+  display: block;
+}
+
+.sidebar_header {
+  margin: 0 0 10px 0;
+  min-height: 1.8em;
+  line-height: 1.8em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #000000;
+  background-color: #D2DCE4;
+  text-align: center;
+  box-shadow: 0 5px 3px -3px #DDDBDB;
+}
+
+// 車両ツリー
+.treeview {
+  overflow-x: hidden;
+  /*font: normal 14px/22px "Segoe UI", Arial, Sans-serif;*/
+}
+
+.treeview ul {
+  list-style-type: none;
+  /*list-style-position: inside;*/
+  padding-left: 20px;
+}
+
+.treeview ul:first-child {
+  padding-left: 0;
+}
+
+.treeview li {
+  white-space: nowrap;
+}
+
+.folding {
+  display: none;
+}
+
+.folding + *::before {
+  content: "\25b6"; /* 折り畳みマーク：▶ */
+  color: #3C9FE7;
+  font-size: 12px;
+}
+
+.folding:checked + *::before {
+  content: "\25bc"; /* 折り畳みマーク：▼ */
+  color: #3C9FE7;
+  font-size: 12px;
+}
+
+.folding:disabled + *::before {
+  content: "　"; /* 折り畳みマーク：なし */
+}
+
+.folding ~ ul {
+  display: none;
+}
+
+.folding:checked ~ ul {
+  display: list-item;
+}
+
+.checkmark {
+  display: none;
+}
+
+.checkmark + label {
+  height: 1em;
+  line-height: 1em;
+}
+
+.checkmark + *::before {
+  content: "　"; /* カスタムチェックマーク：なし */
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  margin: 0 0.1em 0 0.1em;
+  border: solid 1px #1375b3;
+  color: #1375b3;
+  opacity: .5;
+}
+
+.checkmark:checked + *::before {
+  content: "\2714"; /* カスタムチェックマーク：✔ */
+  box-shadow: 0 0 2px rgba(0, 0, 0, .25) inset;
+  opacity: 1;
+}
+
+.customer_label {
+  font-weight: bold;
+}
+
+.car_label {
+  font-weight: normal;
+}
+
+.car_label img {
+  margin: 0 2px 2px 2px;
+}

@@ -4,7 +4,8 @@ const webpack = require('webpack')
    new webpack.ProvidePlugin({ 
      $: 'jquery/src/jquery',
      jQuery: 'jquery/src/jquery',
-     Popper: ['popper.js', 'default'] 
+     Popper: ['popper.js', 'default'] ,
+     L: 'leaflet'
    }) 
  ) 
 module.exports = environment
