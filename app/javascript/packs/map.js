@@ -6,7 +6,7 @@ import resizeArea from "../maps/resizeArea"
 import LJyosetuMap from "../maps/l_jyosetu_map"
 import "leaflet/dist/leaflet.css";
 require('jquery')
-
+window.alert(`hello,${gon.user.username}!`); 
 window.onload = function(){
   "use strict";
   // 読み込み時に地図のサイズを画面に合わせる

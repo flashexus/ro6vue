@@ -5,6 +5,8 @@ class PointsController < ApplicationController
   # GET /points.json
   def index
     @points = Point.all
+    @user = current_user
+    gon.user = @user
   end
 
   # GET /points/1
