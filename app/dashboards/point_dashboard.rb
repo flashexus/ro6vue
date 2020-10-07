@@ -18,7 +18,7 @@ class PointDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     area_group: Field::String,
-    type: Field::String,
+    shop_type: Field::String,
     show_no: Field::Number
   }.freeze
 
@@ -34,6 +34,8 @@ class PointDashboard < Administrate::BaseDashboard
   lat
   lon
   path
+  area_group
+  shop_type
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -48,6 +50,8 @@ class PointDashboard < Administrate::BaseDashboard
   deleted_at
   created_at
   updated_at
+  area_group
+  shop_type
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -60,6 +64,8 @@ class PointDashboard < Administrate::BaseDashboard
   lon
   path
   deleted_at
+  area_group
+  shop_type
   ].freeze
 
   # COLLECTION_FILTERS
