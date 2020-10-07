@@ -6,8 +6,28 @@ class PointsController < ApplicationController
   def index
     @points = Point.all
     @user = current_user
+    @icon_hash = {
+      "観光施設" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
+      "飲食店" => ApplicationController.helpers.master_icon_path("static/kirakira.gif"),
+      "宿泊" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
+      "日帰り温泉" => ApplicationController.helpers.master_icon_path("static/fuwa.gif"),
+      "道の駅" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
+      "その他" => ApplicationController.helpers.master_icon_path("static/hatena2.gif"),  
+    }
+    @area_pos ={
+      "石西エリア" => [34.433905,131.482636], 
+      "石央エリア" => [34.959614,132.144666], 
+      "石東エリア" => [35.113757,132.445299],
+    }
     gon.user = @user
-    gon.icon = ApplicationController.helpers.master_icon_path("static/yado.gif")
+    gon.icon = @icon_hash
+    gon.points = @points
+    gon.area_pos = @area_pos
+    # ポイントのデータを取得してgonに渡す
+    # gonとしてどんなデータが欲しいか
+    # 渡されるデータの種類に応じた表示ができるか、データタイプの幅
+
+
   end
 
   # GET /points/1

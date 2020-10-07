@@ -15,16 +15,21 @@ window.onload = function(){
   $(window).resize(resizeArea);
   var jyosetuMap = new LJyosetuMap(); 
   var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': true};
-  var lonlat = [132.76488304138184, 35.38405443308128]; // VL
+  var lonlat = [gon.area_pos["石央エリア"][1],gon.area_pos["石央エリア"][0]];
   var zoom = 14;
   jyosetuMap.create('map', lonlat, options);
 
-  //表示位置合わせ
-  if (lonlat[0] !== null && lonlat[1] !== null && zoom !== null) {
-    jyosetuMap.setView(lonlat, zoom);
-  } else {
-    jyosetuMap.fitBounds();
-  }
   //スポット表示
-  jyosetuMap.addSpotMarker(lonlat,gon.icon);
+  gon.points.forEach(element => {
+    console.log(element);
+    jyosetuMap.addSpotMarker([element["lon"],element["lat"]],gon.icon[element["shop_type"]]);
+  });
+
+    //表示位置合わせ
+    if (lonlat[0] !== null && lonlat[1] !== null && zoom !== null) {
+      jyosetuMap.setView(lonlat, zoom);
+    } else {
+      jyosetuMap.fitBounds();
+    }
+  
 }
