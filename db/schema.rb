@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_10_07_060836) do
     t.timestamp "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "area_group_id"
-    t.integer "type_id"
+    t.string "area_group"
+    t.string "type"
     t.integer "show_no"
   end
 

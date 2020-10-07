@@ -17,8 +17,8 @@ class PointDashboard < Administrate::BaseDashboard
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    area_group_id: Field::Number,
-    type_id: Field::Number,
+    area_group: Field::String,
+    type: Field::String,
     show_no: Field::Number
   }.freeze
 
