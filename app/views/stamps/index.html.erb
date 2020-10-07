@@ -1,31 +1,52 @@
-<p id="notice"><%= notice %></p>
+<style>
+table th,table td{
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px 0;
+}
+</style>
 
-<h1>stamp</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th>Point</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stamp.each do |stamp| %>
-      <tr>
-        <td><%= stamp.name %></td>
-        <td><%= stamp.user_id %></td>
-        <td><%= stamp.point_id %></td>
-        <td><%= link_to 'Show', stamp %></td>
-        <td><%= link_to 'Edit', edit_stamp_path(stamp) %></td>
-        <td><%= link_to 'Destroy', stamp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Stamp', new_stamp_path %>
+<div class="container">
+  <div class="row">
+    <h1>スタンプカード</h1>
+  </div>
+  <div class="row mt-4">
+    <table class="table table-hover table-borderless">
+      <thead>
+        <tr align="center">
+          <th scope="col">石西エリア<br><p>(益田・津和野・吉賀)</p>山口県</th>
+          <th scope="col">石中エリア<br><p>(浜田・江津・邑南)</p>広島県</th>
+          <th scope="col">石東エリア<br><p>(大田・川本・美郷)</p>県東部</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="table-success" align="center">
+              <%= image_tag "static/stamp.png" %>
+    					<p>店舗番号○○</p>
+            </td>
+            <td class="table-info" align="center">1</td>
+            <td class="table-warning" align="center">1</td>
+          </tr>
+            <td class="table-success" align="center">
+              <%= image_tag "static/stamp.png" %>
+    					<p>店舗番号○○</p>
+            </td>
+            <td class="table-info" align="center">2</td>
+            <td class="table-warning" align="center">2</td>
+          <tr>
+            <td class="table-success" align="center">
+              <%= image_tag "static/stamp.png" %>
+    					<p>店舗番号○○</p>
+            </td>
+            <td class="table-info" align="center">3</td>
+            <td class="table-warning" align="center">3</td>
+          </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+  <div align="center">
+    <button type="button" class="btn btn-outline-primary btn-lg">QR読み取り</button>
+  </div>
+</div>

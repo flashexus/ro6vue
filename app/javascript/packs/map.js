@@ -1,4 +1,3 @@
-
 window.jQuery = $
 window.$      = $
 import 'leaflet'
@@ -6,7 +5,7 @@ import resizeArea from "../maps/resizeArea"
 import LJyosetuMap from "../maps/l_jyosetu_map"
 import "leaflet/dist/leaflet.css";
 require('jquery')
-//window.alert(`hello,${gon.user.username}!`); 
+
 window.onload = function(){
   "use strict";
   // 読み込み時に地図のサイズを画面に合わせる
@@ -20,10 +19,12 @@ window.onload = function(){
   var zoom = 14;
   jyosetuMap.create('map', lonlat, options);
 
+  //表示位置合わせ
   if (lonlat[0] !== null && lonlat[1] !== null && zoom !== null) {
     jyosetuMap.setView(lonlat, zoom);
-} else {
+  } else {
     jyosetuMap.fitBounds();
-}
+  }
+  //スポット表示
   jyosetuMap.addSpotMarker(lonlat,gon.icon);
 }

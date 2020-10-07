@@ -28,7 +28,7 @@ By default, it renders:
   </head>
   <body>
   <nav class="navbar navbar-expand-lg bg-light">
-     <a class="navbar-brand" href="#">Navbar</a>
+     <a class="navbar-brand" href="/">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,6 +40,12 @@ By default, it renders:
         </li>
         <li class="nav-item ">
           <%= link_to 'プロフィール変更', edit_user_registration_path,class:"nav-link" %>
+        </li>
+        <li class="nav-item ">
+          <%= link_to 'くるりんまっぷ', points_path,class:"nav-link" %>
+        </li>
+        <li class="nav-item ">
+          <%= link_to 'スタンプカード', stamps_path,class:"nav-link" %>
         </li>
         <li class="nav-item ">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"nav-link" %>
