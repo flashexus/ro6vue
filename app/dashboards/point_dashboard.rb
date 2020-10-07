@@ -11,12 +11,15 @@ class PointDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     desc: Field::String,
-    lon: Field::Number.with_options(decimals: 2),
-    lat: Field::Number.with_options(decimals: 2),
+    lat: Field::Number.with_options(decimals: 6),
+    lon: Field::Number.with_options(decimals: 6),
     path: Field::String,
     deleted_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    area_group_id: Field::Number,
+    type_id: Field::Number,
+    show_no: Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +31,9 @@ class PointDashboard < Administrate::BaseDashboard
   id
   name
   desc
+  lat
   lon
+  path
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,8 +42,8 @@ class PointDashboard < Administrate::BaseDashboard
   id
   name
   desc
-  lon
   lat
+  lon
   path
   deleted_at
   created_at
@@ -51,8 +56,8 @@ class PointDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   name
   desc
-  lon
   lat
+  lon
   path
   deleted_at
   ].freeze

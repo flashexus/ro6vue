@@ -4,13 +4,19 @@ table th,table td{
   text-align: center;
   padding: 10px 0;
 }
+table td{
+  opacity: 0.85;
+}
 </style>
 
 <div class="container">
   <div class="row">
-    <h1>スタンプカード</h1>
+    <h1 class="font-weight-bold">スタンプカード</h1>
   </div>
-  <div class="row mt-4">
+  <div class="clearfix">
+    <button type="button" class="btn btn-outline-info btn-lg float-xl-right">QR読み取り</button>
+  </div>
+  <div class="row mt-4 mb-4 border rounded-lg pr-5 pl-5">
     <table class="table table-hover table-borderless">
       <thead>
         <tr align="center">
@@ -45,8 +51,5 @@ table th,table td{
       </tbody>
     </table>
     <br>
-  </div>
-  <div align="center">
-    <button type="button" class="btn btn-outline-primary btn-lg">QR読み取り</button>
   </div>
 </div>

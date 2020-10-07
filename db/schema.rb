@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_050315) do
+ActiveRecord::Schema.define(version: 2020_10_07_060836) do
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "desc"
-    t.float "lon"
-    t.float "lat"
+    t.decimal "lat", precision: 10, scale: 7
+    t.decimal "lon", precision: 10, scale: 7
     t.string "path"
     t.timestamp "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "area_group_id"
+    t.integer "type_id"
+    t.integer "show_no"
   end
 
   create_table "stamps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
