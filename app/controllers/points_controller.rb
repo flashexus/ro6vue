@@ -15,9 +15,9 @@ class PointsController < ApplicationController
       "その他" => ApplicationController.helpers.master_icon_path("static/hatena2.gif"),  
     }
     @area_pos ={
-      "石西エリア" => [34.433905,131.482636], 
-      "石央エリア" => [34.959614,132.144666], 
-      "石東エリア" => [35.113757,132.445299],
+      "石西エリア" => [131.482636,34.433905], 
+      "石央エリア" => [132.144666,34.959614], 
+      "石東エリア" => [132.445299,35.113757],
     }
     gon.user = @user
     gon.icon = @icon_hash

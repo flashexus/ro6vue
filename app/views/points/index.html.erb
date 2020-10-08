@@ -9,6 +9,22 @@
       <div id="map" class="gmap"></div>
     </div>
   </div>
+  <div class="row mt-4">
+    <div class="col-6 input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">エリア選択</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01" name="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <% @area_pos.each do |key,value| %>
+          <option value=<%= key %>><%= key %></option>
+        <% end -%>
+      </select>
+    </div>
+    <div class="col-3 clearfix">
+      <button type="button" class="btn btn-outline-info" id="getPosbtn01" name="getPosbtn01">現在位置</button>
+    </div>
+  </div>
 </div>
 
 <table>
