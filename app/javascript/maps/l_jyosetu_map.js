@@ -189,7 +189,7 @@ LJyosetuMap.prototype = {
      * スポットを追加する
      * @param data
      */
-    addSpotMarker: function (data,icon_path) {
+    addSpotMarker: function (data,icon_path,pop) {
         var latlng = data;
         var icon = L.icon({
             iconUrl: icon_path,
@@ -198,7 +198,7 @@ LJyosetuMap.prototype = {
             popupAnchor: [0, -32]
         });
         var layer = L.marker([latlng[1],latlng[0]], {icon: icon})
-            .bindPopup('スポット')
+            .bindPopup(pop)
             .addTo(this.map);
 
         this.spotMarkers.push(layer);

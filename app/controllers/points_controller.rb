@@ -7,26 +7,22 @@ class PointsController < ApplicationController
     @points = Point.all
     @user = current_user
     @icon_hash = {
-      "観光施設" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
-      "飲食店" => ApplicationController.helpers.master_icon_path("static/kirakira.gif"),
-      "宿泊" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
+      "観光施設" => ApplicationController.helpers.master_icon_path("static/roggi.png"),
+      "飲食店" => ApplicationController.helpers.master_icon_path("static/inshoku.png"),
+      "宿泊" => ApplicationController.helpers.master_icon_path("static/hotel.png"),
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("static/fuwa.gif"),
       "道の駅" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
       "その他" => ApplicationController.helpers.master_icon_path("static/hatena2.gif"),  
     }
     @area_pos ={
-      "石西エリア" => [131.482636,34.433905], 
-      "石央エリア" => [132.144666,34.959614], 
+      "石西エリア" => [131.482636,34.433905],
+      "石央エリア" => [132.144666,34.959614],
       "石東エリア" => [132.445299,35.113757],
     }
     gon.user = @user
     gon.icon = @icon_hash
     gon.points = @points
     gon.area_pos = @area_pos
-    # ポイントのデータを取得してgonに渡す
-    # gonとしてどんなデータが欲しいか
-    # 渡されるデータの種類に応じた表示ができるか、データタイプの幅
-
 
   end
 

@@ -28,28 +28,87 @@ table td{
       <tbody>
           <tr>
             <td class="table-success" align="center">
-              <%= image_tag "static/stamp.png" %>
-    					<p>店舗番号○○</p>
+              <% if @bingo["石西エリア"][0].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石西エリア"][0] %></p>
+              <% else %>
+                 <h1>1</h1>
+              <% end %>
             </td>
-            <td class="table-info" align="center">1</td>
-            <td class="table-warning" align="center">1</td>
+            <td class="table-info" align="center">
+              <% if @bingo["石央エリア"][0].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石央エリア"][0] %></p>
+              <% else %>
+                 <h1>1</h1>
+              <% end %>
+            </td>
+            <td class="table-warning" align="center">
+              <% if @bingo["石東エリア"][0].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石東エリア"][0] %></p>
+              <% else %>
+                 <h1>1</h1>
+              <% end %>
+            </td>
           </tr>
             <td class="table-success" align="center">
-              <%= image_tag "static/stamp.png" %>
-    					<p>店舗番号○○</p>
+              <% if @bingo["石西エリア"][1].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石西エリア"][1] %></p>
+              <% else %>
+                 <h1>2</h1>
+              <% end %>
             </td>
-            <td class="table-info" align="center">2</td>
-            <td class="table-warning" align="center">2</td>
+            <td class="table-info" align="center">
+              <% if @bingo["石央エリア"][1].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石央エリア"][1] %></p>
+              <% else %>
+                 <h1>2</h1>
+              <% end %>
+            </td>
+            <td class="table-warning" align="center">
+              <% if @bingo["石東エリア"][1].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石東エリア"][1] %></p>
+              <% else %>
+                 <h1>2</h1>
+              <% end %>
+            </td>
           <tr>
             <td class="table-success" align="center">
+              <% if @bingo["石西エリア"][2].present? %>
               <%= image_tag "static/stamp.png" %>
-    					<p>店舗番号○○</p>
+    					  <p><%= putc @bingo["石西エリア"][2] %></p>
+              <% else %>
+                 <h1>3</h1>
+              <% end %>
             </td>
-            <td class="table-info" align="center">3</td>
-            <td class="table-warning" align="center">3</td>
+            <td class="table-info" align="center">
+              <% if @bingo["石央エリア"][2].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石央エリア"][2] %></p>
+              <% else %>
+                 <h1>3</h1>
+              <% end %>
+            </td>
+            <td class="table-warning" align="center">
+              <% if @bingo["石東エリア"][2].present? %>
+                <%= image_tag "static/stamp.png" %>
+    					  <p><%= putc @bingo["石東エリア"][2] %></p>
+              <% else %>
+                 <h1>3</h1>
+              <% end %>
+            </td>
           </tr>
       </tbody>
     </table>
     <br>
   </div>
 </div>
+
+<script>
+// console.log(gon.stamps)
+console.log(gon.bingo)
+</script>

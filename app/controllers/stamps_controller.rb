@@ -5,7 +5,31 @@ class StampsController < ApplicationController
   # GET /stamp
   # GET /stamp.json
   def index
-    @stamp = Stamp.all
+    @stamps = Stamp.where(user_id:current_user.id)
+    areas = Point::AREA__GROUP_TYPE
+    @bingo = {}
+
+    areas.each do |area|
+      array = []
+      @stamps.each do |stamp|
+        if(area === stamp.point.area_group)
+        array << stamp.point.name
+        end
+      end
+      @bingo[area] = array
+    end
+    gon.stamps = @stamps
+    gon.bingo = @bingo
+    # #tate bingo
+    # #エリアごとにソート
+    # #エリアごとにスタンプ数が３個以上のものを探す
+    # ["東"][施設1,施設2,施設4] 3　
+    # ["中"][施設3,施設6,]      2
+    # ["西"][施設7]            1
+    # #yoko 
+    # #3つの値で全てが１以上なら１ビンゴ
+
+
   end
 
   # GET /stamp/1
@@ -72,4 +96,10 @@ class StampsController < ApplicationController
     def stamp_params
       params.require(:stamp).permit(:name, :user_id, :point_id)
     end
+
+    def bingo(stamp_c)
+
+      return bingo_cnt
+    end
+
 end

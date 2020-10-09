@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag 'map', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <h1>くるりんまっぷ</h1>
+    <h1 class="font-weight-bold">くるりんまっぷ</h1>
   </div>
   <div id="resize_area" class="row mt-4" >
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main">
@@ -25,38 +25,39 @@
       <button type="button" class="btn btn-outline-info" id="getPosbtn01" name="getPosbtn01">現在位置</button>
     </div>
   </div>
+  <div class="row mt-4">
+    <h2 class="font-weight-bold">施設一覧</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Desc</th>
+          <th>Lon</th>
+          <th>Lat</th>
+          <th>Path</th>
+          <th>Deleted at</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @points.each do |point| %>
+          <tr>
+            <td><%= point.name %></td>
+            <td><%= point.desc %></td>
+            <td><%= point.lon %></td>
+            <td><%= point.lat %></td>
+            <td><%= point.path %></td>
+            <td><%= point.deleted_at %></td>
+            <td><%= link_to 'Show', point %></td>
+            <td><%= link_to 'Edit', edit_point_path(point) %></td>
+            <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?'     } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <%= link_to 'New Point', new_point_path %>
+  <%= javascript_pack_tag 'map' %> 
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Desc</th>
-      <th>Lon</th>
-      <th>Lat</th>
-      <th>Path</th>
-      <th>Deleted at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @points.each do |point| %>
-      <tr>
-        <td><%= point.name %></td>
-        <td><%= point.desc %></td>
-        <td><%= point.lon %></td>
-        <td><%= point.lat %></td>
-        <td><%= point.path %></td>
-        <td><%= point.deleted_at %></td>
-        <td><%= link_to 'Show', point %></td>
-        <td><%= link_to 'Edit', edit_point_path(point) %></td>
-        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'New Point', new_point_path %>
-<%= javascript_pack_tag 'map' %> 

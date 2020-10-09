@@ -11,6 +11,9 @@ module Admin
     def authenticate_admin
       # TODO Add authentication logic here.
       authenticate_user!
+      if(current_user.role != "管理者")
+        redirect_to root_path
+      end
     end
 
     # Override this value to specify the number of elements to display at a time

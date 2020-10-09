@@ -23,7 +23,7 @@ window.onload = function(){
   //スポット表示
   gon.points.forEach(element => {
     console.log(element);
-    jyosetuMap.addSpotMarker([element["lon"],element["lat"]],gon.icon[element["shop_type"]]);
+    jyosetuMap.addSpotMarker([element["lon"],element["lat"]],gon.icon[element["shop_type"]],element["name"]);
   });
 
     //表示位置合わせ
