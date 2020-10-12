@@ -9,6 +9,7 @@ class StampsController < ApplicationController
     areas = Point::AREA__GROUP_TYPE
     @bingo = {}
 
+  #スタンプ情報をエリアごとにハッシュ配列に並び替え
     areas.each do |area|
       array = []
       @stamps.each do |stamp|
@@ -18,18 +19,13 @@ class StampsController < ApplicationController
       end
       @bingo[area] = array
     end
+
+  #ビンゴ数の判定
+    @bingo_cnt = bingo(@bingo)
+
     gon.stamps = @stamps
     gon.bingo = @bingo
-    # #tate bingo
-    # #エリアごとにソート
-    # #エリアごとにスタンプ数が３個以上のものを探す
-    # ["東"][施設1,施設2,施設4] 3　
-    # ["中"][施設3,施設6,]      2
-    # ["西"][施設7]            1
-    # #yoko 
-    # #3つの値で全てが１以上なら１ビンゴ
-
-
+    gon.bingo_cnt = @bingo_cnt
   end
 
   # GET /stamp/1
@@ -97,9 +93,28 @@ class StampsController < ApplicationController
       params.require(:stamp).permit(:name, :user_id, :point_id)
     end
 
+    # #tate bingo
+    # #エリアごとにソート
+    # #エリアごとにスタンプ数が３個以上のものを探す
+    # ["東"][施設1,施設2,施設4] 3　
+    # ["中"][施設3,施設6,]      2
+    # ["西"][施設7]            1
+    # #yoko 
+    # #3つの値で全てが１以上なら１ビンゴ
     def bingo(stamp_c)
+      tate_cnt = 0
+      yoko_cnt = 0
+      stamp_cnt =[]
 
-      return bingo_cnt
+      stamp_c.each_value{ |value|
+        if(value.size >= 3)
+          tate_cnt += 1 
+        end
+        stamp_cnt << value.size
+      }
+      yoko_cnt = stamp_cnt.min
+
+      return yoko_cnt + tate_cnt
     end
 
 end

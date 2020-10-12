@@ -55,3 +55,21 @@ http://192.168.x.x ⇒ サイト表示OK
 全体を再構築する場合：
 `docker-compose run apl bundle install`
 `docker-compose up --build`
+
+## ngrokデプロイコマンド: ngrok http http://192.168.99.100:3000
+
+## テスト環境への切り替え
+
+`docker-compose.yml を一部書き換え`
+
+16行目：
+```
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -e test -p 3000 -b '0.0.0.0'"
+```
+
+20行目：
+```
+          RAILS_ENV: production
+          RAILS_ENV: test
+```
