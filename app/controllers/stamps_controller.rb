@@ -45,12 +45,15 @@ class StampsController < ApplicationController
   # POST /stamp
   # POST /stamp.json
   def create
-    @stamp = Stamp.new(stamp_params)
+    @stamp = Stamp.new
+    @stamp.user_id = current_user.id
+    @stamp.point_id = params[:point_id]
 
+    #本番ではここで重複チェックが必要
     respond_to do |format|
       if @stamp.save
         format.html { redirect_to @stamp, notice: 'Stamp was successfully created.' }
-        format.json { render :show, status: :created, location: @stamp }
+        format.json {render :json => { status: "200" }}
       else
         format.html { render :new }
         format.json { render json: @stamp.errors, status: :unprocessable_entity }

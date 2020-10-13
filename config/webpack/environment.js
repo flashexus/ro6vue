@@ -5,7 +5,8 @@ const webpack = require('webpack')
      $: 'jquery/src/jquery',
      jQuery: 'jquery/src/jquery',
      Popper: ['popper.js', 'default'] ,
-     L: 'leaflet'
+     L: 'leaflet',
+     jsQR:'jsqr/dist/jsQR'
    }) 
  ) 
 module.exports = environment

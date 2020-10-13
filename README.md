@@ -56,7 +56,13 @@ http://192.168.x.x ⇒ サイト表示OK
 `docker-compose run apl bundle install`
 `docker-compose up --build`
 
-## ngrokデプロイコマンド: ngrok http http://192.168.99.100:3000
+## ngrokデプロイコマンド
+
+```
+
+ngrok http http://192.168.99.100:3000
+
+```
 
 ## テスト環境への切り替え
 

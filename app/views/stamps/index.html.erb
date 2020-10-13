@@ -14,7 +14,7 @@ table td{
     <h1 class="font-weight-bold">スタンプカード</h1>
   </div>
   <div class="clearfix">
-    <button type="button" class="btn btn-outline-info btn-lg float-xl-right">QR読み取り</button>
+    <%= link_to 'QR読み取り', new_stamp_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg float-xl-right"} %>
   </div>
   <div class="row mt-4 mb-4 border rounded-lg pr-5 pl-5">
     <table class="table table-hover table-borderless">
