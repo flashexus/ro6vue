@@ -4,11 +4,14 @@
     canvas, video{
       border: 1px solid gray;
     }
+    button{
+      cursor: pointer;
+    }
     </style>
 
 
   <h1>QRコード読取</h1>
-  <video id="camera" width="300" height="200"></video>
+  <video id="camera" width="300" height="200" preload="none" muted autoplay playsinline></video>
   <canvas id="canvas01" name="canvas01" width="300" height="200"></canvas>
 
   <form>
