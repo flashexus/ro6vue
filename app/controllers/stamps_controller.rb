@@ -44,7 +44,26 @@ class StampsController < ApplicationController
 
   # POST /stamp
   # POST /stamp.json
+  # サイトからQRコードを読み取り用(QRコードのアクセス方法の前提 https://domain/stamps/add/:id)
   def create
+    @stamp = Stamp.new
+    @stamp.user_id = current_user.id
+    point = params[:point_id].split("stamps/add/")
+    @stamp.point_id = point[1]
+
+    #本番ではここで重複チェックが必要
+    respond_to do |format|
+      if @stamp.save
+        format.json { render :json => { status: "200" } }
+      else
+        format.json { render json: @stamp.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  # POST /stamp
+  # POST /stamp.json
+  # スマフォのカメラから直接読み取り用
+  def add
     @stamp = Stamp.new
     @stamp.user_id = current_user.id
     @stamp.point_id = params[:point_id]
@@ -52,11 +71,9 @@ class StampsController < ApplicationController
     #本番ではここで重複チェックが必要
     respond_to do |format|
       if @stamp.save
-        format.html { redirect_to @stamp, notice: 'Stamp was successfully created.' }
-        format.json {render :json => { status: "200" }}
+        format.html { redirect_to stamps_path, notice: 'Stamp was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @stamp.errors, status: :unprocessable_entity }
       end
     end
   end
