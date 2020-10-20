@@ -109,4 +109,23 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+
+  # devise gem用設定
+  # config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
+  # config.reload_classes_only_on_change = false
+  config.action_mailer.default_url_options = { host: ENV['HOST'] ||= 'localhost' , port: ENV['PORT'] ||= 3000 }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.sendgrid.net",
+    :port => 587,
+    :domain => 'vitallead.org',
+    :user_name => "iwata_k@vitallead.co.jp", s
+    :password => "/z/*B?tk3Xp3R2YY",
+    :authentication => :plain,
+  }
+
 end
