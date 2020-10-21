@@ -117,14 +117,16 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['HOST'] ||= 'localhost' , port: ENV['PORT'] ||= 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-
+  config.action_mailer.default_options ={
+    :from => "iwata_k@vitallead.co.jp"
+  }
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address => "smtp.sendgrid.net",
     :port => 587,
     :domain => 'vitallead.org',
-    :user_name => "iwata_k@vitallead.co.jp", s
-    :password => "/z/*B?tk3Xp3R2YY",
+    :user_name => "apikey",
+    :password => "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",
     :authentication => :plain,
   }
 
