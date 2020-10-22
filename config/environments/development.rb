@@ -71,29 +71,20 @@ Rails.application.configure do
   # devise gem用設定
   config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
   # config.reload_classes_only_on_change = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
+    :address => Rails.application.credentials.address,
     :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => "iwata.vitallead@gmail.com", #gmailアドレス
-    :password => "flashx18999",
+    :domain => Rails.application.credentials.domain,
+    :user_name => Rails.application.credentials.user_name,
+    :password => Rails.application.credentials.password,
     :authentication => 'login',
   }
-  # config.action_mailer.default_url_options = { host: ENV['HOST'] ||= 'localhost' , port: ENV['PORT'] ||= 3000 }
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.default_options ={
-  #   :from => "iwata_k@vitallead.co.jp"
-  # }
-  # config.action_mailer.smtp_settings = {
-  #   :enable_starttls_auto => true,
-  #   :address => "smtp.sendgrid.net",
-  #   :port => 587,
-  #   :user_name => "apikey",
-  #   :password => "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",
-  #   :authentication => :plain,
+  #   :from => "####"
   # }
 
 end
