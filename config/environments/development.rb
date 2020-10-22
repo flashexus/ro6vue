@@ -69,7 +69,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::FileUpdateChecker
   
   # devise gem用設定
-  config.action_mailer.default_url_options = { host: '192.168.99.100', port: 3000 }
+  config.action_mailer.default_url_options = { host: '192.168.99.100' }
   # config.reload_classes_only_on_change = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
