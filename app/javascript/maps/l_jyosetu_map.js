@@ -37,7 +37,7 @@ LJyosetuMap.prototype = {
         var baseGSI = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', {
             attribution: "<a href='http://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html' target='_blank'>国土地理院</a>"
         });
-        var o_std = L.tileLayer('https://tile.openstreetmap.jp/{z}/{x}/{y}.png', {
+        var o_std = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
         });
 
