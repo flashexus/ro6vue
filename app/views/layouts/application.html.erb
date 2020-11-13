@@ -32,14 +32,14 @@ By default, it renders:
  <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" /> %>
  <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
 
-  <%= stylesheet_link_tag 'css_stamp/drawer.min', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag 'css_stamp/bootstrap.min', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%#= stylesheet_link_tag 'css_stamp/custom.scss', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag 'css_stamp/custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag 'css_stamp/drawer.min', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= include_gon %>
-  
+
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <%= stylesheet_pack_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>  
+
   <script type="text/javascript" src="/js/common.js"></script>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -50,9 +50,10 @@ By default, it renders:
 <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-  <body>
+  <body class="about vl-bodyBg login-user">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

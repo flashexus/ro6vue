@@ -1,0 +1,39 @@
+/* line 49, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+.btn-primary {
+  color: #fff;
+  background-color: #66a43c;
+  border-color: #66a43c; }
+  /* line 54, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #8dce61;
+    border-color: #8dce61; }
+  /* line 60, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+  .btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #8dce61;
+    border-color: #8dce61;
+    box-shadow: 0 0 0 0.2rem rgba(66, 208, 142, 0.5); }
+  /* line 67, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #8dce61;
+    border-color: #8dce61; }
+
+/* line 74, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #8dce61;
+  border-color: #66a43c; }
+
+/* line 81, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(66, 208, 142, 0.5); }
+
+/* line 113, ../../../../../../../../../Local Sites/iwami/app/public/css/sass/_setting.scss */
+span.br {
+  display: block; }
+
+/*# sourceMappingURL=_setting.css.map */

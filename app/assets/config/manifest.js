@@ -3,10 +3,4 @@
 //= link administrate/application.css
 //= link administrate/application.js
 //= link css/style.css
-//= link css_stamp/bootstrap-grid.css
-//= link css_stamp/bootstrap-reboot.css
-//= link css_stamp/bootstrap.css
-//= link css_stamp/bootstrap.min.css
-//= link css_stamp/custom.css
-//= link css_stamp/custom.css.map
 //= link css_stamp/drawer.min.css
