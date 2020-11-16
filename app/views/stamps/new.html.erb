@@ -1,0 +1,47 @@
+<body class="qr vl-bodyBg login-user">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+
+  <header class="vl-appTop-header py-3">
+    <div class="vl-appTitle d-flex justify-content-center container">
+      <p>いわみくるり<span>石見周遊スタンプラリー</span></p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
+      <div class="vl-contentsWrap">
+        <div class="vl-contentBlock rounded m-auto bg-white card">
+          <div class="card-header">
+          <h1 class="text-main-color">QR</h1>
+        </div>
+
+        <div class="vl-cardWrap">
+          <div class="vl-readQrWrap m-auto d-flex align-items-center justify-content-center">
+            <a href="" class="bg-main-color text-white btn faa-parent animated-hover">
+              <span class="d-block vl-iconQr"><i class="fas fa-qrcode fa-3x"></i></span>
+              <span class="d-block vl-readQr">QRコードを読み取る</span>
+              <i class="fas fa-hand-point-up fa-2x faa-wrench"></i>
+            </a>
+          </div>
+
+          <video id="camera" width="300" height="200" preload="none" muted autoplay playsinline></video>
+          <canvas id="canvas01" name="canvas01" width="300" height="200"></canvas>
+
+          <form>
+            <button type="button" id="shutter">シャッター</button>
+          </form>
+
+          <audio id="se" preload="auto">
+            <!--    <source src="camera-shutter1.mp3" type="audio/mp3">-->
+          </audio>
+        </div><!-- / .vl-cardWrap -->
+      </div><!-- / .vl-enterBlock -->
+    </div><!-- / .vl-enterWrap -->
+  </div><!-- / .container -->
+
+  <%= render('shared/menu') %>
+  <%= javascript_pack_tag 'qr' %> 
+
+</body>

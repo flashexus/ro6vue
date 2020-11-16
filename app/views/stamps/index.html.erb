@@ -1,115 +1,150 @@
-<style>
-table th,table td{
-  border-radius: 30px;
-  text-align: center;
-  padding: 10px 0;
-}
-table td{
-  opacity: 0.85;
-}
-</style>
+<body class="stamp-list vl-bodyBg login-user">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<div class="container">
-  <div class="row">
-    <h1 class="font-weight-bold">スタンプカード</h1>
-  </div>
-  <div class="clearfix">
-    <%= link_to 'QR読み取り', new_stamp_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg float-xl-right"} %>
-  </div>
-  <div class="row mt-4 mb-4 border rounded-lg pr-5 pl-5">
-    <table class="table table-hover table-borderless">
-      <thead>
-        <tr align="center">
-          <th scope="col">石西エリア<br><p>(益田・津和野・吉賀)</p>山口県</th>
-          <th scope="col">石中エリア<br><p>(浜田・江津・邑南)</p>広島県</th>
-          <th scope="col">石東エリア<br><p>(大田・川本・美郷)</p>県東部</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td class="table-success" align="center">
-              <% if @bingo["石西エリア"][0].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石西エリア"][0] %></p>
-              <% else %>
-                 <h1>1</h1>
-              <% end %>
-            </td>
-            <td class="table-info" align="center">
-              <% if @bingo["石央エリア"][0].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石央エリア"][0] %></p>
-              <% else %>
-                 <h1>1</h1>
-              <% end %>
-            </td>
-            <td class="table-warning" align="center">
-              <% if @bingo["石東エリア"][0].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石東エリア"][0] %></p>
-              <% else %>
-                 <h1>1</h1>
-              <% end %>
-            </td>
-          </tr>
-            <td class="table-success" align="center">
-              <% if @bingo["石西エリア"][1].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石西エリア"][1] %></p>
-              <% else %>
-                 <h1>2</h1>
-              <% end %>
-            </td>
-            <td class="table-info" align="center">
-              <% if @bingo["石央エリア"][1].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石央エリア"][1] %></p>
-              <% else %>
-                 <h1>2</h1>
-              <% end %>
-            </td>
-            <td class="table-warning" align="center">
-              <% if @bingo["石東エリア"][1].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石東エリア"][1] %></p>
-              <% else %>
-                 <h1>2</h1>
-              <% end %>
-            </td>
-          <tr>
-            <td class="table-success" align="center">
-              <% if @bingo["石西エリア"][2].present? %>
-              <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石西エリア"][2] %></p>
-              <% else %>
-                 <h1>3</h1>
-              <% end %>
-            </td>
-            <td class="table-info" align="center">
-              <% if @bingo["石央エリア"][2].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石央エリア"][2] %></p>
-              <% else %>
-                 <h1>3</h1>
-              <% end %>
-            </td>
-            <td class="table-warning" align="center">
-              <% if @bingo["石東エリア"][2].present? %>
-                <%= image_tag "static/stamp.png" %>
-    					  <p><%= putc @bingo["石東エリア"][2] %></p>
-              <% else %>
-                 <h1>3</h1>
-              <% end %>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-    <br>
-  </div>
-</div>
+  <header class="vl-appTop-header py-3">
+   <div class="vl-appTitle d-flex justify-content-center container">
+    <p>いわみくるり<span>石見周遊スタンプラリー</span></p>
+   </div>
+  </header>
+
+  <div class="container">
+    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
+    <div class="vl-contentsWrap">
+      <div class="vl-contentBlock rounded m-auto bg-white card">
+        <div class="card-header">
+          <h1 class="text-main-color">スタンプ取得状況</h1>
+        </div>   
+
+        <div class="vl-cardWrap">
+          <div class="vl-stamp-listWrap">
+           <ul class="row">
+            <li class="col-4 border rounded vl-rectWrap">
+             <div class="vl-rect">石西エリア<br><p>(益田・津和野・吉賀)</p>山口県</div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+             <div class="vl-rect">石中エリア<br><p>(浜田・江津・邑南)</p>広島県</div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+             <div class="vl-rect">石東エリア<br><p>(大田・川本・美郷)</p>県東部</div>
+            </li>
+
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石西エリア"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石西エリア"][0] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">70</span>
+                <% else %>
+                   <h1>1</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石央エリア"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石央エリア"][0] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">125</span>
+                <% else %>
+                   <h1>1</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石東エリア"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石東エリア"][0] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">300</span>
+                <% else %>
+                   <h1>1</h1>
+                <% end %>
+              </div>
+            </li>
+
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石西エリア"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石西エリア"][1] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">70</span>
+                <% else %>
+                   <h1>2</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石央エリア"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石央エリア"][1] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">70</span>
+                <% else %>
+                   <h1>2</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石東エリア"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石東エリア"][1] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">70</span>
+                <% else %>
+                   <h1>2</h1>
+                <% end %>
+              </div>
+            </li>
+
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石央エリア"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石央エリア"][2] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">125</span>
+                <% else %>
+                   <h1>3</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石央エリア"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石央エリア"][2] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">125</span>
+                <% else %>
+                   <h1>3</h1>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap">
+              <div class="vl-rect">
+                <% if @bingo["石東エリア"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
+      					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石東エリア"][2] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info">125</span>
+                <% else %>
+                   <h1>3</h1>
+                <% end %>
+              </div>
+            </li>
+            <div class="row mt-4">
+              <div class="vl-apply text-center">
+                <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選に参加する</a>
+              </div>
+              <div class="vl-apply text-center">
+                <%= link_to 'QR読み取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg float-xl-right"} %>
+              </div>
+            </div>
+          </div><!-- / .vl-stamp-listWrap -->
+        </div>
+      </div><!-- / .vl-enterBlock -->
+    </div><!-- / .vl-enterWrap -->
+  </div><!-- / .container -->
+  <%= render('shared/menu') %>
+</body>
 
 <script>
-// console.log(gon.stamps)
-console.log(gon.bingo)
-alert("tate_bingo = " + gon.bingo_cnt);
 </script>
