@@ -13,32 +13,28 @@ By default, it renders:
 <!DOCTYPE html>
 <html class="no-js"  lang="<%= I18n.locale %>">
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
- <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
- <title>キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～</title>
- <meta name="description" content="いわみくるり～石見周遊スタンプラリー～のキャンペーン概要ページです。">
- <meta property="og:type" content="website" />
- <meta property="og:title" content="キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～" />
- <meta property="og:image" content="" />
- <meta property="og:url" content="" />
- <meta property="og:site_name" content="キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～" />
- <meta property="og:description" content="" />
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～</title>
+  <meta name="description" content="いわみくるり～石見周遊スタンプラリー～のキャンペーン概要ページです。">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="キャンペーン概要｜いわみくるり～石見周遊スタンプラリー～" />
+  <meta property="og:description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="noodp, noydir, index, follow">
 
- <link rel="shortcut icon" href="https://www.all-iwami.com/favicon.ico">
- <%# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css"> %>
- <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" /> %>
- <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
-
+  <link rel="shortcut icon" href="https://www.all-iwami.com/favicon.ico">
+  <%# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css"> %>
+  <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" /> %>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
   <%#= stylesheet_link_tag 'css_stamp/drawer.min', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= include_gon %>
 
+  <%= include_gon %>
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  <%= stylesheet_pack_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>  
 
   <script type="text/javascript" src="/js/common.js"></script>
   <%= csrf_meta_tags %>
@@ -55,5 +51,6 @@ By default, it renders:
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <%= render('shared/menu') %>
   </body>
 </html>
