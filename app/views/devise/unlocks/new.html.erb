@@ -1,3 +1,13 @@
+<body class="login vl-bodyBg">
+  <div class="vl-mainBg cover-container d-flex w-100 mx-auto flex-column pt-5">
+    <header class="vl-appTop-header">
+      <div class="vl-appTitle d-flex justify-content-center container">
+        <h1 class="text-white txt-sh">いわみくるり<span>石見周遊スタンプラリー</span></h1>
+      </div>
+    </header>
+    <div class="vl-contentsWrap container">
+      <div class="vl-enterBlock rounded m-auto bg-white card shadow">
+
 <h1><%= t('.resend_unlock_instructions') %></h1>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
@@ -14,3 +24,7 @@
 <% end %>
 
 <%= render 'devise/shared/links' %>
+      </div>
+    </div>
+  </div>
+</body>

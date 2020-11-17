@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/show'
   devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   namespace :admin do
     # Add dashboard for your models here
     resources :users

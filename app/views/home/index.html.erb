@@ -9,7 +9,7 @@
   </header>
 
   <div class="container">
-    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
+    <div class="vl-userName"><i class="fas fa-smile"></i> <% if user_signed_in? %> <%= current_user.username %>さん <% end %> </div>
     <div class="vl-contentsWrap">
       <div class="vl-contentBlock rounded m-auto bg-white card">
         <div class="card-header">

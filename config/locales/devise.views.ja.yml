@@ -6,16 +6,16 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
-        remember_me: "ログインを記憶"
+        remember_me: "次回から自動でログイン"
     models:
       user: "ユーザ"
   devise:
     confirmations:
       new:
-        resend_confirmation_instructions: "アカウント確認メール再送"
+        resend_confirmation_instructions: "登録確認メールの再送"
     mailer:
       confirmation_instructions:
-        action: "アカウント確認"
+        action: "登録確認"
         greeting: "ようこそ、%{recipient}さん!"
         instruction: "次のリンクでメールアドレスの確認が完了します:"
       reset_password_instructions:
@@ -36,8 +36,8 @@ ja:
         confirm_new_password: "確認用新しいパスワード"
         new_password: "新しいパスワード"
       new:
-        forgot_your_password: "パスワードを忘れましたか?"
-        send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
+        forgot_your_password: "パスワードの再設定"
+        send_me_reset_password_instructions: "再設定メールを送信"
     registrations:
       edit:
         are_you_sure: "本当に良いですか?"
@@ -49,19 +49,19 @@ ja:
         update: "更新"
         we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
       new:
-        sign_up: "アカウント登録"
+        sign_up: "新規登録"
     sessions:
       new:
         sign_in: "ログイン"
     shared:
       links:
         back: "戻る"
-        didn_t_receive_confirmation_instructions: "アカウント確認のメールを受け取っていませんか?"
+        didn_t_receive_confirmation_instructions: "登録確認のメールが届かない"
         didn_t_receive_unlock_instructions: "アカウントの凍結解除方法のメールを受け取っていませんか?"
-        forgot_your_password: "パスワードを忘れましたか?"
+        forgot_your_password: "パスワードを忘れた"
         sign_in: "ログイン"
         sign_in_with_provider: "%{provider}でログイン"
-        sign_up: "アカウント登録"
+        sign_up: "新規登録"
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
