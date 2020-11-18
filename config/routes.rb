@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :points
-  get 'stamps', to: 'stamps#index'
-  get 'stamps/new', to: 'stamps#new'
-  get 'stamps/add/:point_id', to: 'stamps#add'
+  resources :stamps
 
   root 'home#index'
   get 'home/index'

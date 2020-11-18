@@ -20,13 +20,13 @@
           <div class="vl-stamp-listWrap">
            <ul class="row">
             <li class="col-4 border rounded vl-rectWrap">
-             <div class="vl-rect">石西エリア<br><p>(益田・津和野・吉賀)</p>山口県</div>
+             <div class="vl-rect">石西エリア</div>
             </li>
             <li class="col-4 border rounded vl-rectWrap">
-             <div class="vl-rect">石中エリア<br><p>(浜田・江津・邑南)</p>広島県</div>
+             <div class="vl-rect">石中エリア</div>
             </li>
             <li class="col-4 border rounded vl-rectWrap">
-             <div class="vl-rect">石東エリア<br><p>(大田・川本・美郷)</p>県東部</div>
+             <div class="vl-rect">石東エリア</div>
             </li>
 
             <li class="col-4 border rounded vl-rectWrap">
@@ -99,7 +99,7 @@
 
             <li class="col-4 border rounded vl-rectWrap">
               <div class="vl-rect">
-                <% if @bingo["石央エリア"][2].present? %>
+                <% if @bingo["石西エリア"][2].present? %>
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stmp.png" %></span>
       					  <span class="vl-stmpNo badge badge-pill alert-info"><%= putc @bingo["石央エリア"][2] %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info">125</span>
@@ -135,7 +135,7 @@
                 <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選に参加する</a>
               </div>
               <div class="vl-apply text-center">
-                <%= link_to 'QR読み取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg float-xl-right"} %>
+                <%= link_to 'QR読み取り', new_stamp_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg float-xl-right"} %>
               </div>
             </div>
           </div><!-- / .vl-stamp-listWrap -->
