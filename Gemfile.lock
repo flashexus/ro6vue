@@ -103,7 +103,6 @@ GEM
     devise-bootstrap-views (1.1.0)
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
-    devise-i18n-views (0.3.7)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -291,7 +290,6 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   devise-i18n
-  devise-i18n-views
   font-awesome-sass
   gon
   jbuilder (~> 2.7)

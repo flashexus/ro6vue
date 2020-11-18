@@ -21,15 +21,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                     <%= f.email_field :email, 
-                          autofocus: true, 
-                          autocomplete: 'email', 
-                          type:"email" ,
-                          id:"entry_email_first", 
-                          name:"entry[email][first]", 
-                          class:'form-control', 
-                          required:"required", 
-                          placeholder:"例：iwami@example.com" %>
+                     <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
                   </div>
                </dd>
               </dl>
@@ -40,27 +32,13 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                    <%= f.password_field :password, 
-                        autocomplete: 'current-password', 
-                        type:"password" ,
-                        id:"entry_password_first",
-                        class: 'form-control' ,
-                        name:"entry[password][first]" , 
-                        required:"required", 
-                        placeholder:"半角英数記号6 〜32文字"%>
+                    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', required:"required", placeholder:"半角英数記号6 〜32文字" %>
                     <% if @minimum_password_length %>
                      <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
                     <% end %>
                   </div>
                   <div class="vl-input">
-                    <%= f.password_field :password_confirmation, 
-                        autocomplete: 'current-password', 
-                        type:"password" ,
-                        id:"entry_password_second", 
-                        class: 'form-control',
-                        name: "entry[password][second]", 
-                        required:"required" ,
-                        placeholder:"確認のためもう一度入力してください" %>
+                    <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', required:"required" ,placeholder:"確認のためもう一度入力してください" %>
                   </div>
                 </dd>
                </dl>
