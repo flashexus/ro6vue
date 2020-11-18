@@ -19,15 +19,15 @@
 
         <div class="vl-cardWrap">
           <div class="vl-readQrWrap m-auto d-flex align-items-center justify-content-center">
-            <a href="" class="bg-main-color text-white btn faa-parent animated-hover">
-              <span class="d-block vl-iconQr"><i class="fas fa-qrcode fa-3x"></i></span>
-              <span class="d-block vl-readQr">QRコードを読み取る</span>
-              <i class="fas fa-hand-point-up fa-2x faa-wrench"></i>
-            </a>
+              <a  id="flame" href="" class="bg-main-color text-white btn faa-parent animated-hover">
+                <span class="d-block vl-iconQr" ><i class="fas fa-qrcode fa-3x"></i></span>
+                <span class="d-block vl-readQr" >QRコードを読み取る</span>
+                <i class="fas fa-hand-point-up fa-2x faa-wrench"></i>
+              </a>
+              <video id="camera" width="200" height="200" preload="none" hidden muted autoplay playsinline></video>
+              <canvas id="canvas" name="canvas" width="200" height="200" hidden></canvas>
           </div>
 
-          <video id="camera" width="300" height="200" preload="none" muted autoplay playsinline></video>
-          <canvas id="canvas01" name="canvas01" width="300" height="200"></canvas>
 
           <form>
             <button type="button" id="shutter">シャッター</button>

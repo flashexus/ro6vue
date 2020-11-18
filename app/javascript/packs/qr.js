@@ -1,8 +1,10 @@
 import 'jsqr'
 require('jquery')
+//シャッターボタン
 document.querySelector("#shutter").addEventListener("click", () => {
 //window.onload = () => {
-  const canvas = document.querySelector("#canvas01");
+  const flame = document.querySelector("#flame");
+  const canvas = document.querySelector("#canvas");
   const video = document.querySelector("#camera");
   const ctx = canvas.getContext("2d");
   // カメラ設定
@@ -14,7 +16,9 @@ document.querySelector("#shutter").addEventListener("click", () => {
       facingMode: "environment"
     }
   };
-
+  video.hidden = false;
+  flame.hidden = true;
+  
   const drawLine = (ctx, pos, options={color:"blue", size:5})=>{
     // 線のスタイル設定
     ctx.strokeStyle = options.color;
@@ -30,6 +34,8 @@ document.querySelector("#shutter").addEventListener("click", () => {
     ctx.stroke();
   }
   const checkPicture = ()=>{
+    canvas.hidden = false;
+    video.hidden = true;
     // 映像をCanvasへ
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     // QRコード読取
