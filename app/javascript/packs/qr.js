@@ -1,8 +1,8 @@
 import 'jsqr'
 require('jquery')
 //シャッターボタン
-document.querySelector("#shutter").addEventListener("click", () => {
-//window.onload = () => {
+//document.querySelector("#shutter").addEventListener("click", () => {
+document.querySelector("#flame").addEventListener("click", () => {
   const flame = document.querySelector("#flame");
   const canvas = document.querySelector("#canvas");
   const video = document.querySelector("#camera");
@@ -18,12 +18,11 @@ document.querySelector("#shutter").addEventListener("click", () => {
   };
   video.hidden = false;
   flame.hidden = true;
-  
   const drawLine = (ctx, pos, options={color:"blue", size:5})=>{
     // 線のスタイル設定
     ctx.strokeStyle = options.color;
     ctx.lineWidth   = options.size;
-    
+
     // 線を描く
     ctx.beginPath();
     ctx.moveTo(pos.topLeftCorner.x, pos.topLeftCorner.y);
@@ -55,12 +54,12 @@ document.querySelector("#shutter").addEventListener("click", () => {
 	    $.ajax({ type: 'POST', url: '/stamps',
                data: ('point_id='+code.data), dataType: 'json' 
             }).done(function(data){
-              location.href="/stamps";
+              location.href="/stamps?get=true";
             }).fail(function(data){
-              alert("更新失敗");  // 取得した文字列
+              console.log(data);
+              alert(data.responseText);  // 取得した文字列
             });
 
-      
     } else{
       // 存在しない場合
       // 0.3秒後にもう一度チェックする
@@ -83,7 +82,6 @@ document.querySelector("#shutter").addEventListener("click", () => {
     console.log(err.name + ": " + err.message);
   });
 });
-
 
 function set_csrftoken() {
   $.ajaxPrefilter(function (options, originalOptions, jqXHR) {

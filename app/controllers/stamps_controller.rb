@@ -11,13 +11,13 @@ class StampsController < ApplicationController
 
   #スタンプ情報をエリアごとにハッシュ配列に並び替え
     areas.each do |area|
-      array = []
+      hash = []
       @stamps.each do |stamp|
         if(area === stamp.point.area_group)
-        array << stamp.point.name
+        hash << {'id' => stamp.point.id, 'name' => stamp.point.name}
         end
       end
-      @bingo[area] = array
+      @bingo[area] = hash
     end
 
   #ビンゴ数の判定
@@ -50,13 +50,18 @@ class StampsController < ApplicationController
     @stamp.user_id = current_user.id
     point = params[:point_id].split("stamps/add/")
     @stamp.point_id = point[1]
-
-    #本番ではここで重複チェックが必要
-    respond_to do |format|
-      if @stamp.save
-        format.json { render :json => { status: "200" } }
-      else
-        format.json { render json: @stamp.errors, status: :unprocessable_entity }
+    if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
+      respond_to do |format|
+        format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
+      end
+    else
+      #本番ではここで重複チェックが必要
+      respond_to do |format|
+        if @stamp.save
+          format.json { render :json => { status: "200" } }
+        else
+          format.json { render json: @stamp.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

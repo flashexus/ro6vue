@@ -7,7 +7,7 @@
     <div class="vl-modalContents">
       <ul class="list-group">
         <li class="list-group-item">
-           <%= link_to(new_stamp_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+           <%= link_to(stamps_new_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
              <i class="fas fas fa-qrcode"></i><span>QRコード</span>
            <% end %>
         </li>
@@ -17,7 +17,7 @@
            <% end %>
         </li>
         <li class="list-group-item">
-           <%= link_to(stamps_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+           <%= link_to(stamps_path ,:data =>{"role" => "button","turbolinks" => "false"}) do %> 
              <i class="fas fa-stamp"></i><span>取得スタンプ一覧</span>
            <% end %>
         </li>
@@ -43,7 +43,7 @@
         </li>
         <li class="list-group-item">
           <% if user_signed_in? %>
-              <%= link_to(destroy_user_session_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+              <%= link_to( destroy_user_session_path, method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i><span>ログアウト</span>
               <% end %>
           <% else %>

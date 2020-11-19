@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :points
-  resources :stamps
-
   root 'home#index'
   get 'home/index'
   get 'home/show'
+
+  resources :points
+  get 'stamps', to: 'stamps#index'
+  post 'stamps',to: 'stamps#create'
+  get 'stamps/new',to: 'stamps#new'
+
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
