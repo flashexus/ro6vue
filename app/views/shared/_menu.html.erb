@@ -6,19 +6,54 @@
   <div class="vl-modalMain">
     <div class="vl-modalContents">
       <ul class="list-group">
-       <li class="list-group-item"><a href="<%= new_stamp_path %>"><i class="fas fa-qrcode"></i><span>QRコード</span></a></li>
-       <li class="list-group-item"><a href="<%= home_index_path %>"><i class="fas fa-map-marked-alt"></i><span>キャンペーン概要</span></a></li>
-       <li class="list-group-item"><a href="<%= stamps_path %>"><span><i class="fas fa-stamp"></i>取得スタンプ一覧</span></a></li>
-       <li class="list-group-item"><a href="<%= points_path %>"><span><i class="fas fa-map-marker-alt"></i>地点一覧</span></a></li>
-       <li class="list-group-item"><a href=""><i class="fas fa-gift"></i><span>抽選に応募する</span></a></li>
-       <li class="list-group-item"><a href=""><i class="fas fa-book-open"></i><span>利用規約</span></a></li>
-       <li class="list-group-item"><a href=""><i class="fas fa-home"></i><span>いわみくるりホーム</span></a></li>
-      <% if user_signed_in? %>
-         <li class="list-group-item"><a href="<%= destroy_user_session_path %>"><i class="fas fa-sign-out-alt"></i><span>ログアウト</span></a></li>
-      <% else %>
-         <li class="list-group-item"><a href="<%= new_user_session_path %>"><i class="fas fa-sign-in-alt"></i><span>ログイン</span></a></li>
-      <% end %> 
+        <li class="list-group-item">
+           <%= link_to(new_stamp_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fas fa-qrcode"></i><span>QRコード</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to(home_index_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-map-marked-alt"></i><span>キャンペーン概要</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to(stamps_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-stamp"></i><span>取得スタンプ一覧</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to(points_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-map-marker-alt"></i><span>地点一覧</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to('' , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-gift"></i><span>抽選に応募する</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to("" , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-book-open"></i><span>利用規約</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+           <%= link_to("" , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-home"></i><span>いわみくるりホーム</span>
+           <% end %>
+        </li>
+        <li class="list-group-item">
+          <% if user_signed_in? %>
+              <%= link_to(destroy_user_session_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+                <i class="fas fa-sign-out-alt"></i><span>ログアウト</span>
+              <% end %>
+          <% else %>
+              <%= link_to(new_user_session_path , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+                <i class="fas fa-sign-in-alt"></i><span>ログイン</span>
+              <% end %>
+          <% end %> 
+        </li>
       </ul>
+
       <div class="text-center mt-4">
         <p class="vl-modalBtnClose bg-dark text-white btn ">
          <span>閉じる</span> <i class="fas fa-times-circle"></i>
