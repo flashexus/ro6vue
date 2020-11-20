@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   post 'stamps',to: 'stamps#create'
   get 'stamps/new',to: 'stamps#new'
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
   devise_scope :user do
+    # get 'sign_up', :to => "users/registrations#new"
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   namespace :admin do

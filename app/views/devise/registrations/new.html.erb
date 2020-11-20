@@ -12,9 +12,10 @@
         </div>
         <div class="vl-cardWrap">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.hidden_field :role, :value => "ユーザ" %>
             <div class="vr-formWrap">
               <%= bootstrap_devise_error_messages! %>
-
+<!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
                 <dt class="col-sm-3">
                  <%= f.label :email ,class: 'vl-label required' %><span class="vl-required">必須</span>
@@ -25,7 +26,7 @@
                   </div>
                </dd>
               </dl>
-
+<!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
                 <dt class="col-sm-3">
                   <%= f.label :password, class:"vl-label required" %><span class="vl-required">必須</span>
@@ -41,10 +42,70 @@
                     <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', required:"required" ,placeholder:"確認のためもう一度入力してください" %>
                   </div>
                 </dd>
-               </dl>
-
-              <div class="form-group">
-                <%= f.submit t('.sign_up'), class: 'btn btn-main-color btn-lg btn-block' %>
+              </dl>
+<!------------------------------------------------------------------------------------------------------------------------->
+              <dl class="form-group form-row">
+                <dt class="col-sm-3">
+                  <label class="vl-label col-form-label" for="entry_user_name">ニックネーム</label>
+                </dt>
+                <dd class="col-sm-9">
+                  <div class="vl-halfInput">
+                    <%= f.text_field :username, class: "form-control" , required:"required" %>
+                  </div>
+                </dd>
+              </dl>
+<!------------------------------------------------------------------------------------------------------------------------->
+              <dl class="form-group form-row">
+                <dt class="col-sm-2">
+                  <label class="vl-label">性別</label>
+                </dt>
+                <dd class="form-row col-sm-4">
+                  <div class="vl-radio">
+                    <div id="entry_sex">
+                      <div class="vl-select">
+                        <%= f.select :gender, @gender_type, {include_blank: true}, {class: "form-control"} %>
+                      </div>
+                    </div>
+                  </div>
+                </dd>
+                <dt class="col-sm-2">
+                  <label class="vl-label" for="entry_job">年代</label>
+                </dt>
+                <dd class="form-group form-row col-sm-4">
+                  <div class="vl-select">
+                    <%= f.select :age, @age_type, {include_blank: true}, {class: "form-control"} %>
+                  </div>
+                </dd>
+              </dl>
+<!------------------------------------------------------------------------------------------------------------------------->
+              <dl class="form-group form-row">
+                <dt class="col-sm-3">
+                  <label class="vl-label required col-form-label">住所</label><span class="vl-required">必須</span>
+                </dt>
+                <dd class="vl-address col-sm-9">
+                  <div class="vl-zipInput form-row">
+                    <div class="vl-zipWrap d-flex mb-2">
+                      <span>〒</span>
+                      <%= f.text_field :address, class: "form-control" , required:"required",placeholder:"例：6970041" %>
+                    </div>
+                    <div class="vl-zipInput col-sm-4 mb-3 mb-sm-0">
+                      <a href="https://www.post.japanpost.jp/zipcode/" target="_blank"><span>郵便番号検索 <i class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                  </div>
+                  <div class="vl-input">
+                    <input type="text" id="entry_address_addr02" name="entry[address][addr02]" class="form-control" placeholder="番地・ビル名(例：片庭町254)">
+                  </div>
+                </dd>
+              </dl>
+<!------------------------------------------------------------------------------------------------------------------------->
+              <div class="vl-registerRole-actions">
+                <div class="vl-checkbox form-check text-center pt-3 pb-4">
+                  <input type="checkbox" class="form-check-input" name="entry[user_policy_check]" required="required" value="1">
+                  <label class="form-check-label"><a class="vl-link" href="" target="_blank">利用規約</a>に同意して登録してください </label>
+                </div>
+                <div class="form-group">
+                  <%= f.submit t('.sign_up'), class: 'btn btn-main-color btn-lg btn-block' %>
+                </div>
               </div>
             </div><!-- / .vr-formWrap -->
           <% end %>
