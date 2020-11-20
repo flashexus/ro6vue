@@ -1,3 +1,4 @@
+<% set_meta_tags title: 'スタンプ取得状況', description: 'スタンプ取得状況' %>
 <%= stylesheet_link_tag 'map', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= stylesheet_pack_tag 'map', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -12,8 +13,9 @@
   </header>
 
 <div class="container">
-  <div class="row mt-4">
-    <div class="col-6 input-group mb-3">
+  <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %></div>
+  <div class="row mt-1">
+    <div class="col-8 input-group mb-3">
       <div class="input-group-prepend">
         <label class="input-group-text" for="inputGroupSelect01">エリア選択</label>
       </div>
@@ -24,10 +26,9 @@
         <% end -%>
       </select>
     </div>
-    <div class="col-5">
+    <div class="col-4">
       <button type="button" class="btn btn-info" id="getPosbtn01" name="getPosbtn01">現在位置</button>
     </div>
-    <div class="col-1"><i class="fas fa-smile"></i> <%= current_user.username %></div>
   </div>
 
   <div id="resize_area" class="row mt-4" >
@@ -37,7 +38,8 @@
   </div>
   <div class="row mt-4">
     <h2 class="font-weight-bold">施設一覧</h2>
-    <table class="table table-responsive">
+    <div class="table-responsive">
+    <table class="table table-sm table-hover">
       <thead>
         <tr>
           <th>Name</th>
@@ -45,22 +47,22 @@
           <th>Lon</th>
           <th>Lat</th>
           <th>Links</th>
-          <th colspan="3"></th>
         </tr>
       </thead>
 
       <tbody>
         <% @points.each do |point| %>
           <tr>
-            <td><%= point.name %></td>
-            <td><%= point.desc %></td>
-            <td><%= point.lon %></td>
-            <td><%= point.lat %></td>
-            <td><%= point.path %></td>
+            <td  class="col-xs-2"><%= point.name %></td>
+            <td  class="col-xs-2"><%= point.desc %></td>
+            <td  class="col-xs-2"><%= point.lon %></td>
+            <td  class="col-xs-2"><%= point.lat %></td>
+            <td  class="col-xs-2"><%= point.path %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    </div>
   </div>
   <br>
 </div>
