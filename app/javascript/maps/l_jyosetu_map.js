@@ -4,7 +4,8 @@ export default function LJyosetuMap() {
     this.spotMarkers = [];
     this.trackingLines = [];
     this.areaPolygon = [];
-
+    this.mySpotMerker = null;
+    this.areaSpotMarkers = [];
     this.lineColors = [
         "#ff0000", // 30分以内 => 赤
         "#0054a7", // 60分以内 => 青
@@ -203,7 +204,61 @@ LJyosetuMap.prototype = {
 
         this.spotMarkers.push(layer);
     },
-
+    /**
+     * ユーザーの現在位置を表示する
+     * @param data
+     */
+    addMySpotMarker: function (data,icon_path,pop){
+        var latlng = data;
+        var icon = L.icon({
+            iconUrl: icon_path,
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+        var layer = L.marker([latlng[1],latlng[0]], {icon: icon})
+            .bindPopup(pop)
+            .addTo(this.map);
+        this.mySpotMerker = layer;
+    },
+    /**
+     * ユーザーの現在位置を削除する
+     * @param data
+     */
+    removeMySpotMarker: function () {
+        if (this.mySpotMerker != null){
+            this.map.removeLayer(this.mySpotMerker);
+        }
+    },
+    addAreaSpotMarker: function (area_name,points,icon_hash) {
+        for( let i = 0; i < points.length; i+=1 ){
+            if( area_name === points[i].area_group ){
+                let icon = L.icon({
+                    iconUrl: icon_hash[points[i].shop_type],
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [0, -32]
+                });
+                let layer = L.marker([points[i].lat, points[i].lon], {icon: icon})
+                    .bindPopup(points[i].name)
+                    .addTo(this.map);
+                this.areaSpotMarkers.push(layer);
+            }
+        }
+    },
+    removeAreaSpotMarker: function () {
+        for( let i = 0; i < this.areaSpotMarkers.length; i+=1 ){
+            this.map.removeLayer(this.areaSpotMarkers[i]);
+        }
+        this.areaSpotMarkers = [];
+    },
+        /**
+     * すべてのショップが入るようにマップをフィットする
+     */
+    areafitBounds: function () {
+        var group = new L.featureGroup(this.areaSpotMarkers);
+        this.map.fitBounds(group.getBounds());
+    },
     /**
      * エリアを追加する
      * @param geojson

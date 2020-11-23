@@ -44,20 +44,20 @@
         <tr>
           <th>Name</th>
           <th>Desc</th>
+          <th>Shop_type</th>
           <th>Lon</th>
           <th>Lat</th>
-          <th>Links</th>
         </tr>
       </thead>
 
       <tbody>
         <% @points.each do |point| %>
           <tr>
-            <td  class="col-xs-2"><%= point.name %></td>
-            <td  class="col-xs-2"><%= point.desc %></td>
-            <td  class="col-xs-2"><%= point.lon %></td>
-            <td  class="col-xs-2"><%= point.lat %></td>
-            <td  class="col-xs-2"><%= point.path %></td>
+            <td><%= point.name %></td>
+            <td><%= point.desc %></td>
+            <td><%= point.shop_type %></td>
+            <td><%= point.lon %></td>
+            <td><%= point.lat %></td>
           </tr>
         <% end %>
       </tbody>

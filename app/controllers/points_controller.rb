@@ -13,12 +13,14 @@ class PointsController < ApplicationController
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("static/fuwa.gif"),
       "道の駅" => ApplicationController.helpers.master_icon_path("static/yado.gif"),
       "その他" => ApplicationController.helpers.master_icon_path("static/hatena2.gif"),  
+      "セルフ" => ApplicationController.helpers.master_icon_path("image_stamps/sr.png")
     }
     @area_pos ={
       "石西エリア" => [131.482636,34.433905],
       "石央エリア" => [132.144666,34.959614],
       "石東エリア" => [132.445299,35.113757],
     }
+
     gon.user = @user
     gon.icon = @icon_hash
     gon.points = @points
