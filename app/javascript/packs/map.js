@@ -23,16 +23,11 @@ window.onload = function(){
 
   //スポット表示  
   jyosetuMap.addAreaSpotMarker("石央エリア",gon.points,gon.icon);
-  jyosetuMap.areafitBounds();
-
   //表示位置合わせ
-  // if (lonlat[0] !== null && lonlat[1] !== null && zoom !== null) {
-  //   jyosetuMap.setView(lonlat, zoom);
-  // } else {
-  //   jyosetuMap.fitBounds();
-  // }
+  jyosetuMap.areafitBounds();
+  $('#inputGroupSelect01').val("石央エリア");
 }
-  //////////////////////////////////////表示//////////////////////////////////////
+  //////////////////////////////////////エリア選択表示//////////////////////////////////////
 $('#inputGroupSelect01').change(function(){
   let area = $(this).val();
   jyosetuMap.removeAreaSpotMarker();
