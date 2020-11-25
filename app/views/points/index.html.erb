@@ -20,7 +20,6 @@
         <label class="input-group-text" for="inputGroupSelect01">エリア選択</label>
       </div>
       <select class="custom-select" id="inputGroupSelect01" name="inputGroupSelect01">
-        <option selected>Choose...</option>
         <% @area_pos.each do |key,value| %>
           <option value=<%= key %>><%= key %></option>
         <% end -%>
@@ -38,28 +37,17 @@
   </div>
   <div class="row mt-4">
     <h2 class="font-weight-bold">施設一覧</h2>
-    <div class="table-responsive">
+    <div class="table-responsive" >
     <table class="table table-sm table-hover">
       <thead>
         <tr>
           <th>Name</th>
           <th>Desc</th>
           <th>Shop_type</th>
-          <th>Lon</th>
-          <th>Lat</th>
         </tr>
       </thead>
-
-      <tbody>
-        <% @points.each do |point| %>
-          <tr>
-            <td><%= point.name %></td>
-            <td><%= point.desc %></td>
-            <td><%= point.shop_type %></td>
-            <td><%= point.lon %></td>
-            <td><%= point.lat %></td>
-          </tr>
-        <% end %>
+      <tbody id="change">
+        <%= render( partial: 'shop_table', locals: {points: @points}) %>
       </tbody>
     </table>
     </div>

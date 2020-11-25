@@ -22,21 +22,21 @@ window.onload = function(){
   jyosetuMap.create('map', lonlat, options);
 
   //スポット表示  
-  jyosetuMap.addAreaSpotMarker("石央エリア",gon.points,gon.icon);
+  jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   //表示位置合わせ
   jyosetuMap.areafitBounds();
-  $('#inputGroupSelect01').val("石央エリア");
+  $('#inputGroupSelect01').val(gon.select_area);
 }
   //////////////////////////////////////エリア選択表示//////////////////////////////////////
 $('#inputGroupSelect01').change(function(){
-  let area = $(this).val();
+  gon.select_area = $(this).val();
   jyosetuMap.removeAreaSpotMarker();
-  jyosetuMap.addAreaSpotMarker(area,gon.points,gon.icon);
+  jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   jyosetuMap.areafitBounds();
-  return;
+  updateTable(gon.select_area);
 })
 
-//////////////////////////////////////現在位置表示//////////////////////////////////////
+//////////////////////////////////////現在位置表示////////////////////////////////////////
 $('#getPosbtn01').on('click',function(){
   navigator.geolocation.getCurrentPosition(SetCrtPosMarker);
 })
@@ -47,4 +47,15 @@ function SetCrtPosMarker(position) {
   jyosetuMap.removeMySpotMarker();
   jyosetuMap.addMySpotMarker(CrtPoslonlat,gon.icon["セルフ"],"現在位置");
   jyosetuMap.setView(CrtPoslonlat, zoom);
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+function updateTable(area) {
+  $.get({
+    url:"/points/area_shop" ,
+    data: {
+      area:area
+    }
+  }).done(function(data) {
+    $("#change").html(data);
+  })
 }

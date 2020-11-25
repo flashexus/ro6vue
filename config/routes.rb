@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/show'
 
-  resources :points
+  #resources :points
+  get 'points', to:'points#index'
+  get 'points/area_shop', to: 'points#ajax_area_shop'
+
   get 'stamps', to: 'stamps#index'
   post 'stamps',to: 'stamps#create'
   get 'stamps/new',to: 'stamps#new'

@@ -1,0 +1,10 @@
+
+        <% @points.each do |point| %>
+          <% if @select_area  === point.area_group %>
+            <tr>
+              <td><%= point.name %></td>
+              <td><%= point.desc %></td>
+              <td><%= point.shop_type %></td>
+            </tr>
+          <% end %>
+        <% end %>
