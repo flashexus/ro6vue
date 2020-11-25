@@ -142,7 +142,7 @@
             <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
             <div id="getPopuoImg" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
               <%= image_tag "image_stamps/1088425.png",alt:"スタンプを取得しました" %>
-              <button type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+              <button id="getStampBtn" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -154,13 +154,22 @@
 </body>
 
 <script>
+///////////////////////////////////window on load////////////////////////////////////////////
+  var stampPopupBg = document.getElementById("stampPopupBg");
+  var getPopuoImg = document.getElementById("getPopuoImg");
+
   window.onload = function(){
     var parm =  location.search.split('=');
     if( parm[1] == "true" ){
-      let stampPopupBg = document.getElementById("stampPopupBg");
-      let getPopuoImg = document.getElementById("getPopuoImg");
       stampPopupBg.hidden = false;
       getPopuoImg.hidden = false;
     }
   }
+
+///////////////////////////////////window on load////////////////////////////////////////////
+document.querySelector("#getStampBtn").addEventListener("click", () => {
+    stampPopupBg.hidden = true;
+    getPopuoImg.hidden = true;
+});
+
 </script>
