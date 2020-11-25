@@ -16,7 +16,8 @@ document.querySelector("#flame").addEventListener("click", () => {
       facingMode: "environment"
     }
   };
-  video.hidden = false;
+  // video.hidden = false;
+  video.height = 200;
   flame.hidden = true;
   const drawLine = (ctx, pos, options={color:"blue", size:5})=>{
     // 線のスタイル設定
@@ -34,7 +35,8 @@ document.querySelector("#flame").addEventListener("click", () => {
   }
   const checkPicture = ()=>{
     canvas.hidden = false;
-    video.hidden = true;
+    video.height = 1;
+    // video.hidden = true;
     // 映像をCanvasへ
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     // QRコード読取
