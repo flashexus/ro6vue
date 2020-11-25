@@ -1,8 +1,8 @@
 window.jQuery = $
 window.$      = $
-import 'leaflet'
-import resizeArea from "../maps/resizeArea"
-import LJyosetuMap from "../maps/l_jyosetu_map"
+import 'leaflet';
+import resizeArea from "../maps/resizeArea";
+import LJyosetuMap from "../maps/l_jyosetu_map";
 import "leaflet/dist/leaflet.css";
 require('jquery')
 

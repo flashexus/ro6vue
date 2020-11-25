@@ -1,7 +1,6 @@
-import 'jsqr'
+import 'jsqr';
 require('jquery')
 //シャッターボタン
-//document.querySelector("#shutter").addEventListener("click", () => {
 document.querySelector("#flame").addEventListener("click", () => {
   const flame = document.querySelector("#flame");
   const canvas = document.querySelector("#canvas");
@@ -46,7 +45,6 @@ document.querySelector("#flame").addEventListener("click", () => {
     if( code ){
       // 存在する場合
       // 結果を表示
-      //alert(code.data);  // 取得した文字列
       drawLine(ctx, code.location);       // 見つかった箇所に線を引く
       // video と canvas を入れ替え
       canvas.style.display = 'block';
@@ -59,10 +57,9 @@ document.querySelector("#flame").addEventListener("click", () => {
             }).done(function(data){
               location.href="/stamps?get=true";
             }).fail(function(data){
-              console.log(data);
               alert(data.responseText);  // 取得した文字列
+              location.href="/stamps/new";
             });
-
     } else{
       // 存在しない場合
       // 0.3秒後にもう一度チェックする
