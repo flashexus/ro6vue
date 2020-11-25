@@ -11,13 +11,13 @@ document.querySelector("#flame").addEventListener("click", () => {
   const constraints = {
     audio: false,
     video: {
-      width: 5,
-      height: 5,
+      width: canvas.width,
+      height: canvas.height,
       facingMode: "environment"
     }
   };
   // video.hidden = false;
-  //video.height = 200;
+  video.height = 200;
   flame.hidden = true;
   const drawLine = (ctx, pos, options={color:"blue", size:5})=>{
     // 線のスタイル設定
