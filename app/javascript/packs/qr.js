@@ -11,13 +11,13 @@ document.querySelector("#flame").addEventListener("click", () => {
   const constraints = {
     audio: false,
     video: {
-      width: canvas.width,
-      height: canvas.height,
+      width: 5,
+      height: 5,
       facingMode: "environment"
     }
   };
   // video.hidden = false;
-  video.height = 200;
+  //video.height = 200;
   flame.hidden = true;
   const drawLine = (ctx, pos, options={color:"blue", size:5})=>{
     // 線のスタイル設定
@@ -36,6 +36,7 @@ document.querySelector("#flame").addEventListener("click", () => {
   const checkPicture = ()=>{
     canvas.hidden = false;
     video.height = 1;
+    video.weight = 1;
     // video.hidden = true;
     // 映像をCanvasへ
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
