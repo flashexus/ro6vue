@@ -1,6 +1,6 @@
 import 'jsqr';
 require('jquery')
-//シャッターボタン
+//////////////////////////////////////QR読み取り//////////////////////////////////
 document.querySelector("#flame").addEventListener("click", () => {
   const flame = document.querySelector("#flame");
   const canvas = document.querySelector("#canvas");
@@ -15,6 +15,7 @@ document.querySelector("#flame").addEventListener("click", () => {
       facingMode: "environment"
     }
   };
+  //safariに対応するためにはvideoタグをhiddenにできないためサイズを調整して対応
   // video.hidden = false;
   video.height = 200;
   flame.hidden = true;
