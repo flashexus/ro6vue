@@ -86,14 +86,14 @@
                   <div class="vl-zipInput form-row">
                     <div class="vl-zipWrap d-flex mb-2">
                       <span>〒</span>
-                      <%= f.text_field :address, class: "form-control" , required:"required",placeholder:"例：6970041" %>
+                      <%= f.text_field :address, class: "form-control" , required:"required",placeholder:"例：6970041",id:"txtZipCode" %>
                     </div>
                     <div class="vl-zipInput col-sm-4 mb-3 mb-sm-0">
-                      <a href="https://www.post.japanpost.jp/zipcode/" target="_blank"><span>郵便番号検索 <i class="fas fa-external-link-alt"></i></span></a>
+                      <a href="" target="_blank" onclick="return false;" id="get_address" ><span>郵便番号検索 <i class="fas fa-external-link-alt"></i></span></a>
                     </div>
                   </div>
                   <div class="vl-input">
-                    <input type="text" id="entry_address_addr02" name="entry[address][addr02]" class="form-control" placeholder="番地・ビル名(例：片庭町254)">
+                    <input type="text" id="entry_address_addr" name="entry[address][addr02]" class="form-control" placeholder="番地・ビル名(例：片庭町254)">
                   </div>
                 </dd>
               </dl>
@@ -118,3 +118,4 @@
     <small><a href="">©いわみくるり</a></small>
   </footer>
 </body>
+  <%= javascript_pack_tag 'user' %> 
