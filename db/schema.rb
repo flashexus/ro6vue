@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_055246) do
+ActiveRecord::Schema.define(version: 2020_11_25_234215) do
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 2020_10_09_055246) do
     t.string "area_group"
     t.string "shop_type"
     t.integer "show_no"
+    t.boolean "sp_flg"
+    t.string "zipcode"
+    t.string "TEL"
+    t.string "holiday"
   end
 
   create_table "stamps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
