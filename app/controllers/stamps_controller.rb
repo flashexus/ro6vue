@@ -8,6 +8,9 @@ class StampsController < ApplicationController
     @stamps = Stamp.where(user_id:current_user.id)
     areas = Point::AREA__GROUP_TYPE
     @bingo = {}
+    
+    @sp_record = Stamp.includes(:point).where(user_id:current_user.id).where(points:{sp_flg:true})
+    @sp_cnt = @sp_record.count
 
   #スタンプ情報をエリアごとにハッシュ配列に並び替え
     areas.each do |area|
