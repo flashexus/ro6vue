@@ -1,6 +1,6 @@
 class ApplyController < ActionMailer::Base
   default from: "hogehoge@example.com"
-  
-  def index
+
+  def for_campaign
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'apply/index'
+  get 'apply/for_campaign', to: 'apply#for_campaign'
   root 'home#index'
   get 'home/index'
   get 'home/show'

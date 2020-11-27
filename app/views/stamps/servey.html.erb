@@ -11,15 +11,15 @@
           <h1 class="text-main-color">応募フォーム</h1>
         </div>
         <div class="vl-cardWrap">
-          <%= form_with url: apply_index_path  do |f| %>
+          <%= form_with url:apply_for_campaign_path  do |f| %>
             <%= f.hidden_field :role, :value => "ユーザ" %>
             <div class="vr-formWrap">
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
-                <dt class="col-sm-3">
+                <dt class="col-sm-6">
                  <%= f.label :email ,class: 'vl-label required' %><span class="vl-required">必須</span>
                 </dt>
-                <dd class="col-sm-9">
+                <dd class="col-sm-6">
                   <div class="vl-input mb-2">
                      <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
                   </div>
@@ -80,26 +80,29 @@
                   <div class="vl-radio">
                     <div id="entry_sex">
                       <div class="vl-select">
-                        <%= f.select :gender, {include_blank: true}, {class: "form-control", required:"required"} %>
+                        <%= f.select :gender, {'景品１': 1, '景品２': 2}, {include_blank: true}, {class: "form-control", required:"required"} %>
                       </div>
                     </div>
                   </div>
                 </dd>
-                <dt class="col-sm-2">
+              </dl>
+              <dl class="form-group form-row">
+                <dt class="col-sm-6">
                   <label class="vl-label" for="entry_job">どこでスタンプラリーを知りましたか？</label><span class="vl-required">必須</span>
                 </dt>
                 <dd class="form-group form-row col-sm-4">
                   <div class="vl-select">
-                    <%= f.select :age, {include_blank: true}, {class: "form-control", required:"required"} %>
+                    <%= f.select :age, {'ネット': 1, 'ラジオ': 2},{include_blank: true}, {class: "form-control", required:"required"} %>
                   </div>
                 </dd>
               </dl>
+
               <dl class="form-group form-row">
-                <dt class="col-sm-3">
-                  <label class="vl-label col-form-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label><span class="vl-required">必須</span>
+                <dt class="col-sm-6">
+                  <label class="vl-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label><span class="vl-required">必須</span>
                 </dt>
-                <dd class="col-sm-9">
-                  <div class="vl-halfInput">
+                <dd class="form-group form-row col-sm-6">
+                  <div class="vl-input">
                     <%= f.text_field :username, class: "form-control" , required:"required" %>
                   </div>
                 </dd>
@@ -118,8 +121,5 @@
       </div><!-- / .vl-enterBlock -->
     </div><!-- / .vl-enterWrap -->
   </div><!-- / .container -->
-  <footer class="vl-footer py-3 text-center">
-    <small><a href="">©いわみくるり</a></small>
-  </footer>
 </body>
   <%= javascript_pack_tag 'user' %> 
