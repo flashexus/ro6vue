@@ -8,8 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @gender_type = User::GENDER_TYPE
     @age_type = User::AGE_TYPE
-    logger.debug("このページは読み込まれています")
-    logger.debug(@age_type)
     super
 
   end

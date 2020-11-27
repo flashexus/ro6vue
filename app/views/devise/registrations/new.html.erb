@@ -46,7 +46,7 @@
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
                 <dt class="col-sm-3">
-                  <label class="vl-label col-form-label" for="entry_user_name">ニックネーム</label>
+                  <label class="vl-label col-form-label" for="entry_user_name">ニックネーム</label><span class="vl-required">必須</span>
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-halfInput">
@@ -57,28 +57,28 @@
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
                 <dt class="col-sm-2">
-                  <label class="vl-label">性別</label>
+                  <label class="vl-label">性別</label><span class="vl-required">必須</span>
                 </dt>
                 <dd class="form-row col-sm-4">
                   <div class="vl-radio">
                     <div id="entry_sex">
                       <div class="vl-select">
-                        <%= f.select :gender, @gender_type, {include_blank: true}, {class: "form-control"} %>
+                        <%= f.select :gender, @gender_type, {include_blank: true}, {class: "form-control", required:"required"} %>
                       </div>
                     </div>
                   </div>
                 </dd>
                 <dt class="col-sm-2">
-                  <label class="vl-label" for="entry_job">年代</label>
+                  <label class="vl-label" for="entry_job">年代</label><span class="vl-required">必須</span>
                 </dt>
                 <dd class="form-group form-row col-sm-4">
                   <div class="vl-select">
-                    <%= f.select :age, @age_type, {include_blank: true}, {class: "form-control"} %>
+                    <%= f.select :age, @age_type, {include_blank: true}, {class: "form-control", required:"required"} %>
                   </div>
                 </dd>
               </dl>
 <!------------------------------------------------------------------------------------------------------------------------->
-              <dl class="form-group form-row">
+              <dl class="form-row">
                 <dt class="col-sm-3">
                   <label class="vl-label required col-form-label">住所</label><span class="vl-required">必須</span>
                 </dt>
@@ -86,14 +86,14 @@
                   <div class="vl-zipInput form-row">
                     <div class="vl-zipWrap d-flex mb-2">
                       <span>〒</span>
-                      <%= f.text_field :address, class: "form-control" , required:"required",placeholder:"例：6970041",id:"txtZipCode" %>
+　                    <input type="text" id="txtZipCode" name="zipcode" placeholder="例：6970041">
                     </div>
                     <div class="vl-zipInput col-sm-4 mb-3 mb-sm-0">
                       <a href="" target="_blank" onclick="return false;" id="get_address" ><span>郵便番号検索 <i class="fas fa-external-link-alt"></i></span></a>
                     </div>
                   </div>
                   <div class="vl-input">
-                    <input type="text" id="entry_address_addr" name="entry[address][addr02]" class="form-control" placeholder="番地・ビル名(例：片庭町254)">
+　                  <%= f.text_field :address, class:"form-control", required:"required", placeholder:"都道府県・市町村(例：島根県浜田市)", id:"address"%>
                   </div>
                 </dd>
               </dl>
