@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'apply/index'
   root 'home#index'
   get 'home/index'
   get 'home/show'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get 'stamps', to: 'stamps#index'
   post 'stamps',to: 'stamps#create'
   get 'stamps/new',to: 'stamps#new'
+  get 'stamps/servey', to: 'stamps#servey'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

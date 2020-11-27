@@ -31,9 +31,7 @@ class StampsController < ApplicationController
     gon.bingo_cnt = @bingo_cnt
   end
 
-  # GET /stamp/1
-  # GET /stamp/1.json
-  def show
+  def servey
   end
 
   # GET /stamp/new
