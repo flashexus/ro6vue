@@ -25,17 +25,19 @@ window.onload = function(){
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   //表示位置合わせ
   jyosetuMap.areafitBounds();
-  $('#inputGroupSelect01').val(gon.select_area);
+  //初期エリア選択
+  $('#item2-tab').attr('aria-selected',true);
+  $('#item2-tab').addClass('active');
 }
   //////////////////////////////////////エリア選択表示//////////////////////////////////////
-$('#inputGroupSelect01').change(function(){
-  gon.select_area = $(this).val();
+$('.nav-link').on('click', function () {
+  gon.select_area = this.textContent.trim();
   jyosetuMap.removeAreaSpotMarker();
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   jyosetuMap.areafitBounds();
   updateTable(gon.select_area);
-})
 
+});
 //////////////////////////////////////現在位置表示////////////////////////////////////////
 $('#getPosbtn01').on('click',function(){
   navigator.geolocation.getCurrentPosition(SetCrtPosMarker);
