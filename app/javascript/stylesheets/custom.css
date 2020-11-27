@@ -2824,32 +2824,32 @@ span.br { display: block; }
 
 .vl-appTop-header { text-align: center; }
 .vl-appTop-header .vl-appTitle h1 { text-shadow: 0 2px 2px #444; }
-.vl-appTop-header .vl-appTitle p { font-size: 2.5rem; }
-.vl-appTop-header .vl-appTitle span { display: block; font-size: 1.6rem; }
+.vl-appTop-header .vl-appTitle p { font-size: 2.2rem; }
+.vl-appTop-header .vl-appTitle span { display: block; font-size: 1.5rem; }
 
 .vl-contentsWrap { margin: auto; }
 
 .vl-enterBlock { max-width: 360px; padding: 40px; }
-@media (max-width: 400px) { .vl-enterBlock { padding: 20px; } }
+@media (max-width: 480px) { .vl-enterBlock { padding: 20px; } }
 .vl-enterBlock input[type="email"], .vl-enterBlock input[type="password"] { padding: 15px; height: auto; margin: 0 0 15px; }
 .vl-enterBlock .form-check { margin-bottom: 20px; }
 .vl-enterBlock ul { list-style: none; padding: 0; }
 .vl-enterBlock ul li { margin-bottom: 10px; }
 .vl-enterBlock ul li:last-child { margin-bottom: 0; }
 
-.vl-contentBlock .card-header h1 { font-size: 1.8rem; margin-bottom: 0; }
+.vl-contentBlock .card-header h1 { font-size: 1.6rem; margin-bottom: 0; }
 .vl-contentBlock .vl-cardWrap { padding: 30px 40px 60px; }
-@media (max-width: 400px) { .vl-contentBlock .vl-cardWrap { padding: 20px 20px 40px; } }
+@media (max-width: 480px) { .vl-contentBlock .vl-cardWrap { padding: 20px 15px 40px; } }
 .vl-contentBlock form dl { border-bottom: 1px dotted #dee2e6; margin: 0; padding: 20px 0; }
 .vl-contentBlock form dl dd { margin: 0; }
 .vl-contentBlock form .vl-birthYear select { padding: 0 5px 0 10px; }
 .vl-contentBlock form .vl-required { color: #dc3545; font-size: 12px; display: inline-block; margin-left: 5px; }
-@media (max-width: 400px) { .vl-contentBlock form .vl-required { display: block; margin-left: 0; } }
+@media (max-width: 480px) { .vl-contentBlock form .vl-required { display: block; margin-left: 0; } }
 
 .login-user .container { position: relative; }
 .login-user .container .vl-userName { position: absolute; top: -30px; right: 20px; max-width: 550px; }
 
-.vl-modalBtn { position: fixed; right: 10px; bottom: 10px; color: #76952f; cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 60px; height: 60px; }
+.vl-modalBtn { position: fixed; left: 10px; bottom: 10px; color: #76952f; cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 60px; height: 60px; }
 .vl-modalBtn .vl-modalBtnText { font-size: 11px; }
 
 .vl-modalBg { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); position: fixed; top: 0; left: 0; z-index: 10; display: none; }
@@ -2874,13 +2874,29 @@ span.br { display: block; }
 .vl-readQrWrap a { position: relative; width: 200px; height: 200px; display: -webkit-flex !important; display: -moz-flex !important; display: -ms-flex !important; display: -o-flex !important; display: flex !important; justify-content: center; align-content: center; flex-direction: column; }
 .vl-readQrWrap a .fa-hand-point-up { position: absolute; right: 10px; bottom: 0; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
 
-.vl-tabWrap { margin-bottom: 3px; }
 .vl-tabWrap li { margin-right: 3px; }
+@media (max-width: 480px) { .vl-tabWrap li { margin-right: 1px; } }
 .vl-tabWrap li:last-child { margin-right: 0; }
-@media (max-width: 400px) { .vl-tabWrap li { width: 100%; margin: 0 0 1em !important; } }
-.vl-tabWrap li .nav-link { background: #e9ecef; }
+.vl-tabWrap li .nav-link { background: #e9ecef; border-radius: 4px 4px 0 0; color: #28a745; }
+.vl-tabWrap li .nav-link.active { color: #fff; background: #28a745; }
+@media (max-width: 480px) { .vl-tabWrap li .nav-link { font-size: 14px; padding: 8px 5px; } }
+.vl-tabWrap .nav-item.sekiou .nav-link { color: #fd7e14; }
+.vl-tabWrap .nav-item.sekiou .nav-link.active { color: #fff; background: #fd7e14; }
+.vl-tabWrap .nav-item.sekitou .nav-link { color: #17a2b8; }
+.vl-tabWrap .nav-item.sekitou .nav-link.active { color: #fff; background: #17a2b8; }
 
-.vl-spotList ul { height: 200px; overflow-y: scroll; }
+.vl-spotList { height: 200px; overflow-y: scroll; }
+.vl-spotList .table { width: 100%; }
+.vl-spotList td { padding: 8px; }
+.vl-spotList td a { position: relative; display: block; padding-left: 30px; }
+.vl-spotList td a .spot-no { position: absolute; top: 0; left: 0; color: #fff; display: inline-block; width: 25px; height: 25px; font-size: 14px; text-align: center; border-radius: 50px; line-height: 1.9; }
+
+.tab-content .sekisei a { color: #28a745; }
+.tab-content .sekisei a .spot-no { background: #28a745; }
+.tab-content .sekiou a { color: #fd7e14; }
+.tab-content .sekiou a .spot-no { background: #fd7e14; }
+.tab-content .sekitou a { color: #17a2b8; }
+.tab-content .sekitou a .spot-no { background: #17a2b8; }
 
 .vl-stamp-listWrap ul { padding: 0 1em 2em; max-width: 550px; margin: auto; }
 .vl-stamp-listWrap ul li { text-align: center; list-style: none; padding: 1em; }
