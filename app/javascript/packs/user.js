@@ -7,8 +7,12 @@ document.querySelector("#get_address").addEventListener("click", () => {
   $.ajax({ type: 'GET', url: 'https://zipcloud.ibsnet.co.jp/api/search',
       data: ('zipcode='+ zipcode), dataType: 'jsonp' 
     }).done(function(data){
-     $('#address').val(data.results[0]["address1"] + data.results[0]["address2"]) ;
+      if(data.status == 200){
+        $('#address').val(data.results[0]["address1"] + data.results[0]["address2"]) ;
+      }else{
+        alert("検索失敗：直接住所を入力してください"); 
+      }
     }).fail(function(data){
-      alert(data.responseText);  // 取得した文字列
+      alert("検索失敗：直接住所を入力してください"); 
     });
 });
