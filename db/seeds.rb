@@ -396,3 +396,14 @@ point = Point.new(show_no:"198",area_group:"石西エリア",shop_type:"道の�
  point.save!
 point = Point.new(show_no:"199",area_group:"石西エリア",shop_type:"道の駅",sp_flg:false,name:"長門おもちゃ美術館（道の駅センザキッチン内）",zipcode:"759-4106",desc:"山口県長門市仙崎4297-1",TEL:"0837-27-0337",holiday:"毎週木曜（夏休み期間中は営業）",path:"",lat:"34.38851838",lon:"131.2028609")
  point.save!
+
+point = Point.new(show_no:"200",area_group:"石東エリア",shop_type:"観光施設",sp_flg:"",name:"温泉津温泉 龍御前神社",zipcode:"",desc:"大田市温泉津町温泉津ロ156",TEL:"0855-65-2998",holiday:"",path:"",lat:"35.09555804",lon:"132.3461401")
+ point.save!
+point = Point.new(show_no:"201",area_group:"石央エリア",shop_type:"観光施設",sp_flg:"",name:"有福温泉 湯の町神楽殿",zipcode:"",desc:"江津市有福温泉町711-1",TEL:"	0855-52-0534",holiday:"",path:"",lat:"34.94039679",lon:"132.2005888")
+ point.save!
+point = Point.new(show_no:"202",area_group:"石央エリア",shop_type:"観光施設",sp_flg:"",name:"舞乃座（神楽の里 舞乃市）",zipcode:"",desc:"江津市後地町3348-113",TEL:"0120-522-235",holiday:"",path:"",lat:"35.04521915",lon:"132.2998919")
+ point.save!
+point = Point.new(show_no:"203",area_group:"石央エリア",shop_type:"観光施設",sp_flg:"",name:"三宮神社",zipcode:"",desc:"浜田市相生町1571",TEL:"	0855-24-1085",holiday:"",path:"",lat:"34.89408352",lon:"132.1040921")
+ point.save!
+point = Point.new(show_no:"204",area_group:"石西エリア",shop_type:"観光施設",sp_flg:"",name:"益田駅前ビルEAGA",zipcode:"",desc:"益田市駅前町17-1",TEL:"0856-22-7120",holiday:"",path:"",lat:"34.67731619",lon:"131.8390841")
+ point.save!
