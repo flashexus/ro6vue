@@ -32,8 +32,13 @@ class StampsController < ApplicationController
   end
 
   def servey
+    #bingo count などもっていかないといけない
   end
 
+  def send_mail
+    ApplyMailer.for_campaign().deliver
+    render 'servey'
+  end
   # GET /stamp/new
   def new
     @stamp = Stamp.new

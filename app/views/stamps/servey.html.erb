@@ -11,15 +11,15 @@
           <h1 class="text-main-color">応募フォーム</h1>
         </div>
         <div class="vl-cardWrap">
-          <%= form_with url:apply_for_campaign_path  do |f| %>
+          <%= form_with url:stamps_servey_path  do |f| %>
             <%= f.hidden_field :role, :value => "ユーザ" %>
             <div class="vr-formWrap">
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
-                <dt class="col-sm-6">
+                <dt class="col-sm-3">
                  <%= f.label :email ,class: 'vl-label required' %><span class="vl-required">必須</span>
                 </dt>
-                <dd class="col-sm-6">
+                <dd class="col-sm-9">
                   <div class="vl-input mb-2">
                      <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
                   </div>
@@ -32,10 +32,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', required:"required", placeholder:"半角英数記号6 〜32文字" %>
-                    <% if @minimum_password_length %>
-                     <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
-                    <% end %>
+                    <%= f.text_field :TEL_number, class: 'form-control', required:"required", placeholder:"半角英数記号6 〜32文字" %>
                   </div>
                 </dd>
               </dl>
@@ -67,20 +64,20 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-halfInput">
-                    <%= f.text_field :username, class: "form-control" , required:"required" %>
+                    <%= f.text_field :name, class: "form-control" , required:"required" %>
                   </div>
                 </dd>
               </dl>
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
-                <dt class="col-sm-2">
+                <dt class="col-sm-3">
                   <label class="vl-label">応募商品</label><span class="vl-required">必須</span>
                 </dt>
                 <dd class="form-row col-sm-4">
                   <div class="vl-radio">
                     <div id="entry_sex">
                       <div class="vl-select">
-                        <%= f.select :gender, {'景品１': 1, '景品２': 2}, {include_blank: true}, {class: "form-control", required:"required"} %>
+                        <%= f.select :gift, {'景品１': 1, '景品２': 2}, {include_blank: true}, {class: "form-control", required:"required"} %>
                       </div>
                     </div>
                   </div>
@@ -92,18 +89,18 @@
                 </dt>
                 <dd class="form-group form-row col-sm-4">
                   <div class="vl-select">
-                    <%= f.select :age, {'ネット': 1, 'ラジオ': 2},{include_blank: true}, {class: "form-control", required:"required"} %>
+                    <%= f.select :question1, {'ネット': 'ネット', 'ラジオ': 'ネット'},{include_blank: true}, {class: "form-control", required:"required"} %>
                   </div>
                 </dd>
               </dl>
 
               <dl class="form-group form-row">
-                <dt class="col-sm-6">
+                <dt class="col-sm-4">
                   <label class="vl-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label><span class="vl-required">必須</span>
                 </dt>
-                <dd class="form-group form-row col-sm-6">
+                <dd class="form-group form-row col-sm-8">
                   <div class="vl-input">
-                    <%= f.text_field :username, class: "form-control" , required:"required" %>
+                    <%= f.text_field :question2, class: "form-control" , required:"required" %>
                   </div>
                 </dd>
               </dl>

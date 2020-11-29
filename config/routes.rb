@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'apply/for_campaign', to: 'apply#for_campaign'
   root 'home#index'
   get 'home/index'
   get 'home/show'
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
   post 'stamps',to: 'stamps#create'
   get 'stamps/new',to: 'stamps#new'
   get 'stamps/servey', to: 'stamps#servey'
+  post 'stamps/servey', to: 'stamps#send_mail'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
