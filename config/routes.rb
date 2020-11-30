@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'stamps', to: 'stamps#index'
   post 'stamps',to: 'stamps#create'
+  get '/stamps/add/:point_id', to: 'stamps#add'
+
   get 'stamps/new',to: 'stamps#new'
   get 'stamps/servey', to: 'stamps#servey'
   post 'stamps/servey', to: 'stamps#send_mail'

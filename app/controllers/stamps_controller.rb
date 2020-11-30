@@ -94,29 +94,6 @@ class StampsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /stamp/1
-  # PATCH/PUT /stamp/1.json
-  def update
-    respond_to do |format|
-      if @stamp.update(stamp_params)
-        format.html { redirect_to @stamp, notice: 'Stamp was successfully updated.' }
-        format.json { render :show, status: :ok, location: @stamp }
-      else
-        format.html { render :edit }
-        format.json { render json: @stamp.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /stamp/1
-  # DELETE /stamp/1.json
-  def destroy
-    @stamp.destroy
-    respond_to do |format|
-      format.html { redirect_to stamp_url, notice: 'Stamp was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
