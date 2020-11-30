@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
-  get 'home/show'
+  get 'home/policy'
 
   #resources :points
   get 'points', to:'points#index'

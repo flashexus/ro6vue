@@ -8,16 +8,12 @@
 
   <header class="vl-appTop-header py-3">
    <div class="vl-appTitle d-flex justify-content-center container">
-    <p>いわみくるり<span>石見周遊スタンプラリー</span></p>
+      <p><%= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
    </div>
   </header>
 
   <div class="container">
     <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %></div>
-    <div class="col-8">
-      <button type="button" class="btn btn-info" id="getPosbtn01" name="getPosbtn01">現在位置</button>
-    </div>
-
     <div class="vl-contentsWrap">
       <div class="vl-contentBlock rounded m-auto bg-white card">
 
@@ -43,7 +39,6 @@
               <div id="map" class="gmap"></div>
             </div>
           </div>
-
           <div class="row mt-4">
             <div class="table-responsive vl-spotList" >
               <table class="table table-bordered table-hover">
@@ -64,6 +59,9 @@
       </div><!-- / .vl-enterBlock -->
     </div><!-- / .vl-enterWrap -->
   </div><!-- / .container -->
+  <div class="vl-currentPosition">
+    <button type="button" class="btn text-center rounded-circle text-white" id="getPosbtn01" name="getPosbtn01">現在<br>位置</button>
+  </div>
   <%= render('shared/menu') %>
 </body>
 <%= javascript_pack_tag 'map' %> 

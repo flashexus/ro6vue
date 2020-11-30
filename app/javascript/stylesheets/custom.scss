@@ -10,7 +10,7 @@
 // ================================
 
 .vl-bodyBg{
- background: $baseBg-color;
+ @extend %main-stripeBg;
  position: relative;
 }
 
@@ -49,21 +49,7 @@
 
 .vl-appTop-header {
  text-align: center;
- 
- .vl-appTitle {
-  
-  h1 {
-   text-shadow: 0 2px 2px #444;
-  }
-  
-  p {
-   font-size: 2.2rem;
-  }
-  span{
-   display: block;
-   font-size: 1.5rem;
-  }
- }
+ margin-bottom: 15px;
 }
 
 .vl-footer {
@@ -76,6 +62,7 @@
 .vl-enterBlock {
  max-width: 360px;
  padding: 40px;
+ background: rgba(255,255,255,.9);
  
  @include xss {
   padding: 20px;
@@ -110,11 +97,17 @@
 // ================================
 
 .vl-contentBlock{
-
-  .card-header {
+  border: 5px solid #fff;
+  box-shadow: 0px 8px 16px -2px rgba(10,10,10,0.1), 21px 12px 3px -25px rgba(10,10,10,0.02);
+ 
+ .card-header {
+  border: none;
+  background: $baseBg-color;
+  
   h1{
-   font-size: 1.6rem;
+   font-size: 1.4rem;
    margin-bottom: 0;
+   text-align: center;
   }
  }
  
@@ -169,6 +162,11 @@
    top:-30px;
    right: 20px;
    max-width: 550px;
+   background: $main-color;
+   padding: 3px 5px;
+   border-radius: 20px;
+   font-size: 12px;
+   color: #fff;
   }
  }
 }
@@ -178,7 +176,7 @@
  position: fixed;
  left: 10px;
  bottom: 10px;
- color:#76952f;
+ background: $accent-color;
  cursor: pointer;
  -webkit-tap-highlight-color:rgba(0,0,0,0);
  width: 60px;
@@ -204,10 +202,10 @@
   padding: 16px;
   bottom: -91%;
   left: 0;
-  background: #fff;
+  @extend %main-stripeMenuBg;
   border-radius:4px 4px 0 0 ;
   position: fixed;
-  z-index: 11;
+  z-index: 2000;
   opacity: 0;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -220,29 +218,119 @@
  
  .vl-modalBtnClose {
   text-decoration: none;
+  background: $main-color;
+  color: $sub-color03;
+  margin-top: 10px;
+  
+  &:hover {
+   color: #fff;
+  }
  }
 
  
- ul {
-  padding: 0;
+ .vl-menuList {
+  max-width: 380px;
+  padding: 10px 0 0;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  
   li {
    list-style: none;
+   
    a {
+    width: 100px;
+    height: 100px;
+    border: 2px solid $main-color;
     display: block;
     text-align: center;
     text-decoration: none;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    
+    @include v320 {
+     padding-top: 10px;
+     width: 90px;
+     height: 90px;
+    }
+    
+    &.current,&:hover{
+      color: #fff!important;
+     }
+    
+    
+    &.qr {
+     color: $sekisei-color;
+     background: lighten($sekisei-color, 50%);
+     
+     &.current,&:hover{
+      background: $sekisei-color;
+     }
+    }
+    
+    &.about {
+     color: $main-color;
+     background: lighten($main-color, 50%);
+     
+     &.current,&:hover{
+      background: $main-color;
+     }
+    }
+    
+    &.stamp-list {
+     color: $sub-color01;
+     background: lighten($sub-color01, 50%);
+     
+     &.current,&:hover{
+      background: $sub-color01;
+     }
+    }
+    
+    &.map-list {
+     color: $shukuhaku-color;
+     background: lighten($shukuhaku-color, 50%);
+     
+     &.current,&:hover{
+      background: $shukuhaku-color;
+     }
+    }
+    
+    &.entry {
+     color: $nihonisan-color;
+     background: lighten($nihonisan-color, 50%);
+     
+     &.current,&:hover{
+      background: $nihonisan-color;
+     }
+    }
+    
+    &.policy {
+     color: $kagura-color;
+     background: lighten($kagura-color, 50%);
+     
+     &.current,&:hover{
+      background: $kagura-color;
+     }
+    }
+    
+    &.home {
+     color: $accent-color;
+     background: lighten($accent-color, 50%);
+     
+     &.current,&:hover{
+      background: $accent-color;
+     }
+    }
     
     .fas {
-     display: inline-block;
+     display:block;
      padding-right: 5px;
+     font-size: 18px;
+     margin-bottom: 5px;
     }
     
-   }
-   
-   &.active {
-    a{
-     color: #fff;
-    }
    }
   }
  }
@@ -276,6 +364,21 @@ animation: SlideUp .5s ease-in-out forwards;
 animation: SlideDown .5s ease-in-out forwards;
 }
 
+//現在位置取得ボタン ------------------
+.vl-currentPosition {
+ position: fixed;
+ right: 10px;
+ bottom: 10px;
+ 
+ button {
+  background:$sub-color01;
+ cursor: pointer;
+ -webkit-tap-highlight-color:rgba(0,0,0,0);
+ width: 60px;
+ height: 60px;
+ line-height: 1.5;
+ }
+}
 
 // ================================
 // QR
@@ -326,11 +429,11 @@ animation: SlideDown .5s ease-in-out forwards;
  .nav-link {
   background:$gray-200;
   border-radius: 4px 4px 0 0;
-  color: $green;
+  color: $sekitou-color;
   
   &.active {
    color: #fff;
-   background: $green;
+   background: $sekitou-color;
   }
   
   @include xss {
@@ -342,21 +445,21 @@ animation: SlideDown .5s ease-in-out forwards;
  
  .nav-item.sekiou {
   .nav-link {
-   color: $orange;
+   color: $sekiou-color;
    
    &.active {
     color: #fff;
-    background: $orange;
+    background: $sekiou-color;
    }
   }
  }
  .nav-item.sekitou {
   .nav-link {
-   color: $cyan;
+   color: $sekisei-color;
    
    &.active {
     color: #fff;
-    background: $cyan;
+    background: $sekisei-color;
    }
   }
  }
@@ -428,7 +531,6 @@ animation: SlideDown .5s ease-in-out forwards;
  }
 }
 
-
 // ================================
 // スタンプページ
 // ================================
@@ -496,5 +598,54 @@ animation: SlideDown .5s ease-in-out forwards;
  img {
   display: block;
   border: 3px solid #fff;
+ }
+}
+
+// ================================
+// コンテンツ
+// ================================
+
+.vl-cardWrap{
+ 
+ .h-bsc {
+  color: $accent-color;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 5px 5px 5px 10px;
+  margin-bottom: 20px;
+  
+  
+  &::before {
+   position: absolute;
+   content: '';
+   background:$accent-color;
+   top:0;
+   left:0;
+   width: 3px;
+   height: 100%;
+  }
+ }
+ .card-title {
+  font-size: 1.1rem;
+ }
+
+ ul {
+  &.def {
+   padding: 15px 0;
+   li {
+    list-style: none;
+    position: relative;
+    margin: 5px 0;
+    padding-left: 20px;
+    
+    &::before {
+     position: absolute;
+     content: '●';
+     color: $accent-color;
+     top:0;
+     left:0;
+    }
+   }
+  }
  }
 }

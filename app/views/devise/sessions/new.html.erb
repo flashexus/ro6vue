@@ -2,11 +2,11 @@
   <div class="vl-mainBg cover-container d-flex w-100 mx-auto flex-column pt-5">
     <header class="vl-appTop-header">
       <div class="vl-appTitle d-flex justify-content-center container">
-        <h1 class="text-white txt-sh">いわみくるり<span>石見周遊スタンプラリー</span></h1>
+        <h1><%= image_tag "image_stamps/App_titlelogo_color_futi.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></h1>
       </div>
     </header>
     <div class="vl-contentsWrap container">
-      <div class="vl-enterBlock rounded m-auto bg-white card shadow">
+      <div class="vl-enterBlock rounded m-auto card shadow">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',placeholder:"メールアドレスを入力" %>
@@ -31,7 +31,7 @@
     </div>
   </div>
   <footer class="vl-footer py-3 text-center">
-    <small><a href="" class="text-white txt-sh">©いわみくるり</a></small>
+    <small><a href="https://www.all-iwami.com/contents/stamprally/" class="text-white txt-sh">©いわみくるり</a></small>
   </footer>
 </body>
 <script>

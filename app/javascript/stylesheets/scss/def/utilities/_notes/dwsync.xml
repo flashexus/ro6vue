@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="_align.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_background.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_borders.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_clearfix.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_display.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_embed.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_flex.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_float.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_interactions.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_overflow.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_position.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_screenreaders.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_shadows.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_sizing.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_spacing.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_stretched-link.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_text.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
-<file name="_visibility.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132337214820000000" remote="132486890400000000" Dst="0" />
+<file name="_align.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838118005" remote="132507672600000000" Dst="0" />
+<file name="_background.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838127985" remote="132507672600000000" Dst="0" />
+<file name="_borders.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838147927" remote="132507672600000000" Dst="0" />
+<file name="_clearfix.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838167876" remote="132507672600000000" Dst="0" />
+<file name="_display.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838177848" remote="132507672600000000" Dst="0" />
+<file name="_embed.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838197800" remote="132507672600000000" Dst="0" />
+<file name="_flex.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838207763" remote="132507672600000000" Dst="0" />
+<file name="_float.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838217748" remote="132507672600000000" Dst="0" />
+<file name="_interactions.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838227708" remote="132507672600000000" Dst="0" />
+<file name="_overflow.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838237700" remote="132507672600000000" Dst="0" />
+<file name="_position.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838247663" remote="132507672600000000" Dst="0" />
+<file name="_screenreaders.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838257641" remote="132507672600000000" Dst="0" />
+<file name="_shadows.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838267609" remote="132507672600000000" Dst="0" />
+<file name="_sizing.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838287554" remote="132507672600000000" Dst="0" />
+<file name="_spacing.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838297540" remote="132507672600000000" Dst="0" />
+<file name="_stretched-link.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838307506" remote="132507672600000000" Dst="0" />
+<file name="_text.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838317483" remote="132507672600000000" Dst="0" />
+<file name="_visibility.scss" server="sv10062.xserver.jp//nagi.jp/public_html/iwami/" local="132507634838337425" remote="132507672600000000" Dst="0" />
 </dwsync>

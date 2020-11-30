@@ -1,0 +1,68 @@
+<% set_meta_tags title: '利用規約', description: '利用規約' %>
+<body class="about vl-bodyBg login-user">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <header class="vl-appTop-header py-3">
+   <div class="vl-appTitle d-flex justify-content-center container">
+    <p>いわみくるり<span>石見周遊スタンプラリー</span></p>
+   </div>
+  </header>
+
+  <div class="container">
+    <div class="vl-userName"><i class="fas fa-smile"></i> <% if user_signed_in? %> <%= current_user.username %>さん <% end %> </div>
+    <div class="vl-contentsWrap">
+      <div class="vl-contentBlock rounded m-auto bg-white card">
+        <div class="card-header">
+          <h1 class="text-main-color">利用規約</h1>
+        </div>
+
+        <div class="vl-cardWrap">
+          <h2>利用規約</h2>
+          <p>説明のテキストが入ります。説明のテキストが入ります。説明のテキストが入ります。説明のテキストが入ります。</p>
+          <p>顔は猫の鍛冶外国家をドレミファの云い位たです。そしてしばらく丈夫ましうというゴーシュただ。無理たなものたはましすると意気地の愉快手のところがもいっぱいばかたたらて、それじゃ音をいうれものました。</p>
+          <hr>
+          <h2>例：プレゼントリスト</h2>
+          <div class="row">
+           <div class="col-md-4 pb-1 pb-md-0">
+            <div class="card">
+             <%= image_tag "image_stamps/unnamed.jpg", {alt:"プレンゼト名の写真",class:"card-img-top" } %>
+             <div class="card-body">
+              <h3 class="card-title">プレンゼト名</h3>
+              <p class="card-text">説明が入ります。説明が入ります。説明が入ります。</p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4 pb-1 pb-md-0">
+            <div class="card">
+             <%= image_tag "image_stamps/unnamed.jpg", {alt:"プレンゼト名の写真",class:"card-img-top" } %>
+             <div class="card-body">
+              <h3 class="card-title">プレンゼト名</h3>
+              <p class="card-text">説明が入ります。説明が入ります。説明が入ります。</p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4 pb-1 pb-md-0">
+            <div class="card">
+             <%= image_tag "image_stamps/unnamed.jpg", {alt:"プレンゼト名の写真",class:"card-img-top" } %>
+             <div class="card-body">
+              <h3 class="card-title">プレンゼト名</h3>
+              <p class="card-text">説明が入ります。説明が入ります。説明が入ります。</p>
+             </div>
+            </div>
+           </div>
+          <!-- / .row --></div>
+          <ul>
+           <li>リスト表示</li>
+           <li>リスト表示</li>
+           <li>リスト表示</li>
+          </ul>
+        </div>
+
+      </div><!-- / .vl-contentBlock -->
+    </div><!-- / .vl-contentsWrap -->
+ </div>
+  <%= render('shared/menu') %>
+</body>
+ 
+

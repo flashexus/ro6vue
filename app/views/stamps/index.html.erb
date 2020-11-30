@@ -3,9 +3,9 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <header class="vl-appTop-header py-3">
+  <header class="vl-appTop-header">
    <div class="vl-appTitle d-flex justify-content-center container">
-    <p>いわみくるり<span>石見周遊スタンプラリー</span></p>
+    <p><%= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
    </div>
   </header>
 
@@ -143,7 +143,7 @@
 
             <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
             <div id="getPopuoImg" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
-              <%= image_tag "image_stamps/1088425.png",alt:"スタンプを取得しました" %>
+              <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
               <button id="getStampBtn" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

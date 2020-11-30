@@ -2,6 +2,11 @@
 html,body {
  height: 100%;
 }
+
+img {
+ max-width:100%;
+ height: auto;
+}
 // ===================================================================
 // 設定
 // ===================================================================
@@ -16,12 +21,46 @@ $font-family-sans-serif:'Kosugi', sans-serif,"メイリオ", Meiryo, "ヒラギ�
 // 色関係の設定
 // ================================
 
-$baseBg-color:#fcf5e5;
+$baseBg-color:#FFEDE9;
+$main-color:#7b4639;
+$accent-color:#e60044;
+$sub-color01:#8fc31f;
+$sub-color02:#59c3e1;
+$sub-color03:#ffe100;
+
+$sekitou-color:#008281;
+$sekiou-color:#a40000;
+$sekisei-color:#2b5cc5;
+
+$nihonisan-color:#f05900;
+$kagura-color:#2b5cc5;
+$item-color:#568b4d;
+
+$kagurameshi-color:#e40210;
+$shukuhaku-color:#4195c5;
+$shokuji-color:#8b6840;
+$onsen-color:#09ab87;
+
 
 $theme-colors: (
- "main-color": #66a43c,
- "baseBg-color": #fcf5e5
+ "main-color": #7b4639,
+ "baseBg-color": #FFEDE9
 );
+
+
+//Stripe
+%main-stripeBg{
+ background-size: auto auto;
+ background-color: rgba(255, 237, 233, 1);
+ background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 219, 211, 1) 5px, rgba(255, 219, 211, 1) 20px );
+}
+
+%main-stripeMenuBg {
+background-size: auto auto;
+background-color: rgba(255, 255, 255, 1);
+background-image: repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(242, 238, 237, 1) 1px, rgba(242, 238, 237, 1) 4px );
+}
+
 
 @import "def/bootstrap.scss";
 
@@ -37,6 +76,12 @@ $xss:480px;
  }
 }
 
+$v320:320px;
+@mixin v320 {
+ @media (max-width: ($v320)) {
+  @content;
+ }
+}
 
 // ================================
 // クリアフィックス
