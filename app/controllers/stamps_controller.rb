@@ -59,8 +59,9 @@ class StampsController < ApplicationController
   def create
     @stamp = Stamp.new
     @stamp.user_id = current_user.id
-    point = params[:point_id].split("stamps/add/")
-    @stamp.point_id = point[1]
+    code = params[:point_id].split("stamps/add/")
+    point = Point.find_by(code:code[1])
+    @stamp.point_id = point.id
     if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
       respond_to do |format|
         format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
@@ -83,8 +84,9 @@ class StampsController < ApplicationController
     @stamp = Stamp.new
     @stamp.user_id = current_user.id
 
-
-    @stamp.point_id = params[:point_id]
+    code = params[:point_id]
+    point = Point.find_by(code:code)
+    @stamp.point_id = point.id
 
     #本番ではここで重複チェックが必要
     if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
