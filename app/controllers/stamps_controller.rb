@@ -8,7 +8,7 @@ class StampsController < ApplicationController
     @stamps = Stamp.where(user_id:current_user.id)
     areas = Point::AREA__GROUP_TYPE
     @bingo = {}
-    
+    ##取得スタンプ内の特別数をカウント
     @sp_record = Stamp.includes(:point).where(user_id:current_user.id).where(points:{sp_flg:true})
     @sp_cnt = @sp_record.count
 
@@ -32,12 +32,17 @@ class StampsController < ApplicationController
   end
 
   def servey
-    #bingo count などもっていかないといけない
   end
 
   def send_mail
-    ApplyMailer.for_campaign().deliver
-    render 'servey'
+    #bingo count などもっていかないといけない
+
+    ApplyMailer.for_campaign(params,current_user).deliver
+    user = User.find_by(current_user.id)
+    user.apply_flg = TRUE
+    user.save!
+
+    render 'new'
   end
   # GET /stamp/new
   def new

@@ -12,7 +12,8 @@
         </div>
         <div class="vl-cardWrap">
           <%= form_with url:stamps_servey_path  do |f| %>
-            <%= f.hidden_field :role, :value => "ユーザ" %>
+          <%= f.hidden_field :bingo_cnt, :value => params["bigo_cnt"] %>
+          <%= f.hidden_field :sp_cnt, :value => params["sp_cnt"] %>
             <div class="vr-formWrap">
 <!------------------------------------------------------------------------------------------------------------------------->
               <dl class="form-group form-row">
@@ -21,7 +22,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                     <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
+                     <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", value:current_user.email %>
                   </div>
                </dd>
               </dl>
@@ -32,7 +33,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                    <%= f.text_field :TEL_number, class: 'form-control', required:"required", placeholder:"半角英数記号6 〜32文字" %>
+                    <%= f.text_field :TEL_number, class: 'form-control', required:"required", placeholder:"090-1234-4321" %>
                   </div>
                 </dd>
               </dl>
@@ -64,7 +65,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-halfInput">
-                    <%= f.text_field :name, class: "form-control" , required:"required" %>
+                    <%= f.text_field :name, class: "form-control" , required:"required", placeholder:"石見　太郎" %>
                   </div>
                 </dd>
               </dl>
@@ -77,31 +78,29 @@
                   <div class="vl-radio">
                     <div id="entry_sex">
                       <div class="vl-select">
-                        <%= f.select :gift, {'景品１': 1, '景品２': 2}, {include_blank: true}, {class: "form-control", required:"required"} %>
+                        <%= f.select :gift, {'景品１': '景品１', '景品２': '景品１'}, {include_blank: true}, {class: "form-control", required:"required"} %>
                       </div>
                     </div>
                   </div>
                 </dd>
               </dl>
               <dl class="form-group form-row">
-                <dt class="col-sm-6">
-                  <label class="vl-label" for="entry_job">どこでスタンプラリーを知りましたか？</label><span class="vl-required">必須</span>
+                <dt class="col-sm-5">
+                  <label class="vl-label" for="entry_job">どこでスタンプラリーを知りましたか？</label>
                 </dt>
                 <dd class="form-group form-row col-sm-4">
                   <div class="vl-select">
-                    <%= f.select :question1, {'ネット': 'ネット', 'ラジオ': 'ネット'},{include_blank: true}, {class: "form-control", required:"required"} %>
+                    <%= f.select :question1, {'ネット': 'ネット', 'ラジオ': 'ネット'},{include_blank: true}, {class: "form-control"} %>
                   </div>
                 </dd>
               </dl>
 
               <dl class="form-group form-row">
-                <dt class="col-sm-4">
-                  <label class="vl-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label><span class="vl-required">必須</span>
+                <dt class="col-sm-12">
+                  <label class="vl-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label>
                 </dt>
-                <dd class="form-group form-row col-sm-8">
-                  <div class="vl-input">
-                    <%= f.text_field :question2, class: "form-control" , required:"required" %>
-                  </div>
+                <dd class="form-group form-row col-sm-12">
+                    <%= f.text_field :question2, class: "form-control ",style:"width:100%; height: 200px;" %>
                 </dd>
               </dl>
 

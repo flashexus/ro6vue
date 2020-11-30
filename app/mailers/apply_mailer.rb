@@ -1,11 +1,11 @@
 class ApplyMailer < ApplicationMailer
-  default from: "hogehoge@example.com"
-
-  def for_campaign
+  def for_campaign(form,user)
     logger.debug("mail_test")
+    @form = form
+    @user = user
     mail(
-      subject: "メール送信が完了しました。", #メールのタイトル
-      to: "flashexus@gmail.com" #宛先
+      subject: "抽選の応募がありました。", #メールのタイトル
+      to: @form['email'] #宛先
     ) do |format|
       format.text
     end

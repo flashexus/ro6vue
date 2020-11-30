@@ -1,4 +1,21 @@
-"flashexus@gmail.com" 様
+<%= @form['name'] %> 様　から申し込みがありました。
 
-○○への会員登録が完了しました。
-マイページはこちら
+Email：<%= @form['email'] %>
+連絡先：<%= @form['TEL_number'] %>
+郵便番号：<%= @form['zipcode'] %>
+お届け先：<%= @form['address'] %>
+宛名：<%= @form['name'] %>
+
+応募商品：<%= @form['gift'] %>
+登録番号：<%= @user['id'] %>
+
+ビンゴ数：<%= @form['bingo_cnt'] %>
+日本遺産訪問数：<%= @form['sp_cnt'] %>
+
+
+どこでスタンプラリーを知りましたか？
+<%= @form['question1'] %>
+
+石見の良かったところやスタンプラリーについてのご意見など
+<%= @form['question2'] %>
+
