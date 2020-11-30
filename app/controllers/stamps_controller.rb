@@ -89,7 +89,7 @@ class StampsController < ApplicationController
     #本番ではここで重複チェックが必要
     if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
       respond_to do |format|
-        format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        format.html { render json: '既に登録されています。' ,status: :unprocessable_entity }
       end
     else
       respond_to do |format|
