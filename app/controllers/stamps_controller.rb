@@ -61,21 +61,29 @@ class StampsController < ApplicationController
     @stamp.user_id = current_user.id
     code = params[:point_id].split("stamps/add/")
     point = Point.find_by(code:code[1])
-    @stamp.point_id = point.id
-    if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
+    #QRコードの有効性チェック
+    if point.nil?
       respond_to do |format|
-        format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        format.json { render json: '無効なコードです。' ,status: :unprocessable_entity }
       end
     else
-      #本番ではここで重複チェックが必要
-      respond_to do |format|
-        if @stamp.save
-          format.json { render :json => { status: "200" } }
-        else
-          format.json { render json: @stamp.errors, status: :unprocessable_entity }
+      @stamp.point_id = point.id
+      #2重登録チェック
+      if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
+        respond_to do |format|
+          format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        end
+      else
+        respond_to do |format|
+          if @stamp.save
+            format.json { render :json => { status: "200" } }
+          else
+            format.json { render json: @stamp.errors, status: :unprocessable_entity }
+          end
         end
       end
     end
+
   end
   # POST /stamp
   # POST /stamp.json
@@ -86,19 +94,26 @@ class StampsController < ApplicationController
 
     code = params[:point_id]
     point = Point.find_by(code:code)
-    @stamp.point_id = point.id
 
-    #本番ではここで重複チェックが必要
-    if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
+    #QRコードの有効性チェック
+    if point.nil?
       respond_to do |format|
-        format.html { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        format.html { render json: '無効なコードです。' ,status: :unprocessable_entity }
       end
     else
-      respond_to do |format|
-        if @stamp.save
-          format.html { redirect_to stamps_path, notice: 'Stamp was successfully created.' }
-        else
-          format.html { render :new }
+      #ここで重複チェック
+      @stamp.point_id = point.id
+      if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
+        respond_to do |format|
+          format.html { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        end
+      else
+        respond_to do |format|
+          if @stamp.save
+            format.html { redirect_to stamps_path, notice: 'Stamp was successfully created.' }
+          else
+            format.html { render :new }
+          end
         end
       end
     end
