@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'points#index'
   get 'home/index'
   get 'home/policy'
 

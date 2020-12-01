@@ -18,12 +18,7 @@
         </li>
         <li class="list-group-item">
            <%= link_to(points_path ,class:"map-list", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-map-marker-alt"></i><span>地点一覧</span>
-           <% end %>
-        </li>
-        <li class="list-group-item">
-           <%= link_to(home_policy_path ,class:"entry", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-book-open"></i><span>利用規約</span>
+             <i class="fas fa-map-marker-alt"></i><span>施設一覧</span>
            <% end %>
         </li>
         <li class="list-group-item">
@@ -32,12 +27,12 @@
            <% end %>
         </li>
         <li class="list-group-item">
-          <% if user_signed_in? %>
-              <%= link_to edit_user_registration_path, :data =>{"role" => "button","turbolinks" => "false"} do %>
-                <i class="fas fa-home"></i><span>プロフィール変更</span>
-              <% end %>
+           <%= link_to(home_policy_path ,class:"entry", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-book-open"></i><span>利用規約</span>
+           <% end %>
         </li>
         <li class="list-group-item">
+          <% if user_signed_in? %>
               <%= link_to( destroy_user_session_path, method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i><span>ログアウト</span>
               <% end %>
