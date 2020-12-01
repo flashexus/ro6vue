@@ -1,4 +1,6 @@
 <body class="entry vl-bodyBg">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <header class="vl-appTop-header">
     <div class="vl-appTitle d-flex justify-content-center container">
       <p><%= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
@@ -101,7 +103,7 @@
               <div class="vl-registerRole-actions">
                 <div class="vl-checkbox form-check text-center pt-3 pb-4">
                   <input type="checkbox" class="form-check-input" name="entry[user_policy_check]" required="required" value="1">
-                  <label class="form-check-label"><a class="vl-link" href="" target="_blank">利用規約</a>に同意して登録してください </label>
+                  <label class="form-check-label"><a class="vl-link" href="<%= home_policy_path %>" target="_blank">利用規約</a>に同意して登録してください </label>
                 </div>
                 <div class="form-group">
                   <%= f.submit t('.sign_up'), class: 'btn btn-main-color btn-lg btn-block' %>
