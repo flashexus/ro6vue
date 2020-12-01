@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css";
 require('jquery')
 
 var jyosetuMap = new LJyosetuMap(); 
-var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': true};
+var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': false};
 var lonlat = gon.area_pos["石央エリア"];
 var zoom = 14;
 
