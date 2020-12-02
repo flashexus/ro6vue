@@ -1,8 +1,11 @@
 <body class="login vl-bodyBg">
   <div class="vl-mainBg cover-container d-flex w-100 mx-auto flex-column pt-5">
-  <p class="notice" style="background:#FFF;"><%= notice %></p>
-  <p class="alert" style="background:#FFF;"><%= alert %></p>
-
+  <% unless notice.nil? %>
+  <p class="notice"><%= notice %></p>
+  <%end%>
+  <% unless alert.nil? %>
+  <p class="alert"><%= alert %></p>
+  <%end%>
     <header class="vl-appTop-header">
       <div class="vl-appTitle d-flex justify-content-center container">
         <h1><%= image_tag "image_stamps/App_titlelogo_color_futi.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></h1>
