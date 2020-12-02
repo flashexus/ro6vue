@@ -22,6 +22,17 @@ import '../stylesheets/custom';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+//ブラウザキャッシュ対策（for chrome）
+window.onunload = function() {
+  // IE以外用。ここは空でOKです
+};
+//ブラウザキャッシュ対策（for safari）
+window.addEventListener("pageshow", function(event){
+  if (event.persisted) {
+    // ここにキャッシュ有効時の処理を書く
+    window.location.reload();
+  }
+});
 
 //メニュー表示
 $(function(){
