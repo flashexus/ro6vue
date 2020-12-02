@@ -162,10 +162,6 @@
    display: inline-block;
    margin-left: 5px;
    
-   @include xss {
-    display: block;
-    margin-left: 0;
-   }
   }
  }
 }
