@@ -30,7 +30,7 @@
               <div class="vl-rect">
                 <% if @bingo["石西エリア"][0].present? %>
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
-                  <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石西エリア"][0]['id'] %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info" data-toggle="tooltip" title="<%= @bingo["石西エリア"][0]['name'] %>"><%= @bingo["石西エリア"][0]['id'] %></span>
                 <% else %>
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
@@ -163,6 +163,7 @@
       stampPopupBg.hidden = false;
       getPopuoImg.hidden = false;
     }
+    $('[data-toggle="tooltip"]').tooltip();
   }
 
 ///////////////////////////////////get stamp////////////////////////////////////////////

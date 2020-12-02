@@ -520,8 +520,9 @@ animation: SlideDown .5s ease-in-out forwards;
   width: 100%;
  }
  
- td {
+ td,th {
   padding: 8px;
+  font-size: 11px;
   
   a {
    position: relative;

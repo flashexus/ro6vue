@@ -8,6 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+require('jquery');
+require('popper.js/dist/umd/popper');
+require('bootstrap/dist/js/bootstrap');
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all'
 import '../stylesheets/application';
