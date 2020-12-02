@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.role == User::ROLE_TYPE[0]
       admin_root_path
     else
-      points_path
+      stamps_new_path
     end
   end
 end
