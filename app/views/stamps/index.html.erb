@@ -32,7 +32,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石西エリア"][0]['id'] %></span>
                 <% else %>
-                   <h1>1</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -42,7 +42,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石央エリア"][0]['id'] %></span>
                 <% else %>
-                   <h1>1</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -52,7 +52,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石東エリア"][0]['id'] %></span>
                 <% else %>
-                   <h1>1</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -63,7 +63,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石西エリア"][1]['id'] %></span>
                 <% else %>
-                   <h1>2</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -74,7 +74,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石央エリア"][1]['id'] %></span>
                 <% else %>
-                   <h1>2</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -84,7 +84,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石東エリア"][1]['id'] %></span>
                 <% else %>
-                   <h1>2</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -95,7 +95,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石西エリア"][2]['id'] %></span>
                 <% else %>
-                   <h1>3</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -106,7 +106,7 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石央エリア"][2]['id'] %></span>
                 <% else %>
-                   <h1>3</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -117,12 +117,12 @@
                   <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"><%= @bingo["石東エリア"][2]['id'] %></span>
                 <% else %>
-                   <h1>3</h1>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
                 <% end %>
               </div>
             </li>
           </div><!-- / .vl-stamp-listWrap -->
-<p>現在のビンゴ数は<%= @bingo_cnt %></p>
+          <h3>現在のビンゴ数は<%= @bingo_cnt %></h3>
             <div class="row mt-1">
               <div class="vl-apply text-center col-6">
               <% if @bingo_cnt == 0 || current_user.apply_flg == TRUE %>

@@ -22,8 +22,8 @@
            <% end %>
         </li>
         <li>
-           <%= link_to(home_policy_path ,class:"entry", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-book-open"></i></br><span>利用<br>規約</span>
+           <%= link_to(home_policy_path ,class:"policy", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-book-open"></i></br><span>利用規約</span>
            <% end %>
         </li>
         <li>
@@ -33,7 +33,7 @@
         </li>
         <li>
           <% if user_signed_in? %>
-              <%= link_to( destroy_user_session_path, method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+              <%= link_to( destroy_user_session_path, class:"logout", method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i></br><span>ログアウト</span>
               <% end %>
           <% else %>

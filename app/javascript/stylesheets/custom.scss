@@ -47,6 +47,17 @@
  background-image:url("scss_images/main03.jpg");
 }
 
+.alert{
+ padding: 5px;
+ background: #fff;
+ border-radius: 4px;
+ color:$accent-color;
+ font-size: 14px;
+ width: 90%;
+ text-align: center;
+ margin: 0 auto　20px;
+}
+
 .vl-appTop-header {
  text-align: center;
  margin-bottom: 15px;
@@ -297,12 +308,12 @@
      }
     }
     
-    &.entry {
-     color: $nihonisan-color;
-     background: lighten($nihonisan-color, 50%);
+    &.logout {
+     color:$gray-800;
+     background: lighten($gray-800, 50%);
      
      &.current,&:hover{
-      background: $nihonisan-color;
+      background: $gray-800;
      }
     }
     
