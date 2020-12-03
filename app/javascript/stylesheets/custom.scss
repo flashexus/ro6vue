@@ -134,10 +134,10 @@
  }
  
  .vl-cardWrap{
-  padding: 30px 40px 60px;
+  padding: 30px 20px 60px;
   
   @include xss{
-   padding: 20px 15px 40px;
+   padding: 20px 10px 40px;
   }
  }
  
@@ -578,6 +578,8 @@ animation: SlideDown .5s ease-in-out forwards;
 // ================================
 // スタンプページ
 // ================================
+.stamp-list{
+
 .vl-stamp-listWrap{
  ul {
   padding: 0 1em 2em;
@@ -586,7 +588,22 @@ animation: SlideDown .5s ease-in-out forwards;
   li {
    text-align: center;
    list-style: none;
-   padding: 1em;
+   &.area {
+    color: #fff;
+    padding: 5px;
+   }
+   &.sekisei {
+    background: $sekitou-color;
+   }
+   &.sekiou{
+    background: $sekiou-color;
+   }
+   &.sekitou{
+    background: $sekisei-color;
+   }
+   &.stamp {
+    padding: 0;
+   }
    .vl-rectWrap {
     width: 100%;
     padding-top: 100%;
@@ -595,7 +612,8 @@ animation: SlideDown .5s ease-in-out forwards;
  }
  .vl-stmpImg {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
+  padding: 5px 10px;
   img {
    width: 100%;
    height: auto;
@@ -603,7 +621,7 @@ animation: SlideDown .5s ease-in-out forwards;
  }
  
  .vl-stmpNo {
-  font-size: 18px;
+  font-size: 14px;
  }
 }
 
@@ -644,7 +662,7 @@ animation: SlideDown .5s ease-in-out forwards;
   border: 3px solid #fff;
  }
 }
-
+}
 // ================================
 // コンテンツ
 // ================================
