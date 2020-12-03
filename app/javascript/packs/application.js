@@ -46,6 +46,7 @@ if ( deviceType == 'iPhone' && browerType != 'Safari' ) {
 if ( deviceType == 'Android' && browerType != 'Chrome' ) {
   alert('Androidをお使いの方はChromeからアクセスしてください');
 }
+alert(browerType + '+' + deviceType);
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -108,9 +109,11 @@ function judgeDeviceType(UserAgent){
     return 'iPad';
   } else if(UserAgent.indexOf('android') != -1) {
     if(UserAgent.indexOf('mobile') != -1) {
-      return 'android_smafo';
+      //アンドロイド スマフォの場合
+      return 'Android';
     } else {
-      return 'android_tablet';
+      //アンドロイド タブレットの場合
+      return 'Android';
     }
   }
 }
