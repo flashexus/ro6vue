@@ -52,7 +52,7 @@ class StampsController < ApplicationController
     #user = User.find_by(current_user.id)
     # user.apply_flg = TRUE
     # user.save!
-    redirect_to stamps_thanks_path
+    redirect_to action: "thanks"
   end
 
   def thanks

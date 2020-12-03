@@ -12,7 +12,7 @@
         </div>
         <div class="vl-cardWrap">
           <p>おめでとうございます、景品を申し込むことができます。<br>景品の詳細は<a href="" target="_blank">こちら</a></p>
-          <%= form_with url:stamps_servey_path  do |f| %>
+          <%= form_with url:stamps_servey_path, local: true  do |f| %>
           <%= f.hidden_field :bingo_cnt, :value => params["bigo_cnt"] %>
           <%= f.hidden_field :sp_cnt, :value => params["sp_cnt"] %>
             <div class="vr-formWrap">
