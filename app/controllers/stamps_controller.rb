@@ -17,7 +17,7 @@ class StampsController < ApplicationController
       hash = []
       @stamps.each do |stamp|
         if(area === stamp.point.area_group)
-        hash << {'id' => stamp.point.id, 'name' => stamp.point.name}
+        hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name}
         end
       end
       @bingo[area] = hash
@@ -32,18 +32,32 @@ class StampsController < ApplicationController
   end
 
   def servey
-  end
+    @question = Servey::QUESTION
+    bingo_cnt = params[:bingo_cnt]
+    @gift = { :'1ビンゴ' => Servey::GIFT['1ビンゴ'] }
+
+    if bingo_cnt.to_i  > 2
+      @gift['2ビンゴ'] = Servey::GIFT['2ビンゴ']
+    end
+    if bingo_cnt.to_i >= 6
+      @gift['6ビンゴ'] = Servey::GIFT['6ビンゴ']
+    end
+ 
+    end
 
   def send_mail
     #bingo count などもっていかないといけない
 
-    ApplyMailer.for_campaign(params,current_user).deliver
-    user = User.find_by(current_user.id)
-    user.apply_flg = TRUE
-    user.save!
-
-    render 'new'
+    #ApplyMailer.for_campaign(params,current_user).deliver
+    #user = User.find_by(current_user.id)
+    # user.apply_flg = TRUE
+    # user.save!
+    redirect_to action: "thanks"
   end
+
+  def thanks
+  end
+
   # GET /stamp/new
   def new
     @stamp = Stamp.new

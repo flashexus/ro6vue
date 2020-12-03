@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'points#index'
+  root 'stamps#new'
   get 'home/index'
   get 'home/policy'
 
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'stamps/new',to: 'stamps#new'
   get 'stamps/servey', to: 'stamps#servey'
   post 'stamps/servey', to: 'stamps#send_mail'
+  get 'stamps/thanks', to: 'stamps#thanks'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

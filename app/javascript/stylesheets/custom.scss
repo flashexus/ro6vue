@@ -47,6 +47,28 @@
  background-image:url("scss_images/main03.jpg");
 }
 
+.alert{
+ padding: 5px;
+ background: #fff;
+ border-radius: 4px;
+ color:$accent-color;
+ font-size: 14px;
+ width: 90%;
+ text-align: center;
+ margin: 0 auto 20px;
+}
+.notice{
+  padding: 5px;
+  background: #fff;
+  border-radius: 4px;
+  color:$accent-color;
+  font-size: 14px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 20px;
+ }
+
+
 .vl-appTop-header {
  text-align: center;
  margin-bottom: 15px;
@@ -112,10 +134,10 @@
  }
  
  .vl-cardWrap{
-  padding: 30px 40px 60px;
+  padding: 30px 20px 60px;
   
   @include xss{
-   padding: 20px 15px 40px;
+   padding: 20px 10px 40px;
   }
  }
  
@@ -140,10 +162,6 @@
    display: inline-block;
    margin-left: 5px;
    
-   @include xss {
-    display: block;
-    margin-left: 0;
-   }
   }
  }
 }
@@ -297,12 +315,12 @@
      }
     }
     
-    &.entry {
-     color: $nihonisan-color;
-     background: lighten($nihonisan-color, 50%);
+    &.logout {
+     color:$gray-800;
+     background: lighten($gray-800, 50%);
      
      &.current,&:hover{
-      background: $nihonisan-color;
+      background: $gray-800;
      }
     }
     
@@ -385,7 +403,7 @@ animation: SlideDown .5s ease-in-out forwards;
 // ================================
 .vl-readQrWrap {
  
- a {
+  button {
   position: relative;
   width: 200px;
   height: 200px;
@@ -393,7 +411,7 @@ animation: SlideDown .5s ease-in-out forwards;
   display: -moz-flex !important;
   display: -ms-flex !important;
   display: -o-flex !important;
-  display: flex !important;
+  display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
@@ -408,7 +426,32 @@ animation: SlideDown .5s ease-in-out forwards;
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
    }
+   
+   .d-block {
+    margin: 0 auto 5px;
+   }
  }
+ 
+ &.video-canvas
+ canvas{
+  border: 3px solid $accent-color;
+  padding: 2px;
+  position: relative;
+  border-radius: 8px;
+  
+  &::before {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: #000;
+   content: '';
+   color: #000;
+   width: 50px;
+   height: 50px;
+  }
+ }
+ 
+ 
 }
 
 // ================================
@@ -473,8 +516,9 @@ animation: SlideDown .5s ease-in-out forwards;
   width: 100%;
  }
  
- td {
+ td,th {
   padding: 8px;
+  font-size: 11px;
   
   a {
    position: relative;
@@ -534,6 +578,8 @@ animation: SlideDown .5s ease-in-out forwards;
 // ================================
 // スタンプページ
 // ================================
+.stamp-list{
+
 .vl-stamp-listWrap{
  ul {
   padding: 0 1em 2em;
@@ -542,7 +588,22 @@ animation: SlideDown .5s ease-in-out forwards;
   li {
    text-align: center;
    list-style: none;
-   padding: 1em;
+   &.area {
+    color: #fff;
+    padding: 5px;
+   }
+   &.sekisei {
+    background: $sekitou-color;
+   }
+   &.sekiou{
+    background: $sekiou-color;
+   }
+   &.sekitou{
+    background: $sekisei-color;
+   }
+   &.stamp {
+    padding: 0;
+   }
    .vl-rectWrap {
     width: 100%;
     padding-top: 100%;
@@ -551,7 +612,8 @@ animation: SlideDown .5s ease-in-out forwards;
  }
  .vl-stmpImg {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
+  padding: 5px 10px;
   img {
    width: 100%;
    height: auto;
@@ -559,7 +621,7 @@ animation: SlideDown .5s ease-in-out forwards;
  }
  
  .vl-stmpNo {
-  font-size: 18px;
+  font-size: 14px;
  }
 }
 
@@ -600,7 +662,7 @@ animation: SlideDown .5s ease-in-out forwards;
   border: 3px solid #fff;
  }
 }
-
+}
 // ================================
 // コンテンツ
 // ================================

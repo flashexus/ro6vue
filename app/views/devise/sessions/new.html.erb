@@ -1,12 +1,17 @@
 <body class="login vl-bodyBg">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <div class="vl-mainBg cover-container d-flex w-100 mx-auto flex-column pt-5">
+  <% unless notice.nil? %>
+  <p class="notice"><%= notice %></p>
+  <%end%>
+  <% unless alert.nil? %>
+  <p class="alert"><%= alert %></p>
+  <%end%>
     <header class="vl-appTop-header">
       <div class="vl-appTitle d-flex justify-content-center container">
         <h1><%= image_tag "image_stamps/App_titlelogo_color_futi.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></h1>
       </div>
     </header>
+
     <div class="vl-contentsWrap container">
       <div class="vl-enterBlock rounded m-auto card shadow">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

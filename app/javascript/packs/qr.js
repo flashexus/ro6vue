@@ -1,4 +1,5 @@
 import 'jsqr';
+import "font-awesome-animation/dist/font-awesome-animation.min.css";
 require('jquery')
 //////////////////////////////////////QR読み取り//////////////////////////////////
 document.querySelector("#flame").addEventListener("click", () => {
