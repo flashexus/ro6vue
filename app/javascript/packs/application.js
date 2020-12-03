@@ -40,10 +40,10 @@ var userAgent = window.navigator.userAgent.toLowerCase();
 var browerType = judgeBrowserType(userAgent);
 var deviceType = judgeDeviceType(userAgent);
 
-if ( deviceType === 'iPhone' && browerType != 'Safari' ) {
+if ( deviceType == 'iPhone' && browerType != 'Safari' ) {
   alert('iPhoneをお使いの方はSafariからアクセスしてください');
 }
-if ( deviceType === 'Android' && browerType != 'Chrome' ) {
+if ( deviceType == 'Android' && browerType != 'Chrome' ) {
   alert('Androidをお使いの方はChromeからアクセスしてください');
 }
 
