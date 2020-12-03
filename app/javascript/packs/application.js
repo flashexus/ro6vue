@@ -46,7 +46,8 @@ if ( deviceType == 'iPhone' && browerType != 'Safari' ) {
 if ( deviceType == 'Android' && browerType != 'Chrome' ) {
   alert('Androidをお使いの方はChromeからアクセスしてください');
 }
-alert(browerType + '+' + deviceType);
+//alert(browerType + '+' + deviceType);
+alert(userAgent);
 
 
 ///////////////////////////////////////////////////////////////////////////////
