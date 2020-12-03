@@ -47,7 +47,7 @@ if ( deviceType == 'Android' && browerType != 'Chrome' ) {
   alert('Androidをお使いの方はChromeからアクセスしてください');
 }
 //alert(browerType + '+' + deviceType);
-alert(userAgent);
+//alert(userAgent);
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -92,7 +92,9 @@ function judgeBrowserType(UserAgent){
       return 'Edge';
   } else if(UserAgent.indexOf('chrome') != -1) {
       return 'Chrome';
-  } else if(UserAgent.indexOf('safari') != -1) {
+    } else if(UserAgent.indexOf('crios') != -1) {
+      return 'Chrome';
+    } else if(UserAgent.indexOf('safari') != -1) {
       return 'Safari';
   } else if(UserAgent.indexOf('firefox') != -1) {
       return 'FireFox';
