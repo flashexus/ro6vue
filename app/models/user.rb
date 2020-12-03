@@ -11,5 +11,5 @@ class User < ApplicationRecord
   #Gender Type
   GENDER_TYPE = %w(男性 女性 その他)
   #AGE Type
-  AGE_TYPE = %w(10代以下 10代 20代 30代 40代 50代 60代 90代 90代以上)
+  AGE_TYPE = %w(10代以下 10代 20代 30代 40代 50代 60代 70代 70代以上)
 end

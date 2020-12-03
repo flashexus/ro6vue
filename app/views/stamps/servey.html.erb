@@ -23,7 +23,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-input mb-2">
-                     <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", value:current_user.email %>
+                     <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", value:current_user.email, readonly:"readonly" %>
                   </div>
                </dd>
               </dl>
@@ -50,7 +50,7 @@
 　                    <input type="text" id="txtZipCode" name="zipcode" placeholder="例：6970041">
                     </div>
                     <div class="vl-zipInput col-sm-4 mb-3 mb-sm-0">
-                      <a href="" target="_blank" onclick="return false;" id="get_address" ><span>郵便番号から住所を入力 <i class="fas fa-external-link-alt"></i></span></a>
+                      <a href="" target="_blank" onclick="return false;" name="full_address" id="get_address" ><span>郵便番号から住所を入力 <i class="fas fa-external-link-alt"></i></span></a>
                     </div>
                   </div>
                   <div class="vl-input">
@@ -66,7 +66,7 @@
                 </dt>
                 <dd class="col-sm-9">
                   <div class="vl-halfInput">
-                    <%= f.text_field :name, class: "form-control" , required:"required", placeholder:"石見　太郎" %>
+                    <%= f.text_field :full_name, class: "form-control" , required:"required", placeholder:"石見　太郎" %>
                   </div>
                 </dd>
               </dl>
@@ -75,11 +75,11 @@
                 <dt class="col-sm-3">
                   <label class="vl-label">応募商品</label><span class="vl-required">必須</span>
                 </dt>
-                <dd class="form-row col-sm-4">
+                <dd class="form-row col-sm-9">
                   <div class="vl-radio">
                     <div id="entry_sex">
                       <div class="vl-select">
-                        <%= f.select :gift, {'景品１': '景品１', '景品２': '景品１'}, {include_blank: true}, {class: "form-control", required:"required"} %>
+                        <%= f.select :gift, @gift, {include_blank: true}, {class: "form-control", required:"required"} %>
                       </div>
                     </div>
                   </div>
@@ -87,18 +87,18 @@
               </dl>
               <dl class="form-group form-row">
                 <dt class="col-sm-5">
-                  <label class="vl-label" for="entry_job">どこでスタンプラリーを知りましたか？</label>
+                  <label class="vl-label" for="entry_job">どこでいわみくるりを知りましたか？</label>
                 </dt>
                 <dd class="form-group form-row col-sm-4">
                   <div class="vl-select">
-                    <%= f.select :question1, {'ネット': 'ネット', 'ラジオ': 'ネット'},{include_blank: true}, {class: "form-control"} %>
+                    <%= f.select :question1, @question,{include_blank: true}, {class: "form-control"} %>
                   </div>
                 </dd>
               </dl>
 
               <dl class="form-group form-row">
                 <dt class="col-sm-12">
-                  <label class="vl-label" for="entry_user_name">石見の良かったところやスタンプラリーについてのご意見など</label>
+                  <label class="vl-label" for="entry_user_name">「いわみくるり」についてのご意見や改善点などございましたらご記入ください。</label>
                 </dt>
                 <dd class="form-group form-row col-sm-12">
                     <%= f.text_field :question2, class: "form-control ",style:"width:100%; height: 200px;" %>
@@ -111,34 +111,33 @@
                 </div>
               </div>
             </div><!-- / .vr-formWrap -->
-          <% end %>
           <p style="text-align:center;">
-            <input type="checkbox" id="check" name="個人情報の取り扱い" value="同意する" required="required">下記の個人情報の取り扱いに同意する
+            <div class="vl-checkbox form-check text-center">
+              <input type="checkbox" class="form-check-input" id="check" name="個人情報の取り扱い" value="同意する" required="required">
+              <label class="form-check-label">下記の個人情報の取り扱いに同意する</label>
+            </div>
           </p>
+          <% end %>
+
           <h4  style="text-align:center;">個人情報の取り扱いについて</h4>
           <div class="mb-3" style="overflow:scroll; height:150px; overflow-x:hidden; " >
           <p>
-            1. 事業者の氏名又は名称<br />
-                  　　株式会社バイタルリード<br />
-            2. 個人情報保護管理者（若しくはその代理人）の氏名又は職名、所属及び連絡先<br />
-                  　管理者職名：秋国信臣<br />
-                  　所属部署：総合計画部<br />
-                  　連絡先：0853-22-9690<br />
-            3. 個人情報の利用目的<br />
-            　 ・サービスのお申し込み受付と、当該サービスの実施、運営（本人への連絡を含む）のため<br />
-            　 ・本サービスに関連した、各種情報のご案内のため<br />
-            4. 個人情報取扱いの委託<br />
-            　当社は事業運営上、前項利用目的の範囲に限って個人情報を外部に委託することがあります。この場合、個人情報保護水準の高い委託先を選定し、個人　情報の適正管理・機密保持についての契約を交わし、適切な管理を実施させます。<br />
-            5. 個人情報の開示等の請求<br />
-                 ご本人様は、当社に対してご自身の個人情報の開示等（利用目的の通知、開示、内容の訂正・追加・削除、利用の停止または消去、第三者への提供の停止）に関して、下記の当社問合わせ窓口に申し出ることができます。その際、当社はお客様ご本人を確認させていただいたうえで、合理的な期間内に対応いたします。<br />
-                 【お問合せ窓口】<br />
-             島根県出雲市荻杼町274-2<br />
-            メールアドレス：privacy@vitallead.co.jp　TEL：0853-22-9690<br />
-             （受付時間　8：30～17：30※）<br />
-            ※土日祝日、年末年始、夏季休暇期間は翌営業日以降の対応とさせていただきます。<br />
-            6. 個人情報を提供されることの任意性について　<br />
-            　   　ご本人様が当社に個人情報を提供されるかどうかは任意によるものです。 ただし、必要な項目をいただけない場合、適切な対応ができない場合があります。
-            </p>
+            個人情報の取り扱い（プライバシーポリシー）について<br>
+            1.個人情報とは<br>
+            「個人情報」とは、スマートフォンから本スタンプラリーサイトを通じて提供いただいた住所、氏名、電話番号、Eメールアドレスなど、特定の個人が識別できる情報をいいます。<br>
+            <br>2.個人情報の収集について
+            本スタンプラリーサイトを通じて個人情報を提供いただく際は、利用者の意思による情報提供を原則とします。個人情報の収集にあたっては、収集目的及び利用範囲を明確にします。<br>
+            <br>3.個人情報の利用及び提供について<br>
+            個人情報を利用者本人の同意なく、明示した収集目的及び利用範囲を超えて利用することはありません。応募時に入力頂いた個人情報はスタンプラリーの応募商品発送にのみ利用します。ただし、本人の承諾を得た場合や法令等により開示を求められた場合は、必要最低限の情報を開示させていただくことがあります。<br>
+            <br>4.個人情報の管理について<br>
+            収集した個人情報は、正規の権限を持つもののみが閲覧できるようにし、個人情報の漏えい、滅失、改ざん及びき損等しないように厳重に管理します。なお、サービス充実のため、業務委託先に本サイトの管理・運営を委託することがあります。利用者の個人情報の流出や不正アクセスなどが起こらないよう、業務委託先にも適切な管理を徹底させます。<br>
+            <br>5.個人情報の開示請求及び自己情報の訂正、削除及び中止に係る請求について
+            ご本人自らに関する個人情報の開示、訂正、変更、利用停止などお客様からの申し入れがあった際には、法令に定められた場合を除き、直ちに適切な対応を行なうことに努めます。<br>
+            ■個人情報保護に関するお問合せ先<br>
+            〒697-0041　島根県浜田市片庭町254<br>
+            石見観光振興協議会（事務局：島根県西部県民センター商工観光部観光振興課）<br>
+            電話：0855-29-5641（平日9時～17時）<br>
+          </p>
           </div>
         <%= render('shared/menu') %>
         </div><!-- / .vl-cardWrap -->

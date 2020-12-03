@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_095317) do
+ActiveRecord::Schema.define(version: 2020_12_03_060305) do
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 2020_11_30_095317) do
     t.string "TEL"
     t.string "holiday"
     t.string "code"
+  end
+
+  create_table "serveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "TEL_number"
+    t.string "address"
+    t.string "full_name"
+    t.string "gift"
+    t.string "question1"
+    t.string "question2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_serveys_on_user_id"
   end
 
   create_table "stamps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -61,4 +74,5 @@ ActiveRecord::Schema.define(version: 2020_11_30_095317) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "serveys", "users"
 end

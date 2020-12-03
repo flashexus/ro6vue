@@ -1,0 +1,27 @@
+
+<% set_meta_tags title: 'ご応募ありがとうございます', description: 'ご応募ありがとうございます' %>
+<body class="thanks vl-bodyBg login-user">
+  <header class="vl-appTop-header">
+    <div class="vl-appTitle d-flex justify-content-center container">
+      <p><%= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
+    <div class="vl-contentsWrap">
+      <div class="vl-contentBlock rounded m-auto bg-white card">
+        <div class="card-header">
+          <h1 class="text-main-color">ご応募ありがとうございます</h1>
+        </div>
+        <div class="vl-cardWrap">
+          <div class="thanxWrap">
+           <p>当選者の発表は商品の発送をもって代えさせていただきます。</p>
+           <p>ご利用ありがとうございました。</p>
+           <a href="https://www.all-iwami.com/contents/stamprally/" class="btn btn-main-color btn-md btn-block">いわみくるりホームへ戻る</a>
+          </div>
+          <%= render('shared/menu') %>
+        </div><!-- / .vl-cardWrap -->
+      </div><!-- / .vl-enterBlock -->
+    </div><!-- / .vl-enterWrap -->
+  </div><!-- / .container -->
+</body>
