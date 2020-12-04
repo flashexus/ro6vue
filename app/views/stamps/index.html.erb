@@ -149,7 +149,7 @@
               <% if @bingo_cnt == 0 || current_user.apply_flg == TRUE %>
                 <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選に参加</a>
               <% else %>
-                <%= link_to '抽選応募', stamps_servey_path(bingo_cnt: @bingo_cnt, sp_cnt: @sp_cnt), 
+                <%= link_to '抽選応募', stamps_servey_path, 
                     { :data =>{"role" => "button","turbolinks" => "false"}, 
                       :class => "btn btn-main-color btn-lg"} %>
               <% end %>
@@ -160,9 +160,15 @@
             </div>
 
             <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
-            <div id="getPopuoImg" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+            <div id="getPopuoImg1" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
               <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
-              <button id="getStampBtn" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+              <button id="getStampBtn1" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="getPopuoImg2" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+              <%= image_tag "image_stamps/pop_stamp_bingo.jpg",alt:"ビンゴを取得しました" %>
+              <button id="getStampBtn2" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>

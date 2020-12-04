@@ -56,7 +56,11 @@ document.querySelector("#flame").addEventListener("click", () => {
 	    $.ajax({ type: 'POST', url: '/stamps',
                data: ('point_id='+code.data), dataType: 'json' 
             }).done(function(data){
-              location.href="/stamps?get=true";
+              if(data.message =='BINGO'){
+                location.href="/stamps?get=bingo";
+              }else{
+                location.href="/stamps?get=stamp";
+              }
             }).fail(function(data){
               alert(data.responseText);  // 取得した文字列
               location.href="/stamps/new";

@@ -5,35 +5,12 @@ class StampsController < ApplicationController
   # GET /stamp
   # GET /stamp.json
   def index
-    @stamps = Stamp.where(user_id:current_user.id)
-    areas = Point::AREA__GROUP_TYPE
-    @bingo = {}
-    ##取得スタンプ内の特別数をカウント
-    @sp_record = Stamp.includes(:point).where(user_id:current_user.id).where(points:{sp_flg:true})
-    @sp_cnt = @sp_record.count
+    @bingo_flg = updateBingoStatus()
 
-  #スタンプ情報をエリアごとにハッシュ配列に並び替え
-    areas.each do |area|
-      hash = []
-      @stamps.each do |stamp|
-        if(area === stamp.point.area_group)
-        hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name}
-        end
-      end
-      @bingo[area] = hash
-    end
+    @status = BingoStatus.find_by(user_id:current_user.id)
+    @bingo_cnt = @status.bingo_cnt
+    @bingo = JSON.parse(@status.bingo_matrix)
 
-    test_bingo = JSON.generate(@bingo)
-    logger.debug("json test")
-    logger.debug(test_bingo)
-    logger.debug("json parse test")
-    logger.debug(JSON.parse(test_bingo))
-
-
-  #ビンゴ数の判定
-    @bingo_cnt = bingo(@bingo)
-
-    gon.stamps = @stamps
     gon.bingo = @bingo
     gon.bingo_cnt = @bingo_cnt
   end
@@ -63,10 +40,13 @@ class StampsController < ApplicationController
     @servey.gift = params['gift']
     @servey.question1 = params['question1']
     @servey.question2 = params['question2']
+    #個人情報を保管しない場合は↓をコメントアウトする
     @servey.save!
 
-    ApplyMailer.for_campaign(params,current_user).deliver
-    
+    @status = BingoStatus.find_by(user_id:current_user.id)
+    ApplyMailer.for_campaign(@servey,@status,current_user).deliver
+
+    #応募済みフラグを立てる
     user = User.find(current_user.id)
     user.apply_flg = TRUE
     user.save!
@@ -108,8 +88,12 @@ class StampsController < ApplicationController
       else
         respond_to do |format|
           if @stamp.save
-            #updateBingoStatus()
-            format.json { render :json => { status: "200" } }
+            bingo_flg = updateBingoStatus()
+            if bingo_flg === true
+              format.json { render :json => { status: "200", message: "Bingo" } }
+            else
+              format.json { render :json => { status: "200", message: "Stamp" } }
+            end
           else
             format.json { render json: @stamp.errors, status: :unprocessable_entity }
           end
@@ -187,6 +171,7 @@ class StampsController < ApplicationController
 
       return yoko_cnt + tate_cnt
     end
+
     def updateBingoStatus
       stamps = Stamp.where(user_id:current_user.id)
       areas = Point::AREA__GROUP_TYPE
@@ -195,7 +180,7 @@ class StampsController < ApplicationController
       bingo_matrix = {}
       areas.each do |area|
         hash = []
-        @stamps.each do |stamp|
+        stamps.each do |stamp|
           if(area === stamp.point.area_group)
           hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name}
           end
@@ -207,15 +192,22 @@ class StampsController < ApplicationController
 
       ##取得スタンプ内の特別数をカウント
       sp_record = Stamp.includes(:point).where(user_id:current_user.id).where(points:{sp_flg:true})
-      sp_cnt = @sp_record.count
-  
-      @status = Bingo_Status.new
+      sp_cnt = sp_record.count
+      if BingoStatus.exists?(user_id:current_user.id)
+        @status = BingoStatus.find_by(user_id:current_user.id)
+      else
+        @status = BingoStatus.new
+      end
       @status.user_id = current_user.id
-      @status.stamp_cnt = stamps
+      @status.stamp_cnt = stamps.count
+      ##ビンゴ獲得の判定
+      if(bingo_cnt > @status.bingo_cnt)
+        bingo_flg = true
+      end
       @status.bingo_cnt = bingo_cnt
       @status.sp_cnt = sp_cnt
       @status.bingo_matrix = JSON.generate(bingo_matrix)
       @status.save
-
+      return bingo_flg
     end
 end
