@@ -1,13 +1,13 @@
-<%= @form['name'] %> 様　から申し込みがありました。
+<%= @form['full_name'] %> 様　から申し込みがありました。
 
 Email：<%= @form['email'] %>
 連絡先：<%= @form['TEL_number'] %>
 郵便番号：<%= @form['zipcode'] %>
 お届け先：<%= @form['address'] %>
-宛名：<%= @form['name'] %>
+宛名：<%= @form['full_name'] %>
 
 応募商品：<%= @form['gift'] %>
-登録番号：<%= @user['id'] %>
+登録ID：<%= @user['id'] %>
 
 ビンゴ数：<%= @form['bingo_cnt'] %>
 日本遺産訪問数：<%= @form['sp_cnt'] %>

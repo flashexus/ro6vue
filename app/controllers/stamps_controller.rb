@@ -36,7 +36,7 @@ class StampsController < ApplicationController
     bingo_cnt = params[:bingo_cnt]
     @gift = { :'1ビンゴ' => Servey::GIFT['1ビンゴ'] }
 
-    if bingo_cnt.to_i  > 2
+    if bingo_cnt.to_i >= 2
       @gift['2ビンゴ'] = Servey::GIFT['2ビンゴ']
     end
     if bingo_cnt.to_i >= 6
@@ -47,11 +47,22 @@ class StampsController < ApplicationController
 
   def send_mail
     #bingo count などもっていかないといけない
+    @servey = Servey.new
+    @servey.user_id = current_user.id
+    @servey.TEL_number = params['TEL_number']
+    @servey.address = params['address']
+    @servey.zipcode = params['zipcode']
+    @servey.full_name = params['full_name']
+    @servey.gift = params['gift']
+    @servey.question1 = params['question1']
+    @servey.question2 = params['question2']
+    @servey.save!
 
-    #ApplyMailer.for_campaign(params,current_user).deliver
-    #user = User.find_by(current_user.id)
-    # user.apply_flg = TRUE
-    # user.save!
+    ApplyMailer.for_campaign(params,current_user).deliver
+    
+    user = User.find(current_user.id)
+    user.apply_flg = TRUE
+    user.save!
     redirect_to action: "thanks"
   end
 

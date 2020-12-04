@@ -149,13 +149,13 @@
               <% if @bingo_cnt == 0 || current_user.apply_flg == TRUE %>
                 <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選に参加</a>
               <% else %>
-                <%= link_to '抽選に参加', stamps_servey_path(bingo_cnt: @bingo_cnt, sp_cnt: @sp_cnt), 
+                <%= link_to '抽選応募', stamps_servey_path(bingo_cnt: @bingo_cnt, sp_cnt: @sp_cnt), 
                     { :data =>{"role" => "button","turbolinks" => "false"}, 
                       :class => "btn btn-main-color btn-lg"} %>
               <% end %>
               </div>
               <div class="vl-apply text-center col-6">
-                <%= link_to 'QR読み取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-outline-info btn-lg "} %>
+                <%= link_to 'QR読取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-baseBg-color btn-lg "} %>
               </div>
             </div>
 
