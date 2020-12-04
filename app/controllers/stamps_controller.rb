@@ -23,6 +23,13 @@ class StampsController < ApplicationController
       @bingo[area] = hash
     end
 
+    test_bingo = JSON.generate(@bingo)
+    logger.debug("json test")
+    logger.debug(test_bingo)
+    logger.debug("json parse test")
+    logger.debug(JSON.parse(test_bingo))
+
+
   #ビンゴ数の判定
     @bingo_cnt = bingo(@bingo)
 
@@ -101,6 +108,7 @@ class StampsController < ApplicationController
       else
         respond_to do |format|
           if @stamp.save
+            #updateBingoStatus()
             format.json { render :json => { status: "200" } }
           else
             format.json { render json: @stamp.errors, status: :unprocessable_entity }
@@ -179,5 +187,35 @@ class StampsController < ApplicationController
 
       return yoko_cnt + tate_cnt
     end
+    def updateBingoStatus
+      stamps = Stamp.where(user_id:current_user.id)
+      areas = Point::AREA__GROUP_TYPE
 
+      #スタンプ情報をエリアごとにハッシュ配列に並び替え
+      bingo_matrix = {}
+      areas.each do |area|
+        hash = []
+        @stamps.each do |stamp|
+          if(area === stamp.point.area_group)
+          hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name}
+          end
+        end
+        bingo_matrix[area] = hash
+      end
+      #ビンゴ数の判定
+      bingo_cnt = bingo(bingo_matrix)
+
+      ##取得スタンプ内の特別数をカウント
+      sp_record = Stamp.includes(:point).where(user_id:current_user.id).where(points:{sp_flg:true})
+      sp_cnt = @sp_record.count
+  
+      @status = Bingo_Status.new
+      @status.user_id = current_user.id
+      @status.stamp_cnt = stamps
+      @status.bingo_cnt = bingo_cnt
+      @status.sp_cnt = sp_cnt
+      @status.bingo_matrix = JSON.generate(bingo_matrix)
+      @status.save
+
+    end
 end
