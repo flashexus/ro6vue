@@ -5,7 +5,7 @@ class StampsController < ApplicationController
   # GET /stamp
   # GET /stamp.json
   def index
-    # @bingo_flg = updateBingoStatus()
+    @bingo_flg = updateBingoStatus()
 
     @status = BingoStatus.find_by(user_id:current_user.id)
     @bingo_cnt = @status.bingo_cnt
