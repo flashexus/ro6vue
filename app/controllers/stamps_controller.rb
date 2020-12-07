@@ -5,7 +5,7 @@ class StampsController < ApplicationController
   # GET /stamp
   # GET /stamp.json
   def index
-    @bingo_flg = updateBingoStatus()
+    # @bingo_flg = updateBingoStatus()
 
     @status = BingoStatus.find_by(user_id:current_user.id)
     @bingo_cnt = @status.bingo_cnt
@@ -127,7 +127,12 @@ class StampsController < ApplicationController
       else
         respond_to do |format|
           if @stamp.save
-            format.html { redirect_to stamps_path, notice: 'Stamp was successfully created.' }
+            bingo_flg = updateBingoStatus()
+            if bingo_flg === true
+              format.html { redirect_to stamps_path(get: "bingo"), notice: 'Stamp was successfully created.' }
+            else
+              format.html { redirect_to stamps_path(get: "stamp"), notice: 'Stamp was successfully created.' }
+            end
           else
             format.html { render :new }
           end
