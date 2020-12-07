@@ -25,11 +25,8 @@ class StampsController < ApplicationController
       @gift['2ビンゴ'] = Servey::GIFT['2ビンゴ']
     end
     if bingo_cnt.to_i >= 6
-      @gift['6ビンゴ'] = Servey::GIFT['6ビンゴ']
+      @gift['ALLビンゴ'] = Servey::GIFT['6ビンゴ']
     end
-    logger.debug("test")
-    logger
-    logger.debug(@gift)
     end
 
   def send_mail

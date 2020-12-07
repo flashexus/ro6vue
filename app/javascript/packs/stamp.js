@@ -33,6 +33,11 @@ document.querySelector("#getStampBtn2").addEventListener("click", () => {
   stampPopupBg.hidden = true;
   getPopuoImg2.hidden = true;
 });
+document.getElementById("stampPopupBg").addEventListener("click", () => {
+  stampPopupBg.hidden = true;
+  getPopuoImg1.hidden = true;
+  getPopuoImg2.hidden = true;
+});
 
 
 // スタンプゲット時サンプル用

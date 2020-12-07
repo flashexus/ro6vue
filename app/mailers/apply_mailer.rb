@@ -1,6 +1,5 @@
 class ApplyMailer < ApplicationMailer
   def for_campaign(form,status,user)
-    logger.debug("mail_test")
     @form = form
     @status = status
     @user = user
