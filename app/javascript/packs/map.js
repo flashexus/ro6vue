@@ -29,15 +29,29 @@ window.onload = function(){
   $('#item2-tab').attr('aria-selected',true);
   $('#item2-tab').addClass('active');
 }
-  //////////////////////////////////////エリア選択表示//////////////////////////////////////
+//////////////////////////////////////エリア選択表示//////////////////////////////////////
 $('.nav-link').on('click', function () {
+  //エリア名の抽出
   gon.select_area = this.textContent.trim();
+  //表示中のスポットを削除
   jyosetuMap.removeAreaSpotMarker();
+  //選択エリアに合わせたスポットを表示
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
+  //表示位置の調整
   jyosetuMap.areafitBounds();
-  updateTable(gon.select_area);
-
+  //updateTable(gon.select_area);
 });
+
+//////////////////////////////////////施設名の選択//////////////////////////////////////
+// 車両名のクリック
+$('.shop_label').on('click', function () {
+  // 車両にズーム
+  var shop_name = this.textContent.trim();
+  console.log(shop_name);
+  var shop_label_options = {'zoom': false, 'pan': false};
+  jyosetuMap.clickShopLabel(shop_name, shop_label_options);
+});
+
 //////////////////////////////////////現在位置表示////////////////////////////////////////
 $('#getPosbtn01').on('click',function(){
   navigator.geolocation.getCurrentPosition(SetCrtPosMarker);
@@ -58,6 +72,8 @@ function updateTable(area) {
       area:area
     }
   }).done(function(data) {
-    $("#change").html(data);
+     $("#change").html(data);
   })
 }
+
+

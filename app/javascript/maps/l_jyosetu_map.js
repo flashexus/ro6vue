@@ -242,13 +242,17 @@ LJyosetuMap.prototype = {
                 let layer = L.marker([points[i].lat, points[i].lon], {icon: icon})
                     .bindPopup(points[i].name)
                     .addTo(this.map);
-                this.areaSpotMarkers.push(layer);
+                this.areaSpotMarkers.push({
+                    spot_name:points[i].name,
+                    address:points[i].desc,
+                    shop_type:points[i].shop_type,
+                    layer: layer});
             }
         }
     },
     removeAreaSpotMarker: function () {
         for( let i = 0; i < this.areaSpotMarkers.length; i+=1 ){
-            this.map.removeLayer(this.areaSpotMarkers[i]);
+            this.map.removeLayer(this.areaSpotMarkers[i].layer);
         }
         this.areaSpotMarkers = [];
     },
@@ -256,9 +260,37 @@ LJyosetuMap.prototype = {
      * すべてのショップが入るようにマップをフィットする
      */
     areafitBounds: function () {
-        var group = new L.featureGroup(this.areaSpotMarkers);
-        this.map.fitBounds(group.getBounds());
+        // var group = new L.featureGroup(this.areaSpotMarkers.layer);
+        // this.map.fitBounds(group.getBounds());
+
+        var latLngs = this.areaSpotMarkers.map(function (marker) {
+            return marker.layer.getLatLng();
+        });
+        if (latLngs.length === 0) return;
+        this.map.fitBounds(L.latLngBounds(latLngs));
+
     },
+    /**
+     * 車両名をクリックした際の挙動（zoom or pan)
+     */
+    clickShopLabel: function (name, options) {
+
+        for (var i = 0; i < this.areaSpotMarkers.length; i += 1) {
+		    var list_name = this.areaSpotMarkers[i].spot_name;
+            if (list_name === name) {
+                // pan
+                if (options['pan']) {
+                    this.map.panTo(this.areaSpotMarkers[i].layer.getLatLng());
+                    this.areaSpotMarkers[i].layer.openPopup();
+                }else{
+                // zoom
+                    this.map.fitBounds([this.areaSpotMarkers[i].layer.getLatLng()]);
+                    this.areaSpotMarkers[i].layer.openPopup();
+                }return;
+            }
+        }
+    },
+
     /**
      * エリアを追加する
      * @param geojson

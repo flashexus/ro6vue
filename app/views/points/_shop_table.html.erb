@@ -2,9 +2,15 @@
         <% @points.each do |point| %>
           <% if @select_area  === point.area_group %>
             <tr>
-              <td><%= point.name %></td>
+              <td><span class="shop_label" id="'shop_id_'<%=(point.show_no).to_i %>"><%= point.name %></span></td>
               <td><%= point.desc %></td>
               <td><%= point.shop_type %></td>
+            </tr>
+          <% else %>
+             <tr hidden >
+              <td hidden><span class="shop_label" id="'shop_id_'<%=(point.show_no).to_i %>"><%= point.name %></span></td>
+              <td hidden><%= point.desc %></td>
+              <td hidden><%= point.shop_type %></td>
             </tr>
           <% end %>
         <% end %>
