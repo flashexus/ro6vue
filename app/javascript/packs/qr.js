@@ -56,7 +56,6 @@ document.querySelector("#flame").addEventListener("click", () => {
 	    $.ajax({ type: 'POST', url: '/stamps',
                data: ('point_id='+code.data), dataType: 'json' 
             }).done(function(data){
-              alert(data.message); 
               if(data.message =='Bingo'){
                 location.href="/stamps?get=bingo";
               }else{
