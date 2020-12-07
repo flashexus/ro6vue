@@ -17,7 +17,8 @@ class StampsController < ApplicationController
 
   def servey
     @question = Servey::QUESTION
-    bingo_cnt = params[:bingo_cnt]
+    @status = BingoStatus.find_by(user_id:current_user.id)
+    bingo_cnt = @status.bingo_cnt
     @gift = { :'1ビンゴ' => Servey::GIFT['1ビンゴ'] }
 
     if bingo_cnt.to_i >= 2
@@ -26,7 +27,9 @@ class StampsController < ApplicationController
     if bingo_cnt.to_i >= 6
       @gift['6ビンゴ'] = Servey::GIFT['6ビンゴ']
     end
- 
+    logger.debug("test")
+    logger
+    logger.debug(@gift)
     end
 
   def send_mail
