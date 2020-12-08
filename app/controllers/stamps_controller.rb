@@ -43,8 +43,10 @@ class StampsController < ApplicationController
     #個人情報を保管しない場合は↓をコメントアウトする
     @servey.save!
 
+    #応募内容をメール送信(管理者、ユーザー)
     @status = BingoStatus.find_by(user_id:current_user.id)
     ApplyMailer.for_campaign(@servey,@status,current_user).deliver
+    ApplyMailer.thanks_mail(@servey,@status,current_user).deliver
 
     #応募済みフラグを立てる
     user = User.find(current_user.id)

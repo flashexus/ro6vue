@@ -1,4 +1,7 @@
-<%= @form['full_name'] %> 様　から申し込みがありました。
+<%= @form['full_name'] %> 様
+
+以下の内容で
+いわみくるりスタンプラリー抽選への応募を受付いたしました。
 
 Email：<%= @user['email'] %>
 連絡先：<%= @form['TEL_number'] %>
@@ -7,14 +10,7 @@ Email：<%= @user['email'] %>
 宛名：<%= @form['full_name'] %>
 
 応募商品：<%= @form['gift'] %>
-登録ID：<%= @user['id'] %>
-
-日本遺産訪問数：<%= @status['sp_cnt'] %>
 ビンゴ数：<%= @status['bingo_cnt'] %>
-獲得スタンプ数：<%= @status['stamp_cnt'] %>
-
-
-スタンプ状態：<%= @status['bingo_matrix'] %>
 
 
 どこでスタンプラリーを知りましたか？
@@ -23,3 +19,5 @@ Email：<%= @user['email'] %>
 石見の良かったところやスタンプラリーについてのご意見など
 <%= @form['question2'] %>
 
+当選の発表は商品の発送をもって代させていただきます。
+ご利用ありがとうございました。
