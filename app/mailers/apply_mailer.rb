@@ -1,4 +1,6 @@
 class ApplyMailer < ApplicationMailer
+  default from: Rails.application.credentials.from
+
   def for_campaign(form,status,user)
     @form = form
     @status = status

@@ -79,3 +79,10 @@ ngrok http http://192.168.99.100:3000
           RAILS_ENV: production
           RAILS_ENV: test
 ```
+## クレデンシャルの編集の仕方
+Dockerの場合はエディターがインストールされていないので、都度インストールすること
+
+```
+EDITOR="vi" bin/rails credentials:edit --environment production
+```
+
