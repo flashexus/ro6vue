@@ -19,7 +19,12 @@ class PointDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     area_group: Field::String,
     shop_type: Field::String,
-    show_no: Field::Number
+    show_no: Field::Number,
+    sp_flg: Field::Boolean,
+    zipcode: Field::String,
+    TEL: Field::String,
+    holiday: Field::String,
+    code: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,6 +41,11 @@ class PointDashboard < Administrate::BaseDashboard
   path
   area_group
   shop_type
+  sp_flg
+  zipcode
+  TEL
+  holiday
+  code
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -52,7 +62,12 @@ class PointDashboard < Administrate::BaseDashboard
   updated_at
   area_group
   shop_type
-  ].freeze
+  sp_flg
+  zipcode
+  TEL
+  holiday
+  code
+].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -66,7 +81,12 @@ class PointDashboard < Administrate::BaseDashboard
   deleted_at
   area_group
   shop_type
-  ].freeze
+  sp_flg
+  zipcode
+  TEL
+  holiday
+  code
+].freeze
 
   # COLLECTION_FILTERS
   # a hash that defines filters that can be used while searching via the search

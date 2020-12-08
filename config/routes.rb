@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :users
     resources :points
     resources :stamps
-    
+    resources :bingo_statuses
     root to: "users#index" # <--- Root route
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
