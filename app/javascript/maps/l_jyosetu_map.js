@@ -194,7 +194,7 @@ LJyosetuMap.prototype = {
         var latlng = data;
         var icon = L.icon({
             iconUrl: icon_path,
-            iconSize: [32, 32],
+            iconSize: [24, 24],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
@@ -271,7 +271,7 @@ LJyosetuMap.prototype = {
 
     },
     /**
-     * 車両名をクリックした際の挙動（zoom or pan)
+     * 施設名をクリックした際の挙動（zoom or pan)
      */
     clickShopLabel: function (name, options) {
 

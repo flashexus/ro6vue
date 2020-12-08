@@ -4,7 +4,7 @@
             <tr>
               <td><span class="shop_label" id="shop_id_<%=(point.show_no).to_i %>"><%= point.name %></span></td>
               <td><%= point.desc %></td>
-              <td><%= point.shop_type %></td>
+              <td><%= image_tag @icon_hash[point.shop_type], :size =>'24x24',:name => [point.shop_type], :longdesc => [point.shop_type] %></td>
             </tr>
           <% end %>
         <% end %>
