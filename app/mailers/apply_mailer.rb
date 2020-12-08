@@ -5,7 +5,7 @@ class ApplyMailer < ApplicationMailer
     @user = user
     mail(
       subject: "抽選の応募がありました。", #メールのタイトル
-      to: @user['email'] #宛先
+      to: "iwamikururi@vitallead.co.jp" #管理者用アドレス
     ) do |format|
       format.text
     end
@@ -16,7 +16,7 @@ class ApplyMailer < ApplicationMailer
     @user = user
     mail(
       subject: "抽選の応募を受付ました", #メールのタイトル
-      to: @user['email'] #宛先
+      to: @user['email'] #応募したユーザーのアドレス
     ) do |format|
       format.text
     end
