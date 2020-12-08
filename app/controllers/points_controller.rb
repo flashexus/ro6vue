@@ -31,20 +31,11 @@ class PointsController < ApplicationController
 
   def ajax_area_shop
     @select_area = params[:area]
-    #@points = Point.where(area_group: @select_area)
-    @points = Point.all
+    @points = Point.where(area_group: @select_area)
     render partial: 'shop_table',
            locals: {points: @points, select_area:@select_area}
   end
   
-  def shop_table
-    respond_to do |format|
-      format.html {}
-      format.js {} 
-    end
-  end
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_point

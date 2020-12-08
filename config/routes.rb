@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   #resources :points
   get 'points', to:'points#index'
   get 'points/area_shop', to: 'points#ajax_area_shop'
-  get 'points/shop_table', to: 'points#shop_table'
-
 
   get 'stamps', to: 'stamps#index'
   post 'stamps',to: 'stamps#create'

@@ -6,7 +6,7 @@ import LJyosetuMap from "../maps/l_jyosetu_map";
 import "leaflet/dist/leaflet.css";
 require('jquery')
 
-var jyosetuMap = new LJyosetuMap(); 
+var jyosetuMap = new LJyosetuMap();
 var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': false};
 var lonlat = gon.area_pos["石央エリア"];
 var zoom = 14;
@@ -21,7 +21,7 @@ window.onload = function(){
   $(window).resize(resizeArea);
   jyosetuMap.create('map', lonlat, options);
 
-  //スポット表示  
+  //スポット表示
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   //表示位置合わせ
   jyosetuMap.areafitBounds();
@@ -39,15 +39,15 @@ $('.nav-link').on('click', function () {
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   //表示位置の調整
   jyosetuMap.areafitBounds();
-  //updateTable(gon.select_area);
+  updateTable(gon.select_area);
 });
 
 //////////////////////////////////////施設名の選択//////////////////////////////////////
 // 車両名のクリック
-$('.shop_label').on('click', function () {
+//(DOMがajaxで動的に生成されるため、$(document).onでバインドする必要有)
+$(document).on('click','.shop_label' ,function () {
   // 車両にズーム
   var shop_name = this.textContent.trim();
-  console.log(shop_name);
   var shop_label_options = {'zoom': false, 'pan': false};
   jyosetuMap.clickShopLabel(shop_name, shop_label_options);
 });
@@ -72,7 +72,7 @@ function updateTable(area) {
       area:area
     }
   }).done(function(data) {
-     $("#change").html(data);
+      $("#change").html(data);
   })
 }
 
