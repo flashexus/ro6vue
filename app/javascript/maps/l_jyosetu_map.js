@@ -199,7 +199,14 @@ LJyosetuMap.prototype = {
             popupAnchor: [0, -32]
         });
         var layer = L.marker([latlng[1],latlng[0]], {icon: icon})
-            .bindPopup(pop,
+        var newpopup = L.popup({
+            closeOnClick: false,
+            autoClose: false
+          }).setContent(pop);
+        layer.on('mouseover', function() { layer.openPopup(); }); // マウスオーバー
+        layer.on('mouseout', function() { layer.closePopup(); }); // マウスアウト
+        layer
+        .bindPopup(pop,
                 {
                   autoClose:false,
                   closeOnClick:false,
@@ -246,7 +253,12 @@ LJyosetuMap.prototype = {
                     popupAnchor: [0, -32]
                 });
                 let layer = L.marker([points[i].lat, points[i].lon], {icon: icon})
-                    .bindPopup(points[i].name)
+                    .bindPopup(points[i].name,{
+                        autoClose:false,
+                        closeOnClick:false,
+                        keepInView:true,
+                        autoPan:false
+                      })
                     .addTo(this.map);
                 this.areaSpotMarkers.push({
                     spot_name:points[i].name,
