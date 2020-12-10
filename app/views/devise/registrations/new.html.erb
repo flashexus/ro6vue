@@ -32,6 +32,8 @@
                   <div class="vl-input mb-2">
                      <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
                   </div>
+                  <p style="font-size:0.5rem;">携帯電話のメールアドレスを入力される方でパソコンからの受信メールを制限している方は解除をお願いします。
+（@vitallead.co.jpのドメインからメールが受信できるよう解除をお願いします。）</p>
                </dd>
               </dl>
 <!------------------------------------------------------------------------------------------------------------------------->
@@ -101,7 +103,7 @@
                     </div>
                   </div>
                   <div class="vl-input">
-　                  <%= f.text_field :address, class:"form-control", required:"required", placeholder:"都道府県・市町村(例：島根県浜田市)", id:"address"%>
+　                  <%= f.text_field :address, class:"form-control", required:"required", placeholder:"都道府県・市町村まで(例：島根県浜田市)", id:"address"%>
                   </div>
                 </dd>
               </dl>
