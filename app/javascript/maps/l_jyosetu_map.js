@@ -194,12 +194,18 @@ LJyosetuMap.prototype = {
         var latlng = data;
         var icon = L.icon({
             iconUrl: icon_path,
-            iconSize: [24, 24],
+            iconSize: [24, 50],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32]
         });
         var layer = L.marker([latlng[1],latlng[0]], {icon: icon})
-            .bindPopup(pop)
+            .bindPopup(pop,
+                {
+                  autoClose:false,
+                  closeOnClick:false,
+                  keepInView:true,
+                  autoPan:false
+                })
             .addTo(this.map);
 
         this.spotMarkers.push(layer);
