@@ -10,10 +10,10 @@
    </div>
   </header>
 
-  <div class="container" style="padding-left:5px;">
+  <div class="container mt-3 pl-2">
+    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div> 
     <div class="vl-contentsWrap">
       <div class="vl-contentBlock rounded m-auto bg-white card">
-
         <div class="card-header">
           <h1 class="text-main-color">施設一覧</h1>
         </div>
@@ -59,7 +59,6 @@
   <div class="vl-currentPosition">
     <button type="button" class="btn text-center rounded-circle text-white" id="getPosbtn01" name="getPosbtn01">現在<br>位置</button>
   </div>
-
   <%= render('shared/menu') %>
 </body>
 <%= javascript_pack_tag 'map' %> 
