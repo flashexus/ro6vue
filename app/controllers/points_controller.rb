@@ -10,7 +10,7 @@ class PointsController < ApplicationController
       "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
       "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
-      "神楽" => ApplicationController.helpers.master_icon_path("image_stamps/icon_06.png"),
+      "神楽会場" => ApplicationController.helpers.master_icon_path("image_stamps/icon_06.png"),
       "観光施設" => ApplicationController.helpers.master_icon_path("image_stamps/icon_07.png"),
       "セルフ" => ApplicationController.helpers.master_icon_path("image_stamps/assets3.png"),
       "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
