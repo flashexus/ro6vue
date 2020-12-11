@@ -14,6 +14,15 @@ By default, it renders:
 <html class="no-js"  lang="<%= I18n.locale %>">
 <head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb# website: //ogp.me/ns/website#">
   <%= display_meta_tags(default_meta_tags) %>
+
+  <% if Rails.env.development? %>
+    <meta name="robots" content="noodp, noydir, noindex, follow">
+  <% end %>
+
+  <% if Rails.env.production? %>
+    <meta name="robots" content="noodp, noydir, index, follow">
+  <% end %>
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

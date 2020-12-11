@@ -17,8 +17,7 @@ module ApplicationHelper
       description: 'ディスクリプション',
       keywords: 'キーワード',
       canonical: request.original_url,
-      robots:"noodp, noydir, noindex, follow",
-      icon: [
+        icon: [
         { href:"https://www.all-iwami.com/favicon.ico" },
         { href: image_url('image_stamps/stmp.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
