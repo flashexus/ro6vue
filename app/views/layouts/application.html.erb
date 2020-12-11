@@ -15,11 +15,9 @@ By default, it renders:
 <head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb# website: //ogp.me/ns/website#">
   <%= display_meta_tags(default_meta_tags) %>
 
-  <% if Rails.env.development? %>
+  <% if request.host.index("staging") || request.host.index("192.168.99.100") %>
     <meta name="robots" content="noodp, noydir, noindex, follow">
-  <% end %>
-
-  <% if Rails.env.production? %>
+  <% else %>
     <meta name="robots" content="noodp, noydir, index, follow">
   <% end %>
 
