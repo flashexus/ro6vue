@@ -2,31 +2,31 @@
   <ul class="mt-3">
   <%- if controller_name != 'sessions' %>
     <%= link_to new_session_path(resource_name) do %>
-      <i class='fa fa-arrow-circle-right'></i><%= t(".sign_in") %>
+      <i class='fa fa-arrow-circle-right'></i><span style="font-size:1.2rem;"><%= t(".sign_in") %></span>
     <% end -%><br />
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
     <%= link_to new_registration_path(resource_name) do %>
-      <i class='fa fa-arrow-circle-right'></i><%= t(".sign_up") %>
+      <i class='fa fa-arrow-circle-right'></i><span style="font-size:1.2rem;"><%= t(".sign_up") %></span>
     <% end -%><br />
   <% end -%>
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
     <%= link_to new_password_path(resource_name) do %>
-      <i class='fa fa-arrow-circle-right'></i><%= t(".forgot_your_password") %>
+      <i class='fa fa-arrow-circle-right'></i><span style="font-size:1.2rem;"><%= t(".forgot_your_password") %></span>
     <% end -%><br />
   <% end -%>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
     <%= link_to new_confirmation_path(resource_name) do %>
-      <i class='fa fa-arrow-circle-right'></i><%= t(".didn_t_receive_confirmation_instructions") %>
+      <i class='fa fa-arrow-circle-right'></i><span style="font-size:1.2rem;"><%= t(".didn_t_receive_confirmation_instructions") %></span>
     <% end -%><br />
   <% end -%>
 
   <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
     <%= link_to new_unlock_path(resource_name) do %>
-      <li><i class='fa fa-arrow-circle-right'></i><%= t(".didn_t_receive_unlock_instructions") %></li>
+      <li><i class='fa fa-arrow-circle-right'></i><span style="font-size:1.2rem;"><%= t(".didn_t_receive_unlock_instructions") %></li></span>
     <% end -%><br />
   <% end -%>
 
