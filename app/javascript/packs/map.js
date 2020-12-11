@@ -44,8 +44,8 @@ $('.nav-link').on('click', function () {
 
 //////////////////////////////////////施設名の選択//////////////////////////////////////
 // 車両名のクリック
-//(DOMがajaxで動的に生成されるため、$(document).onでバインドする必要有)
-$(document).on('click','.shop_label' ,function () {
+//(DOMがajaxで動的に生成されるため、$(#change).onでバインドする必要有)
+$('#change').on('click','.shop_label' ,function () {
   // 車両にズーム
   var shop_name = this.textContent.trim();
   var shop_label_options = {'zoom': false, 'pan': false};
