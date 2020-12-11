@@ -53,7 +53,7 @@ $('#change').on('click','.shop_label' ,function () {
 });
 
 //////////////////////////////////////現在位置表示////////////////////////////////////////
-$('#getPosbtn01').on('click',function(){
+$('.container').on('click','#getPosbtn01',function(){
   navigator.geolocation.getCurrentPosition(SetCrtPosMarker);
 })
 function SetCrtPosMarker(position) {
