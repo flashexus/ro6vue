@@ -53,7 +53,8 @@ $('#change').on('click','.shop_label' ,function () {
 });
 
 //////////////////////////////////////現在位置表示////////////////////////////////////////
-$('.container').on('click','#getPosbtn01',function(){
+$('.vl-currentPosition').on('click','#getPosbtn01',function(){
+  alert('アラート');
   navigator.geolocation.getCurrentPosition(SetCrtPosMarker);
 })
 function SetCrtPosMarker(position) {
@@ -63,6 +64,7 @@ function SetCrtPosMarker(position) {
   jyosetuMap.removeMySpotMarker();
   jyosetuMap.addMySpotMarker(CrtPoslonlat,gon.icon["セルフ"],"現在位置");
   jyosetuMap.setView(CrtPoslonlat, zoom);
+  alert('アラート2');
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 function updateTable(area) {
