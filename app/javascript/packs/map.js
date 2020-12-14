@@ -12,7 +12,7 @@ var lonlat = gon.area_pos["石央エリア"];
 var zoom = 14;
 
   //////////////////////////////////////初期表示//////////////////////////////////////
-window.onload = function(){
+//window.onload = function(){
   "use strict";
   // 読み込み時に地図のサイズを画面に合わせる
   resizeArea();
@@ -28,7 +28,7 @@ window.onload = function(){
   //初期エリア選択
   $('#item2-tab').attr('aria-selected',true);
   $('#item2-tab').addClass('active');
-}
+//}
 //////////////////////////////////////エリア選択表示//////////////////////////////////////
 $('.nav-link').on('click', function () {
   //エリア名の抽出
