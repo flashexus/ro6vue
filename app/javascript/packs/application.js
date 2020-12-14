@@ -21,11 +21,8 @@ import '../stylesheets/custom';
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
-//bfcacheの状態によっては変数の更新がうまくされないケースがあるということで
-//キャッシュクリア対策には変数での判定は行わない
-
 //ブラウザキャッシュ対策（for chrome）
+//bfcacheの状態に影響されずリロードするためのおまじない
 window.onunload = function() {
   // IE以外用。ここは空でOKです
 };
@@ -40,19 +37,18 @@ var userAgent = window.navigator.userAgent.toLowerCase();
 var browerType = judgeBrowserType(userAgent);
 var deviceType = judgeDeviceType(userAgent);
 
+//bfcacheの状態によっては変数の更新がうまくされないケースがあるということで
+//キャッシュクリア対策には変数での判定は行わない
 if ( deviceType == 'iPhone' && browerType != 'Safari' ) {
   alert('iPhoneをお使いの方はSafariからアクセスしてください');
 }
 if ( deviceType == 'Android' && browerType != 'Chrome' ) {
   alert('Androidをお使いの方はChromeからアクセスしてください');
 }
-//alert(browerType + '+' + deviceType);
-//alert(userAgent);
-
 
 ///////////////////////////////////////////////////////////////////////////////
 //メニュー表示用
-$(function(){
+$(window).on('load', function(){
   var modalBtn = $('.vl-modalBtn');
   var modalBtnClose = $('.vl-modalBtnClose');
   var modalBtnCloseFix = $('.vl-modalBtnCloseFix');
