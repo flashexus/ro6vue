@@ -233,6 +233,7 @@ LJyosetuMap.prototype = {
             .bindPopup(pop)
             .addTo(this.map);
         this.mySpotMerker = layer;
+        this.mySpotMerker.openPopup();
     },
     /**
      * ユーザーの現在位置を削除する
