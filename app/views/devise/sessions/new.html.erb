@@ -13,7 +13,7 @@
     </header>
 
     <div class="vl-contentsWrap container">
-      <div class="vl-enterBlock rounded m-auto card shadow">
+      <div class="vl-enterBlock rounded m-auto card shadow" style="opacity:0.9;padding:15px;">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',placeholder:"メールアドレスを入力" %>
@@ -43,7 +43,7 @@
 </body>
 <script>
 $(function () {
-var num = Math.ceil(3 * Math.random());
+var num = Math.ceil(5 * Math.random());
  $('.vl-mainBg').addClass('main-bg' + num);
 });
 </script>

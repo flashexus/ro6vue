@@ -6,7 +6,7 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
-        remember_me: "次回から自動でログイン"
+        remember_me: "次回から自動ログイン"
     models:
       user: "ユーザ"
   devise:
@@ -69,7 +69,7 @@ ja:
     shared:
       links:
         back: "戻る"
-        didn_t_receive_confirmation_instructions: "登録確認のメールが届かない"
+        didn_t_receive_confirmation_instructions: "登録確認メールが届かない"
         didn_t_receive_unlock_instructions: "アカウントの凍結解除方法のメールを受け取っていませんか?"
         forgot_your_password: "パスワードを忘れた"
         sign_in: "ログイン"

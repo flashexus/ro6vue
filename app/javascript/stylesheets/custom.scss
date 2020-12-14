@@ -38,15 +38,37 @@
 .main-bg1{
  background-image:url("scss_images/main01.jpg");
  background-size: cover;
+ @include xss {
+  background-image: url( "scss_images/main01_sp.jpg");
+ }
 }
 .main-bg2{
  background-image:url("scss_images/main02.jpg");
  background-size: cover;
+ @include xss {
+  background-image: url( "scss_images/main02_sp.jpg");
+ }
 }
 .main-bg3{
  background-image:url("scss_images/main03.jpg");
+ @include xss {
+  background-image: url( "scss_images/main03_sp.jpg");
+ }
 }
-
+.main-bg4{
+  background-image:url("scss_images/main04.jpg");
+  @include xss {
+   background-image: url( "scss_images/main04_sp.jpg");
+  }
+ }
+ 
+ .main-bg5{
+  background-image:url("scss_images/main05.jpg");
+  @include xss {
+   background-image: url( "scss_images/main05_sp.jpg");
+  }
+ }
+ 
 .alert{
  padding: 5px;
  background: #fff;
@@ -56,6 +78,10 @@
  width: 90%;
  text-align: center;
  margin: 0 auto 20px;
+
+ @include xss {
+  text-align: left;
+ }
 }
 .notice{
   padding: 5px;
@@ -664,6 +690,25 @@ animation: SlideDown .5s ease-in-out forwards;
  img {
   display: block;
   border: 3px solid #fff;
+ }
+ .close {
+  top:-10px;
+  right:-10px;
+ }
+ 
+ button{
+  &.vl-closeOnImg {
+   span {
+    font-size: 40px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    background: $accent-color;
+    color: #fff;
+    padding-top: 8px;
+   }
+  }
  }
 }
 }
