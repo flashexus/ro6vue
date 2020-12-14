@@ -24,9 +24,7 @@
           <% if devise_mapping.rememberable? %>
             <div class="form-group form-check w-100">
               <%= f.check_box :remember_me, class: 'form-check-input' %>
-              <%= f.label :remember_me do %>
-                次回から自動でログイン
-              <% end %>
+                <%= resource.class.human_attribute_name('remember_me') %>
             </div>
           <% end %>
           <div class="form-group">
