@@ -30,7 +30,7 @@ var zoom = 14;
   $('#item2-tab').addClass('active');
 //}
 //////////////////////////////////////エリア選択表示//////////////////////////////////////
-$('.nav-link').on('click', function () {
+$('.vl-tabWrap').on('click','.nav-link',function () {
   //エリア名の抽出
   gon.select_area = this.textContent.trim();
   //表示中のスポットを削除

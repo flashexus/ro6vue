@@ -158,19 +158,20 @@
                 <%= link_to 'QR読取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-baseBg-color btn-lg "} %>
               </div>
             </div>
-
-            <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
-            <div id="getPopuoImg1" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
-              <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
-              <button id="getStampBtn1" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div id="getPopuoImg2" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
-              <%= image_tag "image_stamps/pop_stamp_bingo.jpg",alt:"ビンゴを取得しました" %>
-              <button id="getStampBtn2" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="vl-stamp">
+              <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
+              <div id="getPopuoImg1" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+                <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
+                <button id="getStampBtn1" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div id="getPopuoImg2" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+                <%= image_tag "image_stamps/pop_stamp_bingo.jpg",alt:"ビンゴを取得しました" %>
+                <button id="getStampBtn2" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
             </div>
         </div>
       </div><!-- / .vl-enterBlock -->

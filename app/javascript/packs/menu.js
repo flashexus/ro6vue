@@ -4,9 +4,6 @@ require('jquery')
 //メニュー表示用
 //$(window).on('load', function(){
   var menu = $('.vl-menu');
-  // var modalBtn = $('.vl-modalBtn');
-  // var modalBtnClose = $('.vl-modalBtnClose');
-  // var modalBtnCloseFix = $('.vl-modalBtnCloseFix');
   var modalBg = $('.vl-modalBg');
   var modalMain = $('.vl-modalMain');
   //メニュー開く
@@ -31,11 +28,4 @@ require('jquery')
     $(this).next(modalMain).removeClass("_slideUp");
     $(this).next(modalMain).addClass("_slideDown");
   });
-
-
-//   modalBtnCloseFix.on('click', function (e) {
-//     modalBg.fadeOut();
-//     modalMain.removeClass("_slideUp");
-//     modalMain.addClass("_slideDown");
-//   });
 // });
