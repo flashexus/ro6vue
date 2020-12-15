@@ -16,6 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     remember_created_at: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    confirmed_at: Field::DateTime,
     uid: Field::String,
     username: Field::String,
     role: Field::String,
@@ -34,6 +35,7 @@ class UserDashboard < Administrate::BaseDashboard
   id
   email
   created_at
+  confirmed_at
   uid
   username
   role
@@ -49,6 +51,7 @@ class UserDashboard < Administrate::BaseDashboard
     id
     email
     created_at
+    confirmed_at
     uid
     username
     role
@@ -63,6 +66,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   email
+  confirmed_at
   uid
   username
   role
