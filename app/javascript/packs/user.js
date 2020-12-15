@@ -1,9 +1,10 @@
 require('jquery')
-////////////////////////////////////(新規登録)郵便番号検索///////////////////////////////////
-document.querySelector("#get_address").addEventListener("click", () => {
+////////////////////////////////////郵便番号検索///////////////////////////////////
+//document.querySelector("#get_address").addEventListener("click", () => {
+$('.vl-zipInput').on('click','#get_address',function () {
   var zipcode =  $('#txtZipCode').val();
   $.ajax({ type: 'GET', url: 'https://zipcloud.ibsnet.co.jp/api/search',
-      data: ('zipcode='+ zipcode), dataType: 'jsonp' 
+      data: ('zipcode='+ zipcode), dataType: 'jsonp'
     }).done(function(data){
       if(data.status == 200){
         if($('#get_address').attr('name') == "full_address"){

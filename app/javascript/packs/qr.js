@@ -1,7 +1,9 @@
 import 'jsqr';
 require('jquery')
 //////////////////////////////////////QR読み取り//////////////////////////////////
-document.querySelector("#flame").addEventListener("click", () => {
+//document.querySelector("#flame").addEventListener("click", () => {
+//諸々の調整の都合上、最初のセレクター以外ではここではJquery使用せず。
+$('.vl-readQrWrap').on('click','#flame',function () {
   const flame = document.querySelector("#flame");
   const canvas = document.querySelector("#canvas");
   const video = document.querySelector("#camera");
