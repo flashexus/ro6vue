@@ -49,35 +49,42 @@ if ( deviceType == 'Android' && browerType != 'Chrome' ) {
 ///////////////////////////////////////////////////////////////////////////////
 //メニュー表示用
 $(window).on('load', function(){
-  var modalBtn = $('.vl-modalBtn');
-  var modalBtnClose = $('.vl-modalBtnClose');
-  var modalBtnCloseFix = $('.vl-modalBtnCloseFix');
+  var menu = $('.vl-menu');
+  // var modalBtn = $('.vl-modalBtn');
+  // var modalBtnClose = $('.vl-modalBtnClose');
+  // var modalBtnCloseFix = $('.vl-modalBtnCloseFix');
   var modalBg = $('.vl-modalBg');
   var modalMain = $('.vl-modalMain');
-  modalBtn.on('click', function (e) {
+  //メニュー開く
+  menu.on('click','.vl-modalBtn',function (e) {
     $(this).next(modalBg).fadeIn();
     $(this).next(modalBg).next(modalMain).removeClass("_slideDown");
     $(this).next(modalBg).next(modalMain).addClass("_slideUp");
   });
-  modalBtnClose.on('click', function (e) {
+  //メニュー閉じ
+  menu.on('click','.vl-modalBtnClose',function (e) {
     modalBg.fadeOut();
     modalMain.removeClass("_slideUp");
     modalMain.addClass("_slideDown");
   });
-  modalBtnCloseFix.on('click', function (e) {
-    modalBg.fadeOut();
-    modalMain.removeClass("_slideUp");
-    modalMain.addClass("_slideDown");
-  });
-  modalMain.on('click', function (e) {
+  //モーダル展開
+  menu.on('click','.vl-modalMain',function (e) {
     e.stopPropagation();
   });
-  modalBg.on('click', function () {
+  //モーダル背景
+  menu.on('click','.vl-modalBg',function (e) {
     $(this).fadeOut();
     $(this).next(modalMain).removeClass("_slideUp");
     $(this).next(modalMain).addClass("_slideDown");
   });
-});
+
+
+//   modalBtnCloseFix.on('click', function (e) {
+//     modalBg.fadeOut();
+//     modalMain.removeClass("_slideUp");
+//     modalMain.addClass("_slideDown");
+//   });
+ });
 ///////////////////////////////////////////////////////////////////////////////
 // ユーザーエージェントからブラウザタイプを判定
 function judgeBrowserType(UserAgent){
