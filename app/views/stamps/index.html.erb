@@ -15,7 +15,7 @@
         </div>   
         <div class="vl-cardWrap">
           <div class="vl-stamp-listWrap">
-           <ul class="row">
+           <ul class="row" style="padding:0 1em 0.5em;">
             <li class="col-4 border rounded vl-rectWrap area sekisei">石西/<br>山口</li>
             <li class="col-4 border rounded vl-rectWrap area sekiou">石央/<br>広島</li>
             <li class="col-4 border rounded vl-rectWrap area sekitou">石東/<br>県東部</li>
@@ -143,36 +143,54 @@
               </div>
             </li>
           </div><!-- / .vl-stamp-listWrap -->
-          <h3>現在のビンゴ数は<%= @bingo_cnt %></h3>
-            <div class="row mt-1">
-              <div class="vl-apply text-center col-6">
-              <% if @bingo_cnt == 0 || current_user.apply_flg == TRUE %>
-                <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選応募</a>
+          <% if current_user.apply_flg == TRUE %>
+            <h4 class="text-center">抽選の応募は既に終了しています</h4>
+          <% else %>
+            <% case @bingo_cnt.to_i %>
+              <% when 0 %>
+                  <p class="text-center">現在のビンゴ数は<%= @bingo_cnt %></p>
+              <% when 1 %>
+                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
+                  <p class="text-center">石見へワンスアゲイン賞 応募可能</p>
+              <% when 2..5 %>
+                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
+                  <p class="text-center">石見通(ツー)賞 応募可能</p>
+              <% when 6 %>
+                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
+                  <p class="text-center">ALL石見賞 応募可能</p>
               <% else %>
-                <%= link_to '抽選応募', stamps_servey_path, 
-                    { :data =>{"role" => "button","turbolinks" => "false"}, 
-                      :class => "btn btn-main-color btn-lg"} %>
-              <% end %>
-              </div>
-              <div class="vl-apply text-center col-6">
-                <%= link_to 'QR読取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-baseBg-color btn-lg "} %>
-              </div>
+                 <h4 class="text-center">現在のビンゴ数は<%= @bingo_cnt %></h4>
+            <% end %>
+          <% end %>
+          <div class="row mt-1">
+            <div class="vl-apply text-center col-6">
+            <% if @bingo_cnt == 0 || current_user.apply_flg == TRUE %>
+              <a href="" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">抽選応募</a>
+            <% else %>
+              <%= link_to '抽選応募', stamps_servey_path, 
+                  { :data =>{"role" => "button","turbolinks" => "false"}, 
+                    :class => "btn btn-main-color btn-lg"} %>
+            <% end %>
             </div>
-            <div class="vl-stamp">
-              <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
-              <div id="getPopuoImg1" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
-                <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
-                <button id="getStampBtn1" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div id="getPopuoImg2" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
-                <%= image_tag "image_stamps/pop_stamp_bingo.jpg",alt:"ビンゴを取得しました" %>
-                <button id="getStampBtn2" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+            <div class="vl-apply text-center col-6">
+              <%= link_to 'QR読取り', stamps_new_path,{:data =>{"role" => "button","turbolinks" => "false"}, :class => "btn btn-baseBg-color btn-lg "} %>
             </div>
+          </div>
+          <div class="vl-stamp">
+            <div id="stampPopupBg" class="vl-stampPopupBg" hidden></div>
+            <div id="getPopuoImg1" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+              <%= image_tag "image_stamps/pop_stamp_get.jpg",alt:"スタンプを取得しました" %>
+              <button id="getStampBtn1" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="getPopuoImg2" class="vl-getPopuoImg alert alert-dismissible fade show shadow" role="alert" hidden>
+              <%= image_tag "image_stamps/pop_stamp_bingo.jpg",alt:"ビンゴを取得しました" %>
+              <button id="getStampBtn2" type="button" class="close vl-closeOnImg" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div><!-- / .vl-enterBlock -->
     </div><!-- / .vl-enterWrap -->

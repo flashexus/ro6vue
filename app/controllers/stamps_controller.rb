@@ -19,13 +19,13 @@ class StampsController < ApplicationController
     @question = Servey::QUESTION
     @status = BingoStatus.find_by(user_id:current_user.id)
     bingo_cnt = @status.bingo_cnt
-    @gift = { :'1ビンゴ' => Servey::GIFT['1ビンゴ'] }
+    @gift = { :'石見へワンスアゲイン賞' => Servey::GIFT['1ビンゴ'] }
 
     if bingo_cnt.to_i >= 2
-      @gift['2ビンゴ'] = Servey::GIFT['2ビンゴ']
+      @gift['石見通(ツー)賞'] = Servey::GIFT['2ビンゴ']
     end
     if bingo_cnt.to_i >= 6
-      @gift['ALLビンゴ'] = Servey::GIFT['6ビンゴ']
+      @gift['ALL石見賞'] = Servey::GIFT['6ビンゴ']
     end
     end
 
