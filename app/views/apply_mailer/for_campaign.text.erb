@@ -14,8 +14,12 @@ Email：<%= @user['email'] %>
 獲得スタンプ数：<%= @status['stamp_cnt'] %>
 
 
-スタンプ状態：<%= @status['bingo_matrix'] %>
-
+スタンプ状態：
+<% JSON.parse(@status['bingo_matrix']).each do |area, positions| %>
+  <% positions.each do |position| %>
+    <%= area + " | " + position["name"] + " | " + position["created"] %>
+  <% end %>
+<% end %>
 
 どこでスタンプラリーを知りましたか？
 <%= @form['question1'] %>

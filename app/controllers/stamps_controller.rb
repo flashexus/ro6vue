@@ -189,7 +189,7 @@ class StampsController < ApplicationController
         hash = []
         stamps.each do |stamp|
           if(area === stamp.point.area_group)
-          hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name}
+          hash << {'id' => stamp.point.show_no, 'name' => stamp.point.name,'created' => stamp.point.created_at,}
           end
         end
         bingo_matrix[area] = hash
