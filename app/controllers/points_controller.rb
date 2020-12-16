@@ -6,7 +6,18 @@ class PointsController < ApplicationController
   def index
     @points = Point.all
     @user = current_user
-    @icon_hash = Point::ICON
+    @icon_hash = {
+      "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
+      "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
+      "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
+      "神楽会場" => ApplicationController.helpers.master_icon_path("image_stamps/icon_06.png"),
+      "観光施設" => ApplicationController.helpers.master_icon_path("image_stamps/icon_07.png"),
+      "セルフ" => ApplicationController.helpers.master_icon_path("image_stamps/assets3.png"),
+      "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
+      "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
+      "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
+      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
+  }
     @area_pos = Point::AREA_POS
     @select_area = Point::INIT_AREA
 
@@ -20,7 +31,18 @@ class PointsController < ApplicationController
   def ajax_area_shop
     @select_area = params[:area]
     @points = Point.where(area_group: @select_area)
-    @icon_hash = Point::ICON
+    @icon_hash = {
+      "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
+      "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
+      "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
+      "神楽会場" => ApplicationController.helpers.master_icon_path("image_stamps/icon_06.png"),
+      "観光施設" => ApplicationController.helpers.master_icon_path("image_stamps/icon_07.png"),
+      "セルフ" => ApplicationController.helpers.master_icon_path("image_stamps/assets3.png"),
+      "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
+      "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
+      "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
+      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
+  }
 
     render partial: 'shop_table',
            locals: {points: @points, select_area:@select_area, icon_hash:@icon_hash}
