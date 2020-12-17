@@ -18,7 +18,9 @@ By default, it renders:
   <% if request.host.index("staging") || request.host.index("192.168.99.100") %>
     <meta name="robots" content="noodp, noydir, noindex, follow">
   <% else %>
+  <%# if !request.host.index("staging") && request.host.index("iwamikururi") %>
     <meta name="robots" content="noodp, noydir, index, follow">
+    <%= render('shared/analytics_iwami') %>
   <% end %>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
