@@ -28,7 +28,7 @@ ja:
         subject: "[いわみくるり]登録確認メール"
         action: "いわみくるり登録確認"
         greeting: "ようこそ、%{recipient}さん!"
-        instruction: "次のリンクでメールアドレスの確認が完了します:"
+        instruction: "次のリンクでメールアドレスの確認が完了します"
       reset_password_instructions:
         subject: "[いわみくるり]パスワードの再設定メール"
         action: "いわみくるりパスワード変更"

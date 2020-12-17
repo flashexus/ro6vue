@@ -43,13 +43,13 @@ $('.vl-tabWrap').on('click','.nav-link',function () {
 });
 
 //////////////////////////////////////施設名の選択//////////////////////////////////////
-// 車両名のクリック
+// 施設名のクリック
 //(DOMがajaxで動的に生成されるため、$(#change).onでバインドする必要有)
 $('#change').on('click','.shop_label' ,function () {
-  // 車両にズーム
   var shop_name = this.textContent.trim();
   var shop_label_options = {'zoom': false, 'pan': false};
   jyosetuMap.clickShopLabel(shop_name, shop_label_options);
+  scrollTo(0, $('#resize_area').offset().top);
 });
 
 //////////////////////////////////////現在位置表示////////////////////////////////////////
@@ -63,6 +63,7 @@ function SetCrtPosMarker(position) {
   jyosetuMap.removeMySpotMarker();
   jyosetuMap.addMySpotMarker(CrtPoslonlat,gon.icon["セルフ"],"現在位置");
   jyosetuMap.setView(CrtPoslonlat, zoom);
+  scrollTo(0, $('#resize_area').offset().top);
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 function updateTable(area) {
@@ -75,5 +76,4 @@ function updateTable(area) {
       $("#change").html(data);
   })
 }
-
 

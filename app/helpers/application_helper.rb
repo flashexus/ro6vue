@@ -19,7 +19,7 @@ module ApplicationHelper
       canonical: request.original_url,
         icon: [
         { href:"https://www.all-iwami.com/favicon.ico" },
-        { href: image_url('image_stamps/stmp.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('image_stamps/stmp.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: :site,
@@ -27,15 +27,15 @@ module ApplicationHelper
         description: :description, 
         type: 'website',
         url: request.original_url,
-        image: '',
+        image: image_url('image_stamps/App_titlelogo_color.png'),
         locale: 'ja_JP',
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@ツイッターのアカウント名',
+        site: 'account',
       },
       fb: {
-        app_id: '自身のfacebookのapplication ID'
+        app_id: 'application ID'
       }
     }
   end

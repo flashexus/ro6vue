@@ -12,7 +12,7 @@ class Point < ApplicationRecord
         "石東エリア" => [132.445299,35.113757],
       }
 
-    ICON = {
+    ICON = %w({
         "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
         "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
         "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
@@ -23,5 +23,5 @@ class Point < ApplicationRecord
         "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
         "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
         "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
-    }
+    })
 end
