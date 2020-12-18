@@ -75,20 +75,19 @@ class StampsController < ApplicationController
     @stamp.user_id = current_user.id
     code = params[:point_id].split("stamps/add/")
     point = Point.find_by(code:code[1])
-    #QRコードの有効性チェック
-    if point.nil?
-      respond_to do |format|
-        format.json { render json: '無効なコードです。' ,status: :unprocessable_entity }
-      end
-    else
-      @stamp.point_id = point.id
-      #2重登録チェック
-      if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
-        respond_to do |format|
+
+    respond_to do |format|
+      case check = validate_stamp(point)
+        #異常系 エラーリターン
+        when "InvalideStamp" then
+          format.json { render json: '無効なコードです。' ,status: :unprocessable_entity }
+        when "DuplicateStamp" then
           format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
-        end
-      else
-        respond_to do |format|
+        when "LimitStamp" then
+          format.json { render json: 'このエリアでの取得上限です。' ,status: :unprocessable_entity }
+        when "NoError" then
+          #正常系 スタンプを記録
+          @stamp.point_id = point.id
           if @stamp.save
             bingo_flg = updateBingoStatus()
             if bingo_flg === true
@@ -99,10 +98,8 @@ class StampsController < ApplicationController
           else
             format.json { render json: @stamp.errors, status: :unprocessable_entity }
           end
-        end
       end
     end
-
   end
   # POST /stamp
   # POST /stamp.json
@@ -114,31 +111,28 @@ class StampsController < ApplicationController
     code = params[:point_id]
     point = Point.find_by(code:code)
 
-    #QRコードの有効性チェック
-    if point.nil?
-      respond_to do |format|
-        format.html { render json: '無効なコードです。' ,status: :unprocessable_entity }
-      end
-    else
-      #ここで重複チェック
-      @stamp.point_id = point.id
-      if Stamp.exists?( user_id: @stamp.user_id, point_id: @stamp.point_id )
-        respond_to do |format|
-          format.html { render json: '既に登録されています。' ,status: :unprocessable_entity }
-        end
-      else
-        respond_to do |format|
+    respond_to do |format|
+      case check = validate_stamp(point)
+        #異常系 エラーリターン
+        when "InvalideStamp" then
+          format.json { render json: '無効なコードです。' ,status: :unprocessable_entity }
+        when "DuplicateStamp" then
+          format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
+        when "LimitStamp" then
+          format.json { render json: 'このエリアでの取得上限です。' ,status: :unprocessable_entity }
+        when "NoError" then
+          #正常系 スタンプを記録
+          @stamp.point_id = point.id
           if @stamp.save
             bingo_flg = updateBingoStatus()
             if bingo_flg === true
-              format.html { redirect_to stamps_path(get: "bingo"), notice: 'Stamp was successfully created.' }
+              format.json { render :json => { status: "200", message: "Bingo" } }
             else
-              format.html { redirect_to stamps_path(get: "stamp"), notice: 'Stamp was successfully created.' }
+              format.json { render :json => { status: "200", message: "Stamp" } }
             end
           else
-            format.html { render :new }
+            format.json { render json: @stamp.errors, status: :unprocessable_entity }
           end
-        end
       end
     end
   end
@@ -178,7 +172,7 @@ class StampsController < ApplicationController
 
       return yoko_cnt + tate_cnt
     end
-
+    #############################ビンゴ状態の更新・保存#########################
     def updateBingoStatus
       stamps = Stamp.where(user_id:current_user.id)
       areas = Point::AREA__GROUP_TYPE
@@ -207,6 +201,7 @@ class StampsController < ApplicationController
       end
       @status.user_id = current_user.id
       @status.stamp_cnt = stamps.count
+
       ##ビンゴ獲得の判定
       if(bingo_cnt > @status.bingo_cnt)
         bingo_flg = true
@@ -216,5 +211,27 @@ class StampsController < ApplicationController
       @status.bingo_matrix = JSON.generate(bingo_matrix)
       @status.save
       return bingo_flg
+    end
+
+    ###############################エラーチェック##############################
+    def validate_stamp(point)
+      #有効なコードか
+      if point.nil?
+        return "InvalideStamp"
+      end
+      #2重登録されていないか
+      if Stamp.exists?( user_id: current_user.id, point_id: point.id )
+        return "DuplicateStamp"
+      end
+      #同一エリアで3つ以上のスタンプを取得できないようにする
+      if check_BingoStatus(point)
+        return "LimitStamp"
+      end
+      return "NoError"
+    end
+
+    ###################つ以上同一エリアでスタンプを取得できないようにする########
+    def check_BingoStatus(point)
+      return false
     end
 end
