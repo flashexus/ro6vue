@@ -22,7 +22,7 @@ ja:
       not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: 初めての方は新規登録をクリックしてください。既に登録済みの方はメールアドレス、パスワードを入力してログインしてください。
-      unconfirmed: メールアドレスの本人確認が必要です。
+      unconfirmed: 登録確認メールを受信し、アカウントを認証してください。
     mailer:
       confirmation_instructions:
         subject: "[いわみくるり]登録確認メール"
