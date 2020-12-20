@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'stamps#new'
   get 'home/index'
   get 'home/policy'
+  get 'home/finish_regist'
 
   #resources :points
   get 'points', to:'points#index'
