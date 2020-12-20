@@ -141,6 +141,44 @@
 }
 
 // ================================
+// ようこそ
+// ================================
+
+.vl-youkoso,.vl-youkoso02{
+ 
+ .btn {
+  span {
+   font-size: 16px;
+   display: block;
+  }
+ }
+ 
+ .vl-1st{
+  margin-bottom: 1em;
+  background: $sub-color01;
+  border: 1px solid darken($sub-color01, 5%);
+  color: #fff;
+  
+  &:hover {
+   background: darken($sub-color01, 5%);
+  }
+ }
+}
+
+.vl-youkoso02 {
+ margin-bottom: 2em!important;
+ padding: 40px 40px 20px!important;
+}
+
+ .vl-youkoso_head__l {
+  font-size: 20px;
+  color: $accent-color;
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-weight: bold;
+ }
+
+// ================================
 // 新規登録ページ
 // ================================
 
@@ -365,6 +403,14 @@
      
      &.current,&:hover{
       background: $accent-color;
+     }
+    }
+    &[href="/stamps/new"] {
+     color: $kagurameshi-color;
+     background: #fff;
+     
+     &.current,&:hover{
+      background: $kagurameshi-color;
      }
     }
     
@@ -711,6 +757,56 @@ animation: SlideDown .5s ease-in-out forwards;
   }
  }
 }
+ 
+ .completion {
+  font-size: 18px;
+  color: $accent-color;
+ }
+ 
+ p.total {
+  span {
+   font-size: 18px;
+   font-weight: 700;
+  }
+ }
+ 
+  h4.total {
+  span {
+   font-size: 24px;
+   font-weight: 700;
+  }
+ }
+ 
+ .bingoAchievement {
+  font-weight: 700;
+  font-size: 24px;
+  color: $accent-color;
+ }
+ 
+ .onesAgain,.iwamiTwo,.allIwami {
+  span{
+  display: inline-block;
+  padding: 3px;
+  margin: 5px 3px 0 0;
+  color: #fff;
+  border-radius: 10px;
+  }
+ }
+  .onesAgain {
+   span{
+    background: $kagurameshi-color;
+   }
+  }
+  .iwamiTwo {
+   span{
+    background: $shukuhaku-color;
+   }
+  }
+  .allIwami {
+   span{
+    background: $onsen-color;
+   }
+  }
 }
 // ================================
 // コンテンツ
