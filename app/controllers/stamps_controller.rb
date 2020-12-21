@@ -41,7 +41,7 @@ class StampsController < ApplicationController
     @servey.question1 = params['question1']
     @servey.question2 = params['question2']
     #個人情報を保管しない場合は↓をコメントアウトする
-    @servey.save!
+    #@servey.save!
 
     #応募内容をメール送信(管理者、ユーザー)
     @status = BingoStatus.find_by(user_id:current_user.id)

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  has_many :stamps
+  has_many :stamps, dependent: :destroy
+  has_one :bingo_status, dependent: :destroy
+  has_one :servey , dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
