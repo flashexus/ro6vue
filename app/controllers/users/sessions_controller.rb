@@ -5,6 +5,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
+    # 正式オープンまではログイン画面に飛ばないようによする
     blk_start = Date.new(2020,12,25)
     blk_end = Date.new(2021,1,13)
     if Date.today >= blk_start  &&  Date.today < blk_end
