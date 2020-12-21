@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/policy'
   get 'home/finish_regist'
+  get 'home/info'
 
   #resources :points
   get 'points', to:'points#index'
