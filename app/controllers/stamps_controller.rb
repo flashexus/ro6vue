@@ -112,6 +112,8 @@ class StampsController < ApplicationController
             format.json { render json: '既に登録されています。' ,status: :unprocessable_entity }
           when "LimitStamp" then
             format.json { render :json => { status: "200",message: "このエリアでの取得上限です。" } }
+          when "AlreadyApply"  then
+            format.json { render json: '既に応募されています。' ,status: :unprocessable_entity }
           when "NoError" then
             #正常系 スタンプを記録
             @stamp.point_id = point.id
@@ -204,6 +206,9 @@ class StampsController < ApplicationController
       #対象エリアのスタンプ数を見る 3以上ならエラー
       area_stamp_cnt = Stamp.includes(:point).where(user_id:current_user.id).where(points:{area_group:point.area_group}).count
       return "LimitStamp"  if area_stamp_cnt >= 3
+
+      #既に応募済み
+      return "AlreadyApply" if current_user.apply_flg == TRUE
 
       return "NoError"
     end
