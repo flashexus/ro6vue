@@ -61,7 +61,7 @@ function SetCrtPosMarker(position) {
   CrtPoslonlat[0] = position.coords.longitude;
   CrtPoslonlat[1] = position.coords.latitude;
   jyosetuMap.removeMySpotMarker();
-  jyosetuMap.addMySpotMarker(CrtPoslonlat,gon.icon["セルフ"],"現在位置");
+  jyosetuMap.addMySpotMarker(CrtPoslonlat,gon.icon["セルフ"][gon.user.gender],"今ココだよ");
   jyosetuMap.setView(CrtPoslonlat, zoom);
   scrollTo(0, $('#resize_area').offset().top);
 }
