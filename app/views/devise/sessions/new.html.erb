@@ -13,7 +13,13 @@
     </header>
 
     <div class="vl-contentsWrap container">
+      <div class="vl-enterBlock vl-youkoso02 rounded m-auto card shadow" style="opacity:0.9;padding:15px">
+        <h2 class="vl-youkoso_head__l"><span>はじめての方</span></h2>
+        <%= link_to "新規登録", new_registration_path(resource_name),  class:"btn btn-lg btn-block vl-1st" %>
+        <!-- / .vl-enterBlock -->
+      </div>
       <div class="vl-enterBlock rounded m-auto card shadow" style="opacity:0.9;padding:15px">
+        <h2 class="vl-youkoso_head__l"><span>アカウントをお持ちの方</span></h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control',placeholder:"メールアドレスを入力" %>

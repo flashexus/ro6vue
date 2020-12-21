@@ -146,20 +146,20 @@
           <% if current_user.apply_flg == TRUE %>
             <h4 class="text-center">抽選の応募は既に終了しています</h4>
           <% else %>
-            <% case @bingo_cnt.to_i %>
+           <% case @bingo_cnt.to_i %>
               <% when 0 %>
-                  <p class="text-center">現在のビンゴ数は<%= @bingo_cnt %></p>
+                  <p class="text-center total">現在のビンゴ数は<span><%= @bingo_cnt %></span></p>
               <% when 1 %>
-                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
-                  <p class="text-center">石見へワンスアゲイン賞 応募可能</p>
+                  <p class="text-center mb-0"><span class="bingoAchievement"><%= @bingo_cnt %></span>ビンゴ達成</p>
+                  <p class="text-center onesAgain"><span>石見へワンスアゲイン賞</span>応募可能</p>
               <% when 2..5 %>
-                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
-                  <p class="text-center">石見通(ツー)賞 応募可能</p>
+                  <p class="text-center mb-0"><span class="bingoAchievement"><%= @bingo_cnt %></span>ビンゴ達成</p>
+                  <p class="text-center iwamiTwo"><span>石見通(ツー)賞</span>応募可能</p>
               <% when 6 %>
-                  <p class="text-center mb-0"><%= @bingo_cnt %>ビンゴ達成</p>
-                  <p class="text-center">ALL石見賞 応募可能</p>
+                  <p class="text-center mb-0"><span class="bingoAchievement"><%= @bingo_cnt %></span>ビンゴ達成</p>
+                  <p class="text-center allIwami"><span>ALL石見賞</span>応募可能</span></p>
               <% else %>
-                 <h4 class="text-center">現在のビンゴ数は<%= @bingo_cnt %></h4>
+                 <h4 class="text-center total">現在のビンゴ数は<span><%= @bingo_cnt %></span></h4>
             <% end %>
           <% end %>
           <div class="row mt-1">

@@ -60,8 +60,11 @@ $('.vl-readQrWrap').on('click','#flame',function () {
             }).done(function(data){
               if(data.message =='Bingo'){
                 location.href="/stamps?get=bingo";
-              }else{
+              }else if(data.message =='Stamp'){
                 location.href="/stamps?get=stamp";
+              }else{
+                alert(data.message);  // 取得した文字列
+                location.href="/stamps";
               }
             }).fail(function(data){
               alert(data.responseText);  // 取得した文字列
