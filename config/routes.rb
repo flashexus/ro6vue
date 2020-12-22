@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'stamps#new'
   get 'home/index'
   get 'home/policy'
-  get 'home/finish_regist'
   get 'home/info'
 
   #resources :points
@@ -25,8 +24,8 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
   }
   devise_scope :user do
-    # get 'sign_up', :to => "users/registrations#new"
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get 'users/finish_regist', :to => "users/registrations#finish_regist"
+    get 'users/sign_out' => 'users/sessions#destroy'
   end
   namespace :admin do
     # Add dashboard for your models here

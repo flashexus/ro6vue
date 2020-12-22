@@ -20,6 +20,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def finish_regist
+
+  end
   # GET /resource/edit
   # def edit
   #   super
@@ -64,13 +67,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     super(resource)
-    home_finish_regist_path
+  #  home_finish_regist_path
+    users_finish_regist_path
   
   end
 
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
   #  super(resource)
-  home_finish_regist_path
+  #  home_finish_regist_path
+    users_finish_regist_path
+    
   end
 end
