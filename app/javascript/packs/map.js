@@ -41,7 +41,27 @@ $('.vl-tabWrap').on('click','.nav-link',function () {
   jyosetuMap.areafitBounds();
   updateTable(gon.select_area);
 });
-
+//////////////////////////////////////施設タイプ選択表示//////////////////////////////////////
+$('.vl-shopSelect').on('change','#select_shop',function () {
+  //施設タイプの抽出
+  let shop_type = $('#select_shop').val();
+ 
+  //表示中のスポットを削除
+  jyosetuMap.removeAreaSpotMarker();
+  
+  //対象施設を抽出
+  let points = []
+  for (let i=0; i < gon.points.length; i++){
+    if ( (gon.points[i].area_group === gon.select_area) && (gon.points[i].shop_type === shop_type)){
+      points.push(gon.points[i]);
+    }
+  }
+  //選択エリアに合わせたスポットを表示
+  jyosetuMap.addAreaSpotMarker(gon.select_area,points,gon.icon);
+  //表示位置の調整
+  jyosetuMap.areafitBounds();
+  updateSelectTable(gon.select_area,shop_type);
+});
 //////////////////////////////////////施設名の選択//////////////////////////////////////
 // 施設名のクリック
 //(DOMがajaxで動的に生成されるため、$(#change).onでバインドする必要有)
@@ -76,4 +96,15 @@ function updateTable(area) {
       $("#change").html(data);
   })
 }
+function updateSelectTable(area,shop_type){
+  $.get({
+    url:"/points/select_shop" ,
+    data: {
+      area:area,
+      shop_type:shop_type
+    }
+  }).done(function(data) {
+      $("#change").html(data);
+  })
 
+}
