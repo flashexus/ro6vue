@@ -10,7 +10,13 @@ class Point < ApplicationRecord
         "石西エリア" => [131.482636,34.433905],
         "石央エリア" => [132.144666,34.959614],
         "石東エリア" => [132.445299,35.113757],
-      }
+    }
+
+    LINK_PATH = {
+        "石西エリア" => "https://www.all-iwami.com/contents/stamprally/sekisei/",
+        "石央エリア" => "https://www.all-iwami.com/contents/stamprally/sekiou/",
+        "石東エリア" => "https://www.all-iwami.com/contents/stamprally/sekitou/",
+    }
 
     ICON = %w({
         "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),

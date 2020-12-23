@@ -7,6 +7,7 @@ class PointsController < ApplicationController
     @points = Point.all
     @user = current_user
 
+    @link_path = Point::LINK_PATH
     @icon_hash = {
       "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
       "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
@@ -31,6 +32,7 @@ class PointsController < ApplicationController
     gon.icon = @icon_hash
     gon.points = @points
     gon.area_pos = @area_pos
+    gon.link_path = @link_path
   end
 
   def ajax_area_shop

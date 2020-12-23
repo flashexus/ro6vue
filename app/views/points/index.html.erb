@@ -35,9 +35,12 @@
               <div id="map" class="gmap"></div>
             </div>
           </div>
-          <div class="vl-shopSelect row mt-2 mr-1 justify-content-end" hidden>
-            <p style="font-size:10px;">施設タイプ絞り込み:</p>
-            <%= select_tag "select_shop", options_for_select(@icon_hash.map{ |key,value| key if key!="セルフ"}),{include_blank: true,style:"height:1.5em; font-size:10px;"} %>
+          <div class="row mt-2 mr-1 justify-content-end">
+            <%= link_to "施設詳細ページへ", @link_path[@select_area],class:"vl-link" %> 
+            <div class="vl-shopSelect" hidden>
+              <p style="font-size:10px;">施設タイプ絞り込み:</p>
+              <%= select_tag "select_shop", options_for_select(@icon_hash.map{ |key,value| key if key!="セルフ"}),{include_blank: true,style:"height:1.5em; font-size:10px;"} %>
+            </div>
           </div>
           <div class="row mt-4 pr-2 pl-2">
             <div class="table-responsive vl-spotList" >

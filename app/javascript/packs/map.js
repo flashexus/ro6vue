@@ -37,6 +37,9 @@ $('.vl-tabWrap').on('click','.nav-link',function () {
   jyosetuMap.removeAreaSpotMarker();
   //選択エリアに合わせたスポットを表示
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
+  //賞品リンクを更新
+  $('.vl-link').attr('href', gon.link_path[gon.select_area]);
+
   //表示位置の調整
   jyosetuMap.areafitBounds();
   updateTable(gon.select_area);

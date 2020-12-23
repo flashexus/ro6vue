@@ -33,6 +33,11 @@
            <% end %>
         </li>
         <li>
+           <%= link_to("https://www.all-iwami.com/contents/stamprally/syouhin/" ,class:"home", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-gift"></i></br><span>賞品一覧</span>
+           <% end %>
+        </li>
+        <li>
           <% if user_signed_in? %>
               <%= link_to( destroy_user_session_path, class:"logout", method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i></br><span>ログアウト</span>
