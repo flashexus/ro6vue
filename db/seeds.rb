@@ -152,8 +152,10 @@ point = Point.new( code:"z1w70024", show_no:"76",area_group:"石央エリア",sh
  point.save!
 point = Point.new( code:"v9yd1025", show_no:"77",area_group:"石央エリア",shop_type:"その他",sp_flg:false,name:"島根県立石見海浜公園",zipcode:"697-0005",desc:"浜田市国分町1644-1",TEL:"0855-28-2231",holiday:"12/29～1/3",path:"http://kkisp.jp",lat:"34.94962792",lon:"132.1237864") 
  point.save!
-point = Point.new( code:"v7s4t026", show_no:"78",area_group:"石央エリア",shop_type:"その他",sp_flg:false,name:"縁側喫茶「右衛門田」白川邸",zipcode:"",desc:"浜田市旭町都川2159",TEL:"0855-47-0423",holiday:"",path:"",lat:"34.8367502",lon:"132.3208944") 
- point.save!
+
+#  point = Point.new( code:"v7s4t026", show_no:"78",area_group:"石央エリア",shop_type:"その他",sp_flg:false,name:"縁側喫茶「右衛門田」白川邸",zipcode:"",desc:"浜田市旭町都川2159",TEL:"0855-47-0423",holiday:"",path:"",lat:"34.8367502",lon:"132.3208944") 
+#  point.save!
+
 point = Point.new( code:"qgcvq027", show_no:"79",area_group:"石央エリア",shop_type:"その他",sp_flg:false,name:"やさか村ワタブンアートファブリック",zipcode:"",desc:"浜田市弥栄町木都賀イ514-1",TEL:"0855-48-2436",holiday:"土日祝",path:"www.tu-ton-ton.com/",lat:"34.76551797",lon:"132.0740864") 
  point.save!
 point = Point.new( code:"aysoy028", show_no:"80",area_group:"石央エリア",shop_type:"飲食店",sp_flg:false,name:"居酒屋　きらら",zipcode:"697-0022",desc:"浜田市浅井町1577",TEL:"0855-22-1782",holiday:"昼／日曜日・月曜日夜／不定休",path:"",lat:"34.90153526",lon:"132.088857") 
