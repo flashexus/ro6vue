@@ -35,14 +35,14 @@
               <div id="map" class="gmap"></div>
             </div>
           </div>
-          <div class="row mt-2 mr-1 justify-content-end">
-            <span>休日・営業時間等は</span>
-            <%= link_to "施設詳細ページへ", @link_path[@select_area],class:"vl-link" %> 
-          </div>
-          <div class="row mt-2 mr-1 justify-content-end">
-            <div class="vl-shopSelect">
-              <span style="font-size:14px;">施設タイプ絞り込み:</span>
-              <%= select_tag "select_shop", options_for_select(@icon_hash.map{ |key,value| key if key!="セルフ"}),{style:"height:2.0em; font-size:12px;"} %>
+          <div class="row mt-2 mr-1">
+            <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6  justify-content-top vl-shopSelect">
+              <span style="font-size:8px;">施設タイプ絞り込み:</span>
+              <%= select_tag "select_shop", options_for_select(@icon_hash.map{ |key,value| key if key!="セルフ"}),{style:"height:2.0em; font-size:8px;"} %>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 justify-content-end">
+              <p>休日・営業時間等は</p>
+              <%= link_to "施設詳細ページへ", @link_path[@select_area],class:"vl-link" %>
             </div>
           </div>
           <div class="row mt-2 pr-2 pl-2">
