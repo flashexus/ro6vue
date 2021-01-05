@@ -8,7 +8,7 @@ require('jquery')
 
 var jyosetuMap = new LJyosetuMap();
 var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': false};
-var lonlat = gon.area_pos["石央エリア"];
+var lonlat = gon.area_pos["石西エリア"];
 var zoom = 14;
 
   //////////////////////////////////////初期表示//////////////////////////////////////
