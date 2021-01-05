@@ -9,6 +9,11 @@ class PointsController < ApplicationController
 
     @link_path = Point::LINK_PATH
     @icon_hash = {
+      "セルフ"=> {
+        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
+        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
+        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
+      },
       "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
       "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
@@ -17,12 +22,7 @@ class PointsController < ApplicationController
       "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
       "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
       "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
-      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png"),
-      "セルフ"=> {
-        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
-        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
-        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
-      }
+      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
     }
     @area_pos = Point::AREA_POS
     @select_area = Point::INIT_AREA

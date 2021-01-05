@@ -254,7 +254,7 @@ LJyosetuMap.prototype = {
                     popupAnchor: [0, -32]
                 });
                 let layer = L.marker([points[i].lat, points[i].lon], {icon: icon})
-                    .bindPopup(points[i].name,{
+                    .bindPopup( "No " + points[i].show_no + "." + points[i].name,{
                         autoClose:false,
                         closeOnClick:false,
                         keepInView:true,
