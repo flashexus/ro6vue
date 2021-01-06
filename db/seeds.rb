@@ -1,8 +1,8 @@
-point = Point.new( code:"5033i001", show_no:"1",area_group:"石東エリア",shop_type:"観光施設",sp_flg:true,name:"島根県立三瓶自然館サヒメル",zipcode:"694-0003",desc:"大田市三瓶町多根1121-8-1",TEL:"0854-86-0500",holiday:"火曜（火曜が休・祝日の場合は次の平日に休館）",path:"https://www.nature-sanbe.jp/sahimel/",lat:"35.15270584",lon:"132.62047108" ) 
+point = Point.new( code:"5033i001", show_no:"1",area_group:"石東エリア",shop_type:"観光施設",sp_flg:true,name:"島根県立三瓶自然館サヒメル",zipcode:"694-0003",desc:"大田市三瓶町多根1121-8",TEL:"0854-86-0500",holiday:"火曜（火曜が休・祝日の場合は次の平日に休館）",path:"https://www.nature-sanbe.jp/sahimel/",lat:"35.15270584",lon:"132.62047108" ) 
  point.save!
 point = Point.new( code:"paw1o002", show_no:"2",area_group:"石東エリア",shop_type:"観光施設",sp_flg:false,name:"三瓶山北の原キャンプ場",zipcode:"694-0003",desc:"大田市三瓶町多根1121-1",TEL:"0854-86-0152",holiday:"火曜（12月～3月）",path:"https://www.nature-sanbe.jp/camp/",lat:"35.15388625",lon:"132.6205016" ) 
  point.save!
-point = Point.new( code:"ztdt3003", show_no:"3",area_group:"石東エリア",shop_type:"観光施設",sp_flg:true,name:"石見銀山世界遺産センター",zipcode:"694-0305",desc:"大田市大森町イ1597-3",TEL:"0854-89-0183",holiday:"毎月最終火曜日",path:"https://ginzan.city.ohda.lg.jp",lat:"35.10568302",lon:"132.45173" ) 
+point = Point.new( code:"ztdt3003", show_no:"3",area_group:"石東エリア",shop_type:"観光施設",sp_flg:true,name:"石見銀山世界遺産センター",zipcode:"694-0305",desc:"大田市大森町イ1597-3",TEL:"0854-89-0183",holiday:"毎月最終火曜",path:"https://ginzan.city.ohda.lg.jp",lat:"35.10568302",lon:"132.45173" ) 
  point.save!
 point = Point.new( code:"k31ra004", show_no:"4",area_group:"石東エリア",shop_type:"観光施設",sp_flg:true,name:"石見銀山資料館",zipcode:"694-0305",desc:"大田市大森町ハ51番地1",TEL:"0854-89-0846",holiday:"12月～2月の水曜日",path:"https://igmuseum.jp",lat:"35.12205625",lon:"132.4478551" ) 
  point.save!
@@ -34,7 +34,7 @@ point = Point.new( code:"1ge7u00h", show_no:"17",area_group:"石東エリア",sh
  point.save!
 point = Point.new( code:"3sn2k00i", show_no:"18",area_group:"石東エリア",shop_type:"その他",sp_flg:true,name:"物部神社",zipcode:"694-0011",desc:"大田市川合町川合1545",TEL:"0854-82-0644",holiday:"無",path:"https://www.mononobe-jinja.jp",lat:"35.15494102",lon:"132.5134523") 
  point.save!
-point = Point.new( code:"hd32k00j", show_no:"19",area_group:"石東エリア",shop_type:"その他",sp_flg:false,name:"一宮酒造有限会社",zipcode:"694-0064",desc:"大田市大田町大田ハ271番地2",TEL:"0854-82-0057",holiday:"土日祝日",path:"https://www.ichinomiy-s.jp",lat:"35.19472241",lon:"132.5065558") 
+point = Point.new( code:"hd32k00j", show_no:"19",area_group:"石東エリア",shop_type:"その他",sp_flg:false,name:"一宮酒造有限会社",zipcode:"694-0064",desc:"大田市大田町大田ハ271番地2",TEL:"0854-82-0057",holiday:"土日祝日",path:"https://www.ichinomiya-s.jp",lat:"35.19472241",lon:"132.5065558") 
  point.save!
 point = Point.new( code:"jtswo00k", show_no:"20",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"seasons Dinig 暖DAN",zipcode:"699-2211",desc:"大田市波根町1338-1",TEL:"0854-85-7387",holiday:"月曜、年末年始、その他都合により",path:"https://www.facebook.com/SeasonsDiningDANDAN",lat:"35.24112455321419",lon:"132.52643299994995") 
  point.save!
@@ -60,7 +60,7 @@ point = Point.new( code:"q0qs300u", show_no:"30",area_group:"石東エリア",sh
  point.save!
 point = Point.new( code:"p5dde00v", show_no:"31",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"そら豆",zipcode:"699-4622",desc:"美郷町久保740-7",TEL:"0855-74-6033",holiday:"土・日・祝、年末年始",path:"",lat:"35.07121873",lon:"132.593042") 
  point.save!
-point = Point.new( code:"iw61l00w", show_no:"32",area_group:"石東エリア",shop_type:"宿泊",sp_flg:false,name:"千千香",zipcode:"699-4621",desc:"美郷町粕淵437-12",TEL:"0855-74-6500",holiday:"木・金曜定休,土・日曜不定休",path:"https://sensenka.localinfo.jp/",lat:"35.07334897",lon:"132.5918227") 
+point = Point.new( code:"iw61l00w", show_no:"32",area_group:"石東エリア",shop_type:"宿泊",sp_flg:false,name:"千千香",zipcode:"699-4621",desc:"美郷町粕渕437-12",TEL:"0855-74-6500",holiday:"木・金曜定休,土・日曜不定休",path:"https://sensenka.localinfo.jp/",lat:"35.07334897",lon:"132.5918227") 
  point.save!
 point = Point.new( code:"35y2u00x", show_no:"33",area_group:"石東エリア",shop_type:"その他",sp_flg:false,name:"産直みさと市",zipcode:"699-4621",desc:"美郷町粕渕177-15",TEL:"0855-74-6230",holiday:"年始",path:"",lat:"35.07591803",lon:"132.5900729") 
  point.save!
@@ -72,29 +72,29 @@ point = Point.new( code:"copau010", show_no:"36",area_group:"石東エリア",sh
  point.save!
 point = Point.new( code:"ftlt4011", show_no:"37",area_group:"石東エリア",shop_type:"ガソリンスタンド",sp_flg:false,name:"大畠石油店",zipcode:"696-0704",desc:"美郷町都賀本郷243-7",TEL:"0855-82-2289",holiday:"日曜、年始",path:"",lat:"34.95744174",lon:"132.6422469") 
  point.save!
-point = Point.new( code:"xdtgf012", show_no:"38",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"カフェ・ドゥ・ソレイユ",zipcode:"696-0001",desc:"邑智郡川本町大字川本617-9",TEL:"0855-72-0013",holiday:"土曜・日曜・祝日",path:"",lat:"34.99236430690714",lon:"132.49359049990662") 
+point = Point.new( code:"xdtgf012", show_no:"38",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"カフェ・ドゥ・ソレイユ",zipcode:"696-0001",desc:"川本町大字川本617-9",TEL:"0855-72-0013",holiday:"土曜・日曜・祝日",path:"",lat:"34.99236430690714",lon:"132.49359049990662") 
  point.save!
-point = Point.new( code:"9yned013", show_no:"39",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"喫茶K",zipcode:"696-0001",desc:"邑智郡川本町大字川本543-2",TEL:"0855-72-0596",holiday:"日曜",path:"",lat:"34.99335618438769",lon:"132.49474941646238") 
+point = Point.new( code:"9yned013", show_no:"39",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"喫茶K",zipcode:"696-0001",desc:"川本町大字川本543-2",TEL:"0855-72-0596",holiday:"日曜",path:"",lat:"34.99335618438769",lon:"132.49474941646238") 
  point.save!
-point = Point.new( code:"yxbva014", show_no:"40",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"新栄寿し",zipcode:"696-0001",desc:"邑智郡川本町大字川本613-2",TEL:"0855-72-0021",holiday:"不定休",path:"",lat:"34.99190662037359",lon:"132.4933161742166") 
+point = Point.new( code:"yxbva014", show_no:"40",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"新栄寿し",zipcode:"696-0001",desc:"川本町大字川本613-2",TEL:"0855-72-0021",holiday:"不定休",path:"",lat:"34.99190662037359",lon:"132.4933161742166") 
  point.save!
-point = Point.new( code:"l38zf015", show_no:"41",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"鮨　ふくや",zipcode:"696-0001",desc:"邑智郡川本町大字川本524-16",TEL:"0855-72-0079",holiday:"不定休",path:"",lat:"34.99226373",lon:"132.4941571") 
+point = Point.new( code:"l38zf015", show_no:"41",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"鮨　ふくや",zipcode:"696-0001",desc:"川本町大字川本524-16",TEL:"0855-72-0079",holiday:"不定休",path:"",lat:"34.99226373",lon:"132.4941571") 
  point.save!
-point = Point.new( code:"jlys6016", show_no:"42",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"ふくむら食堂",zipcode:"696-0001",desc:"邑智郡川本町大字川本633-2",TEL:"0855-72-0246",holiday:"日曜・祝日",path:"",lat:"34.99330680646165",lon:"132.49390568340297") 
+point = Point.new( code:"jlys6016", show_no:"42",area_group:"石東エリア",shop_type:"飲食店",sp_flg:false,name:"ふくむら食堂",zipcode:"696-0001",desc:"川本町大字川本633-2",TEL:"0855-72-0246",holiday:"日曜・祝日",path:"",lat:"34.99330680646165",lon:"132.49390568340297") 
  point.save!
-point = Point.new( code:"37ewg017", show_no:"43",area_group:"石東エリア",shop_type:"日帰り温泉",sp_flg:false,name:"湯谷温泉　弥山荘",zipcode:"696-1222",desc:"邑智郡川本町大字湯谷781-2",TEL:"0855-72-2645",holiday:"",path:"https://www.kawamoto-kankou.jp/location/misensou/#event",lat:"35.00794097",lon:"132.4474993") 
+point = Point.new( code:"37ewg017", show_no:"43",area_group:"石東エリア",shop_type:"日帰り温泉",sp_flg:false,name:"湯谷温泉　弥山荘",zipcode:"696-1222",desc:"川本町大字湯谷781-2",TEL:"0855-72-2645",holiday:"",path:"https://www.kawamoto-kankou.jp/location/misensou/#event",lat:"35.00794097",lon:"132.4474993") 
  point.save!
-point = Point.new( code:"67ewk018", show_no:"44",area_group:"石東エリア",shop_type:"道の駅",sp_flg:false,name:"道の駅 インフォメーションセンターかわもと",zipcode:"696-0003",desc:"邑智郡川本町大字因原505-1",TEL:"0855-72-1111",holiday:"年末年始、レストラン:月",path:"",lat:"34.96600037",lon:"132.4729892") 
+point = Point.new( code:"67ewk018", show_no:"44",area_group:"石東エリア",shop_type:"道の駅",sp_flg:false,name:"道の駅 インフォメーションセンターかわもと",zipcode:"696-0003",desc:"川本町大字因原505-1",TEL:"0855-72-1111",holiday:"年末年始、レストラン:月",path:"",lat:"34.96600037",lon:"132.4729892") 
  point.save!
-point = Point.new( code:"l7z4w019", show_no:"45",area_group:"石東エリア",shop_type:"ガソリンスタンド",sp_flg:false,name:"因原石油有限会社",zipcode:"696-0003",desc:"邑智郡川本町大字因原456",TEL:"0855-72-0320",holiday:"",path:"",lat:"34.96719189",lon:"132.4724448") 
+point = Point.new( code:"l7z4w019", show_no:"45",area_group:"石東エリア",shop_type:"ガソリンスタンド",sp_flg:false,name:"因原石油有限会社",zipcode:"696-0003",desc:"川本町大字因原456",TEL:"0855-72-0320",holiday:"",path:"",lat:"34.96719189",lon:"132.4724448") 
  point.save!
-point = Point.new( code:"zasxr01a", show_no:"46",area_group:"石東エリア",shop_type:"ガソリンスタンド",sp_flg:false,name:"松江石油株式会社　川本SS",zipcode:"696-0001",desc:"邑智郡川本町大字川本551-1",TEL:"0855-72-0358",holiday:"日曜",path:"",lat:"34.99391670829075",lon:"132.49483518660946") 
+point = Point.new( code:"zasxr01a", show_no:"46",area_group:"石東エリア",shop_type:"ガソリンスタンド",sp_flg:false,name:"松江石油株式会社　川本SS",zipcode:"696-0001",desc:"川本町大字川本551-1",TEL:"0855-72-0358",holiday:"日曜",path:"",lat:"34.99391670829075",lon:"132.49483518660946") 
  point.save!
-point = Point.new( code:"0hgvb01b", show_no:"47",area_group:"石東エリア",shop_type:"宿泊",sp_flg:false,name:"かわもとおとぎ館",zipcode:"696-0001",desc:"邑智郡川本町大字川本332-13",TEL:"0855-72-3080",holiday:"レストラン:日曜・月曜・火曜",path:"http://kawamoto-otogi-kan.com/",lat:"34.99086947905361",lon:"132.49708598001132") 
+point = Point.new( code:"0hgvb01b", show_no:"47",area_group:"石東エリア",shop_type:"宿泊",sp_flg:false,name:"かわもとおとぎ館",zipcode:"696-0001",desc:"川本町大字川本332-13",TEL:"0855-72-3080",holiday:"レストラン:日曜・月曜・火曜",path:"http://kawamoto-otogi-kan.com/",lat:"34.99086947905361",lon:"132.49708598001132") 
  point.save!
 point = Point.new( code:"po00d01c", show_no:"48",area_group:"石東エリア",shop_type:"道の駅",sp_flg:false,name:"道の駅 キララ多伎",zipcode:"699-0902",desc:"出雲市多伎町多岐135-1",TEL:"0853-86-9080",holiday:"なし",path:"",lat:"35.29050268",lon:"132.6322088") 
  point.save!
-point = Point.new( code:"p9g1s01d", show_no:"49",area_group:"石東エリア",shop_type:"道の駅",sp_flg:false,name:"道の駅 ご縁広場出雲物産館",zipcode:"699-0721",desc:"出雲市大社町修理免735-5",TEL:"0853-53-5150",holiday:"なし",path:"https://www.izumo-bussankan.jp/",lat:"35.38918973",lon:"132.6862751") 
+point = Point.new( code:"p9g1s01d", show_no:"49",area_group:"石東エリア",shop_type:"道の駅",sp_flg:false,name:"道の駅 ご縁広場 出雲物産館",zipcode:"699-0721",desc:"出雲市大社町修理免735-5",TEL:"0853-53-5150",holiday:"なし",path:"https://www.izumo-bussankan.jp/",lat:"35.38918973",lon:"132.6862751") 
  point.save!
 point = Point.new( code:"e4maf01e", show_no:"50",area_group:"石央エリア",shop_type:"観光施設",sp_flg:false,name:"しまね海洋館 アクアス",zipcode:"697-0004",desc:"浜田市久代町1117-2",TEL:"0855-28-3900",holiday:"火曜（春・夏・冬休み、GW、年末年始は休まず開館）",path:"https://aquas.or.jp/",lat:"34.95945222",lon:"132.1445931") 
  point.save!
@@ -138,7 +138,7 @@ point = Point.new( code:"up6j901x", show_no:"69",area_group:"石央エリア",sh
  point.save!
 point = Point.new( code:"thx1b01y", show_no:"70",area_group:"石央エリア",shop_type:"飲食店",sp_flg:false,name:"リフレパークきんたの里",zipcode:"697-0123",desc:"浜田市金城町七条イ980-1",TEL:"0855-42-3555",holiday:"第3水曜（祝日の場合は翌日）",path:"https://kintanosato.com/",lat:"34.86269902241943",lon:"132.16173898873055") 
  point.save!
-point = Point.new( code:"2kxkc01z", show_no:"71",area_group:"石央エリア",shop_type:"飲食店",sp_flg:false,name:"BERRYNE CAFÉ",zipcode:"697-0123",desc:"浜田市金城町七条イ７３５番地",TEL:"0855-42-2515",holiday:"月・火曜日",path:"https://www.berryne.co.jp/",lat:"34.86884305533949",lon:"132.1671698452173") 
+point = Point.new( code:"2kxkc01z", show_no:"71",area_group:"石央エリア",shop_type:"飲食店",sp_flg:false,name:"BERRYNE CAFÉ",zipcode:"697-0123",desc:"浜田市金城町七条イ735番地",TEL:"0855-42-2515",holiday:"月・火曜日",path:"https://www.berryne.co.jp/",lat:"34.86884305533949",lon:"132.1671698452173") 
  point.save!
 point = Point.new( code:"j7omt020", show_no:"72",area_group:"石央エリア",shop_type:"飲食店",sp_flg:false,name:"くじら亭",zipcode:"699-3226",desc:"浜田市三隅町岡見661-1",TEL:"0855-32-3142",holiday:"火曜日",path:"",lat:"34.77077405309837",lon:"131.92199623676765") 
  point.save!
@@ -404,13 +404,13 @@ point = Point.new( code:"wunkx05j", show_no:"200",area_group:"石西エリア",s
  point.save!
 point = Point.new( code:"gomsw05k", show_no:"201",area_group:"石西エリア",shop_type:"道の駅",sp_flg:false,name:"長門おもちゃ美術館（道の駅 センザキッチン内）",zipcode:"759-4106",desc:"山口県長門市仙崎4297-1",TEL:"0837-27-0337",holiday:"毎週木曜（夏休み期間中は営業）",path:"",lat:"34.38849494640002",lon:"131.20244184521724") 
  point.save!
-point = Point.new( code:"skakq05l", show_no:"202",area_group:"石東エリア",shop_type:"神楽会場",sp_flg:"true",name:"温泉津温泉 龍御前神社",zipcode:"",desc:"大田市温泉津町温泉津ロ156",TEL:"0855-65-2998",holiday:"",path:"",lat:"35.09555804",lon:"132.3461401") 
+point = Point.new( code:"skakq05l", show_no:"202",area_group:"石東エリア",shop_type:"神楽会場",sp_flg:"true",name:"【石見神楽定期公演】温泉津温泉 龍御前神社",zipcode:"",desc:"大田市温泉津町温泉津ロ156",TEL:"0855-65-2998（温泉津温泉旅館組合）",holiday:"",path:"",lat:"35.09555804",lon:"132.3461401") 
  point.save!
-point = Point.new( code:"aypro05m", show_no:"203",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"有福温泉 湯の町神楽殿",zipcode:"",desc:"江津市有福温泉町711-1",TEL:"	0855-52-0534",holiday:"",path:"",lat:"34.94039679",lon:"132.2005888") 
+point = Point.new( code:"aypro05m", show_no:"203",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"【石見神楽定期公演】有福温泉 湯の町神楽殿",zipcode:"",desc:"江津市有福温泉町711-1",TEL:"0855-52-0534（江津市観光協会）",holiday:"",path:"",lat:"34.94039679",lon:"132.2005888") 
  point.save!
-point = Point.new( code:"tre5f05n", show_no:"204",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"舞乃座（神楽の里 舞乃市）",zipcode:"",desc:"江津市後地町3348-113",TEL:"0120-522-235",holiday:"",path:"",lat:"35.04521915",lon:"132.2998919") 
+point = Point.new( code:"tre5f05n", show_no:"204",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"【石見神楽定期公演】舞乃座（神楽の里 舞乃市）",zipcode:"",desc:"江津市後地町3348-113",TEL:"090-8065-0002（席の予約専用電話）",holiday:"",path:"",lat:"35.04521915",lon:"132.2998919") 
  point.save!
-point = Point.new( code:"zl72l05o", show_no:"205",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"三宮神社",zipcode:"",desc:"浜田市相生町1571",TEL:"	0855-24-1085",holiday:"",path:"",lat:"34.89408352",lon:"132.1040921") 
+point = Point.new( code:"zl72l05o", show_no:"205",area_group:"石央エリア",shop_type:"神楽会場",sp_flg:"true",name:"【石見神楽定期公演】三宮神社",zipcode:"",desc:"浜田市相生町1571",TEL:"0855-24-1085（（一社）浜田市観光協会）",holiday:"",path:"",lat:"34.89408352",lon:"132.1040921") 
  point.save!
-point = Point.new( code:"bq3el05p", show_no:"206",area_group:"石西エリア",shop_type:"神楽会場",sp_flg:"true",name:"益田駅前ビルEAGA",zipcode:"",desc:"益田市駅前町17-1",TEL:"0856-22-7120",holiday:"",path:"",lat:"34.67731619",lon:"131.8390841") 
+point = Point.new( code:"bq3el05p", show_no:"206",area_group:"石西エリア",shop_type:"神楽会場",sp_flg:"true",name:"【石見神楽定期公演】益田駅前ビルEAGA",zipcode:"",desc:"益田市駅前町17-1",TEL:"0856-22-7120（（一社）益田市観光協会）",holiday:"",path:"",lat:"34.67731619",lon:"131.8390841") 
  point.save!
