@@ -26,8 +26,19 @@ var zoom = 14;
   //表示位置合わせ
   jyosetuMap.areafitBounds();
   //初期エリア選択
-  $('#item2-tab').attr('aria-selected',true);
-  $('#item2-tab').addClass('active');
+  if (gon.select_area === "石西エリア"){
+    $('#item1-tab').attr('aria-selected',true);
+    $('#item1-tab').addClass('active');
+  }
+  if (gon.select_area === "石央エリア"){
+    $('#item2-tab').attr('aria-selected',true);
+    $('#item2-tab').addClass('active');
+  }
+  if (gon.select_area === "石東エリア"){
+    $('#item3-tab').attr('aria-selected',true);
+    $('#item3-tab').addClass('active');
+  }
+
 //}
 //////////////////////////////////////エリア選択表示//////////////////////////////////////
 $('.vl-tabWrap').on('click','.nav-link',function () {
@@ -39,7 +50,8 @@ $('.vl-tabWrap').on('click','.nav-link',function () {
   jyosetuMap.addAreaSpotMarker(gon.select_area,gon.points,gon.icon);
   //賞品リンクを更新
   $('.vl-link').attr('href', gon.link_path[gon.select_area]);
-
+  //施設タイプを全てに変更
+  $('#select_shop').val("全て");
   //表示位置の調整
   jyosetuMap.areafitBounds();
   updateTable(gon.select_area);
@@ -55,8 +67,9 @@ $('.vl-shopSelect').on('change','#select_shop',function () {
   //対象施設を抽出
   let points = []
   for (let i=0; i < gon.points.length; i++){
-    if ( (gon.points[i].area_group === gon.select_area) && (gon.points[i].shop_type === shop_type)){
-      points.push(gon.points[i]);
+    if ( (gon.points[i].area_group === gon.select_area) && 
+         ( (gon.points[i].shop_type === shop_type) || ("全て" === shop_type) )){
+          points.push(gon.points[i]);
     }
   }
   //選択エリアに合わせたスポットを表示

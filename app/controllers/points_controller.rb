@@ -39,6 +39,11 @@ class PointsController < ApplicationController
     @select_area = params[:area]
     @points = Point.where(area_group: @select_area)
     @icon_hash = {
+      "セルフ"=> {
+        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
+        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
+        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
+      },
       "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
       "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
@@ -47,12 +52,7 @@ class PointsController < ApplicationController
       "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
       "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
       "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
-      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png"),
-      "セルフ"=> {
-        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
-        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
-        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
-      }
+      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
   }
 
     render partial: 'shop_table',
@@ -62,8 +62,17 @@ class PointsController < ApplicationController
   def ajax_select_shop
     @select_area = params[:area]
     @select_shop = params[:shop_type]
-    @points = Point.where(area_group: @select_area,shop_type:@select_shop)
+    if @select_shop == "全て"
+      @points = Point.where(area_group: @select_area)
+    else
+      @points = Point.where(area_group: @select_area,shop_type:@select_shop)
+    end
     @icon_hash = {
+      "セルフ"=> {
+        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
+        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
+        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
+      },
       "宿泊" => ApplicationController.helpers.master_icon_path("image_stamps/icon_02.png"),
       "飲食店" => ApplicationController.helpers.master_icon_path("image_stamps/icon_03.png"),
       "日帰り温泉" => ApplicationController.helpers.master_icon_path("image_stamps/icon_04.png"),
@@ -72,12 +81,7 @@ class PointsController < ApplicationController
       "道の駅" => ApplicationController.helpers.master_icon_path("image_stamps/icon_08.png"),
       "美術館" => ApplicationController.helpers.master_icon_path("image_stamps/icon_09.png"),
       "ガソリンスタンド" => ApplicationController.helpers.master_icon_path("image_stamps/icon_10.png"),
-      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png"),
-      "セルフ"=> {
-        "男性" => ApplicationController.helpers.master_icon_path("static/boy.gif"),
-        "女性" => ApplicationController.helpers.master_icon_path("static/girl.gif"),
-        "その他" => ApplicationController.helpers.master_icon_path("static/qoo.gif"),
-      }
+      "その他" => ApplicationController.helpers.master_icon_path("image_stamps/icon_11.png")
   }
 
     render partial: 'shop_table',

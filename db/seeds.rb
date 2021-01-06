@@ -296,7 +296,7 @@ point = Point.new( code:"ozbrv043", show_no:"147",area_group:"石西エリア",s
  point.save!
 point = Point.new( code:"abvx6044", show_no:"148",area_group:"石西エリア",shop_type:"観光施設",sp_flg:false,name:"益田市立秦記念館",zipcode:"698-0203",desc:"益田市美都町都茂807",TEL:"0856-52-2415",holiday:"火曜、水曜、祝日の翌日",path:"https://masudashi.com/kankouspot/kankouspot-715/",lat:"34.6721149",lon:"131.9999342") 
  point.save!
-point = Point.new( code:"o3v82045", show_no:"149",area_group:"石西エリア",shop_type:"飲食店",sp_flg:false,name:"café＆fruit moritani",zipcode:"698-0024 ",desc:"益田市駅前町25-32",TEL:"0856-22-0322",holiday:"第4水曜",path:"https://www.moritani-fruits.com/",lat:"34.6776655021656",lon:"131.83873127807365") 
+point = Point.new( code:"o3v82045", show_no:"149",area_group:"石西エリア",shop_type:"飲食店",sp_flg:false,name:"Fruits moritani",zipcode:"698-0024 ",desc:"益田市駅前町25-32",TEL:"0856-22-0322",holiday:"第4水曜",path:"https://www.moritani-fruits.com/",lat:"34.6776655021656",lon:"131.83873127807365") 
  point.save!
 point = Point.new( code:"8boye046", show_no:"150",area_group:"石西エリア",shop_type:"飲食店",sp_flg:false,name:"monno café",zipcode:"699-5132",desc:"益田市横田町2060-1",TEL:"0856-25-1711",holiday:"日曜・祝日",path:"",lat:"34.63464653567422",lon:"131.79990535639857") 
  point.save!
