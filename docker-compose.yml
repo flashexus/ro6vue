@@ -38,7 +38,7 @@ services:
       - db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=pass
-      - "TZ=Asia/Tokyo"
+      - TZ=Asia/Tokyo
     ports:
       - "3306:3306"
 volumes: 
