@@ -18,10 +18,9 @@ services:
     command: sh docker/Rails6/scripts/launch.sh
     volumes:
       - .:/Ro6MysNgx
-      - /Ro6MysNgx/node_modules
+      - node:/Ro6MysNgx/node_modules
       - public-data:/Ro6MysNgx/public
       - tmp-data:/Ro6MysNgx/tmp
-      - log-data:/Ro6MysNgx/log
       - gem_data:/usr/local/bundle
     environment:
       RAILS_ENV: development
@@ -45,5 +44,5 @@ volumes:
     db:
     public-data:
     tmp-data:
-    log-data:
+    node:
     gem_data:
