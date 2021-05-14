@@ -10,7 +10,7 @@
 // ================================
 
 .vl-bodyBg{
- @extend %main-stripeBg;
+//  @extend %main-stripeBg;
  position: relative;
 }
 
@@ -36,36 +36,36 @@
 }
 
 .main-bg1{
- background-image:url("scss_images/main01.jpg");
+//  background-image:url("scss_images/main01.jpg");
  background-size: cover;
  @include xss {
-  background-image: url( "scss_images/main01_sp.jpg");
+  // background-image: url( "scss_images/main01_sp.jpg");
  }
 }
 .main-bg2{
- background-image:url("scss_images/main02.jpg");
+//  background-image:url("scss_images/main02.jpg");
  background-size: cover;
  @include xss {
-  background-image: url( "scss_images/main02_sp.jpg");
+  // background-image: url( "scss_images/main02_sp.jpg");
  }
 }
 .main-bg3{
- background-image:url("scss_images/main03.jpg");
+//  background-image:url("scss_images/main03.jpg");
  @include xss {
-  background-image: url( "scss_images/main03_sp.jpg");
+  // background-image: url( "scss_images/main03_sp.jpg");
  }
 }
 .main-bg4{
-  background-image:url("scss_images/main04.jpg");
+  // background-image:url("scss_images/main04.jpg");
   @include xss {
-   background-image: url( "scss_images/main04_sp.jpg");
+  //  background-image: url( "scss_images/main04_sp.jpg");
   }
  }
  
  .main-bg5{
-  background-image:url("scss_images/main05.jpg");
+  // background-image:url("scss_images/main05.jpg");
   @include xss {
-   background-image: url( "scss_images/main05_sp.jpg");
+  //  background-image: url( "scss_images/main05_sp.jpg");
   }
  }
  
@@ -188,7 +188,7 @@
  
  .card-header {
   border: none;
-  background: $baseBg-color;
+  // background: $baseBg-color;
   
   h1{
    font-size: 1.4rem;

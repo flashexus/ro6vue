@@ -20,15 +20,14 @@ By default, it renders:
   <% else %>
   <%# if !request.host.index("staging") && request.host.index("iwamikururi") %>
     <meta name="robots" content="noodp, noydir, index, follow">
-    <%= render('shared/analytics_iwami') %>
   <% end %>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="format-detection" content="telephone=no">
 
-  <link rel="shortcut icon" href="//www.all-iwami.com/favicon.ico">
-  <link href="//fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
+  <%# <link rel="shortcut icon" href="//www.all-iwami.com/favicon.ico">
+  <link href="//fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet"> %>
   <%#= stylesheet_link_tag 'css_stamp/drawer.min', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <%= include_gon %>

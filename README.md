@@ -86,3 +86,16 @@ Dockerの場合はエディターがインストールされていないので�
 EDITOR="vi" bin/rails credentials:edit --environment production
 ```
 
+## 設定済みコンポーネント
+Rails 
+ administrate
+ devise
+ devise-bootstrap-views
+
+Node
+ Vue
+ Vuetify
+ Vue-Router
+ jquery
+ jsqr
+ leaflet 

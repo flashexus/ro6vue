@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
   root 'stamps#new'
 
-  get 'home/policy'
-  get 'home/info'
-
   # vue-router root path 
   get 'home', to: 'home#index'
   # vue-router path
-  get 'employees/new', to: 'home#index'
-  get 'employees/:id', to: 'home#index'
-  get 'employees/:id/edit', to: 'home#index'
-  get 'map', to: 'home#index'
+  get 'home/employees/new', to: 'home#index'
+  get 'home/employees/:id', to: 'home#index'
+  get 'home/employees/:id/edit', to: 'home#index'
+  get 'home/map', to: 'home#index'
   
   #resources :points
   get 'points', to:'points#index'

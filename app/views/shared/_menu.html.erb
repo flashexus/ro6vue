@@ -23,21 +23,6 @@
            <% end %>
         </li>
         <li>
-           <%= link_to(home_policy_path ,class:"policy", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-book-open"></i></br><span>利用規約</span>
-           <% end %>
-        </li>
-        <li>
-           <%= link_to("https://www.all-iwami.com/contents/stamprally/" ,class:"home", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-home"></i></br><span>いわみくるりホーム</span>
-           <% end %>
-        </li>
-        <li>
-           <%= link_to("https://www.all-iwami.com/contents/stamprally/syouhin/" ,class:"home", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
-             <i class="fas fa-gift"></i></br><span>賞品一覧</span>
-           <% end %>
-        </li>
-        <li>
           <% if user_signed_in? %>
               <%= link_to( destroy_user_session_path, class:"logout", method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i></br><span>ログアウト</span>
@@ -59,7 +44,7 @@
   </div> <!-- / .vl-modalMain -->
 </div>
   <footer class="vl-footer py-3 text-center">
-    <small><a href="https://www.all-iwami.com/contents/stamprally/">©いわみくるり</a></small>
+    <%# <small><a href="https://www.all-iwami.com/contents/stamprally/">©いわみくるり</a></small> %>
   </footer>
   <%= javascript_pack_tag 'menu', 'data-turbolinks-track': 'reload' %>
 
