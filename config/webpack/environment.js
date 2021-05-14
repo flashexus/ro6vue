@@ -1,4 +1,6 @@
 const { environment } = require('@rails/webpacker')
+const { VueLoaderPlugin } = require('vue-loader')
+const vue = require('./loaders/vue')
 const customConfig = require('./custom');
 const webpack = require('webpack') 
 const performance = require('./maxsize')
@@ -14,5 +16,7 @@ const performance = require('./maxsize')
  )
  environment.config.merge(performance );
  environment.config.merge(customConfig);
+environment.plugins.prepend('VueLoaderPlugin', new VueLoaderPlugin())
+environment.loaders.prepend('vue', vue)
 module.exports = environment
 

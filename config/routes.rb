@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   root 'stamps#new'
-  get 'home/index'
+
   get 'home/policy'
   get 'home/info'
 
+  # vue-router root path 
+  get 'home', to: 'home#index'
+  # vue-router path
+  get 'employees/new', to: 'home#index'
+  get 'employees/:id', to: 'home#index'
+  get 'employees/:id/edit', to: 'home#index'
+  get 'map', to: 'home#index'
+  
   #resources :points
   get 'points', to:'points#index'
   get 'points/area_shop', to: 'points#ajax_area_shop'
@@ -35,5 +43,15 @@ Rails.application.routes.draw do
     resources :bingo_statuses
     root to: "users#index" # <--- Root route
   end
+
+    # APIコントローラへのルーティング
+    namespace :api, {format: 'json'} do
+      namespace :v1 do
+        resources :employees, only: [:index, :show, :create, :update, :destroy]
+        resources :locations, only: [:index, :show, :create, :update, :destroy]
+      end
+    end
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
