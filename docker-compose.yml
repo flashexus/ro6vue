@@ -29,6 +29,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - mongo
   db:
     build: 
       context: ./docker/MySQL
@@ -40,9 +41,23 @@ services:
       - TZ=Asia/Tokyo
     ports:
       - "3306:3306"
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo:/data/db"
+      - ./configdb:/data/configdb
+      - ./import_data:/usr/local/share/db
+
 volumes: 
     db:
     public-data:
     tmp-data:
     node:
     gem_data:
+    mongo:

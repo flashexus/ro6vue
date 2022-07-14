@@ -1,21 +1,21 @@
 class Point < ApplicationRecord
     has_many :stamps, dependent: :destroy
-    INIT_AREA = "石央エリア"
+    INIT_AREA = "エリア1"
     #area group Const
-    AREA__GROUP_TYPE = %w(石西エリア 石央エリア 石東エリア)
+    AREA__GROUP_TYPE = %w(エリア1 エリア2 エリア3)
     #area group Const
     POINT_TYPE = %w(観光施設 飲食店 宿泊 日帰り温泉 道の駅 その他)
 
     AREA_POS = {
-        "石西エリア" => [131.482636,34.433905],
-        "石央エリア" => [132.144666,34.959614],
-        "石東エリア" => [132.445299,35.113757],
+        "エリア1" => [131.482636,34.433905],
+        "エリア2" => [132.144666,34.959614],
+        "エリア3" => [132.445299,35.113757],
     }
 
     LINK_PATH = {
-        "石西エリア" => "https://www.all-iwami.com/contents/stamprally/sekisei/",
-        "石央エリア" => "https://www.all-iwami.com/contents/stamprally/sekiou/",
-        "石東エリア" => "https://www.all-iwami.com/contents/stamprally/sekitou/",
+        "エリア1" => "https://www.all-iwami.com/contents/stamprally/sekisei/",
+        "エリア2" => "https://www.all-iwami.com/contents/stamprally/sekiou/",
+        "エリア3" => "https://www.all-iwami.com/contents/stamprally/sekitou/",
     }
 
     ICON = %w({

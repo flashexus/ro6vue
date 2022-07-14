@@ -8,7 +8,7 @@ require('jquery')
 
 var jyosetuMap = new LJyosetuMap();
 var options = {'mouseover': false, 'popup_of_min': false, 'switch_map': false};
-var lonlat = gon.area_pos["石央エリア"];
+var lonlat = gon.area_pos["エリア2"];
 var zoom = 14;
 
   //////////////////////////////////////初期表示//////////////////////////////////////
@@ -26,15 +26,15 @@ var zoom = 14;
   //表示位置合わせ
   jyosetuMap.areafitBounds();
   //初期エリア選択
-  if (gon.select_area === "石西エリア"){
+  if (gon.select_area === "エリア1"){
     $('#item1-tab').attr('aria-selected',true);
     $('#item1-tab').addClass('active');
   }
-  if (gon.select_area === "石央エリア"){
+  if (gon.select_area === "エリア2"){
     $('#item2-tab').attr('aria-selected',true);
     $('#item2-tab').addClass('active');
   }
-  if (gon.select_area === "石東エリア"){
+  if (gon.select_area === "エリア3"){
     $('#item3-tab').attr('aria-selected',true);
     $('#item3-tab').addClass('active');
   }

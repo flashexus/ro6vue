@@ -1,14 +1,13 @@
 <% set_meta_tags title: 'スタンプ取得状況', description: 'スタンプ取得状況' %>
 <body class="stamp-list vl-bodyBg login-user">
   <header class="vl-appTop-header">
-   <div class="vl-appTitle d-flex justify-content-center container">
-    <p><%#= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
-   </div>
+    <div class="vl-appTitle d-flex justify-content-center container">
+    </div>
   </header>
 
   <div class="container">
-    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
-    <div class="vl-contentsWrap">
+    <div class="vl-userName row mt-4 mb-4"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div>
+    <div class="vl-contentsWrap row">
       <div class="vl-contentBlock rounded m-auto bg-white card">
         <div class="card-header">
           <h1 class="text-main-color">スタンプ取得状況</h1>
@@ -16,129 +15,129 @@
         <div class="vl-cardWrap">
           <div class="vl-stamp-listWrap">
            <ul class="row" style="padding:0 1em 0.5em;">
-            <li class="col-4 border rounded vl-rectWrap area sekisei">石西/<br>山口</li>
-            <li class="col-4 border rounded vl-rectWrap area sekiou">石央/<br>広島</li>
-            <li class="col-4 border rounded vl-rectWrap area sekitou">石東/<br>県東部</li>
+            <li class="col-4 border rounded vl-rectWrap area sekisei">西</li>
+            <li class="col-4 border rounded vl-rectWrap area sekiou">中央</li>
+            <li class="col-4 border rounded vl-rectWrap area sekitou">東</li>
 
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石西エリア"][0].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア1"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石西エリア"][0]['name'] %>">
-                    <%= @bingo["石西エリア"][0]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア1"][0]['name'] %>">
+                    <%= @bingo["エリア1"][0]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石央エリア"][0].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア2"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石央エリア"][0]['name'] %>">
-                    <%= @bingo["石央エリア"][0]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア2"][0]['name'] %>">
+                    <%= @bingo["エリア2"][0]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石東エリア"][0].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア3"][0].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石東エリア"][0]['name'] %>">
-                    <%= @bingo["石東エリア"][0]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア3"][0]['name'] %>">
+                    <%= @bingo["エリア3"][0]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
-                <% end %>
-              </div>
-            </li>
-
-            <li class="col-4 border rounded vl-rectWrap stamp">
-              <div class="vl-rect">
-                <% if @bingo["石西エリア"][1].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
-                  <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石西エリア"][1]['name'] %>">
-                    <%= @bingo["石西エリア"][1]['id'] %>
-                  </span>
-                <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
 
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石央エリア"][1].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア1"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石央エリア"][1]['name'] %>">
-                    <%= @bingo["石央エリア"][1]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア1"][1]['name'] %>">
+                    <%= @bingo["エリア1"][1]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
-                <% end %>
-              </div>
-            </li>
-            <li class="col-4 border rounded vl-rectWrap stamp">
-              <div class="vl-rect">
-                <% if @bingo["石東エリア"][1].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
-                  <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石東エリア"][1]['name'] %>">
-                    <%= @bingo["石東エリア"][1]['id'] %>
-                  </span>
-                <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
 
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石西エリア"][2].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア2"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                       data-toggle="tooltip" title="<%= @bingo["石西エリア"][2]['name'] %>">
-                    <%= @bingo["石西エリア"][2]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア2"][1]['name'] %>">
+                    <%= @bingo["エリア2"][1]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
+                <% end %>
+              </div>
+            </li>
+            <li class="col-4 border rounded vl-rectWrap stamp">
+              <div class="vl-rect">
+                <% if @bingo["エリア3"][1].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info"
+                        data-toggle="tooltip" title="<%= @bingo["エリア3"][1]['name'] %>">
+                    <%= @bingo["エリア3"][1]['id'] %>
+                  </span>
+                <% else %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
 
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石央エリア"][2].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア1"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石央エリア"][2]['name'] %>">
-                    <%= @bingo["石央エリア"][2]['id'] %>
+                       data-toggle="tooltip" title="<%= @bingo["エリア1"][2]['name'] %>">
+                    <%= @bingo["エリア1"][2]['id'] %>
                   </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
 
             <li class="col-4 border rounded vl-rectWrap stamp">
               <div class="vl-rect">
-                <% if @bingo["石東エリア"][2].present? %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_01.png" %></span>
+                <% if @bingo["エリア2"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
                   <span class="vl-stmpNo badge badge-pill alert-info"
-                        data-toggle="tooltip" title="<%= @bingo["石東エリア"][2]['name'] %>">
-                    <%= @bingo["石東エリア"][2]['id'] %>
+                        data-toggle="tooltip" title="<%= @bingo["エリア2"][2]['name'] %>">
+                    <%= @bingo["エリア2"][2]['id'] %>
+                  </span>
+                <% else %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
+                <% end %>
+              </div>
+            </li>
+
+            <li class="col-4 border rounded vl-rectWrap stamp">
+              <div class="vl-rect">
+                <% if @bingo["エリア3"][2].present? %>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-01.png" %></span>
+                  <span class="vl-stmpNo badge badge-pill alert-info"
+                        data-toggle="tooltip" title="<%= @bingo["エリア3"][2]['name'] %>">
+                    <%= @bingo["エリア3"][2]['id'] %>
                     </span>
                 <% else %>
-                  <span class="vl-stmpImg"><%= image_tag "image_stamps/stamp_02.png" %></span>
+                  <span class="vl-stmpImg"><%= image_tag "image_stamps/yokudekimashita-02.png" %></span>
                 <% end %>
               </div>
             </li>
@@ -148,13 +147,13 @@
           <% else %>
             <p class="text-center mb-0"><span class="bingoAchievement"><%= @bingo_cnt %></span>ビンゴ達成</p>
             <% if @bingo_cnt.to_i >= 6 %>
-                <p class="text-center allIwami"><span>ALL石見賞</span>応募可能</span></p>
+                <p class="text-center allIwami"><span>1ビンゴ賞</span>応募可能</span></p>
             <% end %>
             <% if @bingo_cnt.to_i >= 2..5 %>
-                <p class="text-center iwamiTwo"><span>石見通(ツー)賞</span>応募可能</p>
+                <p class="text-center iwamiTwo"><span>2ビンゴ賞</span>応募可能</p>
             <% end %>
             <% if @bingo_cnt.to_i >= 1 %>
-                <p class="text-center onesAgain"><span>石見へワンスアゲイン賞</span>応募可能</p>
+                <p class="text-center onesAgain"><span>ALL賞</span>応募可能</p>
             <% end %>
           <% end %>
           <div class="row mt-1">

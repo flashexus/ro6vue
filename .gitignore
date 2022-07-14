@@ -33,3 +33,12 @@
 yarn-debug.log*
 .yarn-integrity
 /config/credentials
+/public/App_titlelogo_color.png
+/public/apple-touch-icon.png
+/public/apple-touch-icon-precomposed.png
+/public/favicon.ico
+/app/assets/images/image_stamps/logomark_color.png
+/app/assets/images/image_stamps/logomark_brown.png
+/app/assets/images/image_stamps/stmp.png
+/app/assets/images/image_stamps/stamp_01.png
+/app/assets/images/image_stamps/stamp_02.png

@@ -23,6 +23,11 @@
            <% end %>
         </li>
         <li>
+           <%= link_to(home_path ,class:"map-list", :data =>{"role" => "button","turbolinks" => "false"}) do %> 
+             <i class="fas fa-map-marker-alt"></i></br><span>Vueページ</span>
+           <% end %>
+        </li>
+        <li>
           <% if user_signed_in? %>
               <%= link_to( destroy_user_session_path, class:"logout", method: :delete , :data =>{"role" => "button","turbolinks" => "false"}) do %> 
                 <i class="fas fa-sign-out-alt"></i></br><span>ログアウト</span>
@@ -44,7 +49,7 @@
   </div> <!-- / .vl-modalMain -->
 </div>
   <footer class="vl-footer py-3 text-center">
-    <%# <small><a href="https://www.all-iwami.com/contents/stamprally/">©いわみくるり</a></small> %>
+    <%# <small><a href="https://www.all-iwami.com/contents/stamprally/">©</a></small> %>
   </footer>
   <%= javascript_pack_tag 'menu', 'data-turbolinks-track': 'reload' %>
 

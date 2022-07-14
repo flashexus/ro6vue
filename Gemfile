@@ -35,6 +35,7 @@ gem 'administrate', "0.14.0"
 gem 'font-awesome-sass'
 gem 'gon'
 gem 'meta-tags'
+gem 'mongoid'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

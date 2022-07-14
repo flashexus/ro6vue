@@ -5,14 +5,11 @@
 <body class="qr vl-bodyBg login-user">
 
   <header class="vl-appTop-header" style="margin-bottom:5px">
-   <div class="vl-appTitle d-flex justify-content-center container">
-      <p><%#= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
-   </div>
   </header>
 
   <div class="container mt-3 pl-2">
-    <div class="vl-userName"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div> 
-    <div class="vl-contentsWrap">
+    <div class="vl-userName row mt-4 mb-4"><i class="fas fa-smile"></i> <%= current_user.username %>さん</div> 
+    <div class="vl-contentsWrap row">
       <div class="vl-contentBlock rounded m-auto bg-white card">
         <div class="card-header">
           <h1 class="text-main-color">施設一覧</h1>
@@ -20,13 +17,13 @@
         <!--<p style="font-size:8px; color:gray; margin-bottom:0rem;">*マップ下のタブをクリックしてエリアを選択してください</p> -->
           <ul class="nav nav-tabs vl-tabWrap justify-content-center nav-pills" role="tablist">
             <li class="nav-item sekisei">
-              <a class="nav-link" id="item1-tab" data-toggle="tab" href="#item1" role="tab" aria-controls="item1" aria-selected="false">石西エリア</a>
+              <a class="nav-link" id="item1-tab" data-toggle="tab" href="#item1" role="tab" aria-controls="item1" aria-selected="false">エリア1</a>
             </li>
             <li class="nav-item sekiou">
-              <a class="nav-link" id="item2-tab" data-toggle="tab" href="#item2" role="tab" aria-controls="item2" aria-selected="false">石央エリア</a>
+              <a class="nav-link" id="item2-tab" data-toggle="tab" href="#item2" role="tab" aria-controls="item2" aria-selected="false">エリア2</a>
             </li>
             <li class="nav-item sekitou">
-              <a class="nav-link" id="item3-tab" data-toggle="tab" href="#item3" role="tab" aria-controls="item3" aria-selected="false">石東エリア</a>
+              <a class="nav-link" id="item3-tab" data-toggle="tab" href="#item3" role="tab" aria-controls="item3" aria-selected="false">エリア3</a>
             </li>
           </ul><!-- / .nav-tabs -->
         <div class="vl-cardWrap" style="padding: 5px 10px 40px;">

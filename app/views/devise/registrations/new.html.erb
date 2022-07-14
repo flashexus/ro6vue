@@ -7,9 +7,6 @@
   <%end%>
 
   <header class="vl-appTop-header">
-    <div class="vl-appTitle d-flex justify-content-center container">
-      <p><%= image_tag "image_stamps/App_titlelogo_color.png",{ alt:"石見周遊スタンプラリー いわみくるり",width:"300", height:"100"} %></p>
-    </div>
   </header>
 
   <div class="container">
@@ -20,7 +17,7 @@
         </div>
         <div class="vl-cardWrap">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.hidden_field :role, :value => "ユーザ" %>
+            <%= f.hidden_field :role, :value => "管理者" %>
             <div class="vr-formWrap">
               <%= bootstrap_devise_error_messages! %>
 <!------------------------------------------------------------------------------------------------------------------------->
@@ -32,8 +29,6 @@
                   <div class="vl-input mb-2">
                      <%= f.email_field :email, autofocus: true, autocomplete: 'email',class:'form-control', required:"required", placeholder:"例：iwami@example.com" %>
                   </div>
-                  <p style="font-size:1.0rem;">携帯電話のメールアドレスを入力される方でパソコンからの受信メールを制限している方は解除をお願いします。
-（@vitallead.co.jpのドメインからメールが受信できるよう解除をお願いします。）</p>
                </dd>
               </dl>
 <!------------------------------------------------------------------------------------------------------------------------->
@@ -109,10 +104,6 @@
               </dl>
 <!------------------------------------------------------------------------------------------------------------------------->
               <div class="vl-registerRole-actions">
-                <div class="vl-checkbox form-check text-center pt-3 pb-4">
-                  <input type="checkbox" class="form-check-input" name="entry[user_policy_check]" required="required" value="1">
-                  <label class="form-check-label"><a class="vl-link" href="<%= home_policy_path %>" target="_blank">利用規約</a>に同意する </label>
-                </div>
                 <div class="form-group">
                   <%= f.submit t('.sign_up'), class: 'btn btn-main-color btn-lg btn-block' %>
                 </div>
@@ -125,7 +116,7 @@
     </div><!-- / .vl-enterWrap -->
   </div><!-- / .container -->
   <footer class="vl-footer py-3 text-center">
-    <small><a href="https://www.all-iwami.com/contents/stamprally/">©いわみくるり</a></small>
+    <small><a href="https://www.all-iwami.com/contents/stamprally/">©</a></small>
   </footer>
 </body>
   <%= javascript_pack_tag 'user' %> 

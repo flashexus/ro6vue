@@ -25,20 +25,20 @@ ja:
       unconfirmed: 登録確認メールを受信し、アカウントを認証してください。
     mailer:
       confirmation_instructions:
-        subject: "[いわみくるり]登録確認メール"
-        action: "いわみくるり登録確認"
+        subject: "[]登録確認メール"
+        action: "登録確認"
         greeting: "ようこそ、%{recipient}さん!"
         instruction: "次のリンクでメールアドレスの確認が完了します"
       reset_password_instructions:
-        subject: "[いわみくるり]パスワードの再設定メール"
-        action: "いわみくるりパスワード変更"
+        subject: "[]パスワードの再設定メール"
+        action: "パスワード変更"
         greeting: "こんにちは、%{recipient}さん!"
         instruction: "誰かがパスワードの再設定を希望しました。次のリンクでパスワードの再設定が出来ます。"
         instruction_2: "あなたが希望したのではないのなら、このメールは無視してください。"
         instruction_3: "上のリンクにアクセスして新しいパスワードを設定するまで、パスワードは変更されません。"
       unlock_instructions:
-        subject: "[いわみくるり]アカウントのロック解除メール"
-        action: "いわみくるりアカウントのロック解除"
+        subject: "[]アカウントのロック解除メール"
+        action: "アカウントのロック解除"
         greeting: "こんにちは、%{recipient}さん!"
         instruction: "アカウントのロックを解除するには下のリンクをクリックしてください。"
         message: "ログイン失敗が繰り返されたため、アカウントはロックされています。"
