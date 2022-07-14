@@ -109,7 +109,7 @@ export default {
   async mounted () {
     this.google = await GoogleMapsApiLoader({
       libraries: ['places'],
-      apiKey: 'AIzaSyAGWhzbT56YwFb852arM2D4RpBMMRrV6QI'
+      apiKey: '-------Need APIKEY------'
     })
     this.initializeMap()
   },
